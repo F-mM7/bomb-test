@@ -1,0 +1,31 @@
+@import '../constants/animations.css';
+
+/* アニメーションクラス */
+.start-page-title {
+  animation: pulse 2s ease-in-out infinite alternate;
+}
+
+.start-page-content {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.start-page-button {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .start-page-title {
+    font-size: 2.5rem !important;
+  }
+  
+  .start-page-content {
+    padding: 20px !important;
+    margin: 20px !important;
+  }
+  
+  .start-page-button {
+    font-size: 1.5rem !important;
+    padding: 12px 32px !important;
+  }
+}

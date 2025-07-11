@@ -1,0 +1,64 @@
+@import '../constants/animations.css';
+
+/* 爆発エフェクトのスタイル */
+.explosion-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  pointer-events: none;
+  animation: explosion 0.5s ease-out forwards;
+}
+
+/* 焦げたような爆弾エフェクト */
+.burned-bomb {
+  position: relative;
+}
+
+.burned-bomb::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(ellipse at 60% 40%, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 50%, transparent 70%),
+    radial-gradient(ellipse at 30% 70%, rgba(40, 20, 0, 0.3) 0%, rgba(20, 10, 0, 0.2) 40%, transparent 60%),
+    linear-gradient(135deg, rgba(0, 0, 0, 0.1) 0%, rgba(40, 20, 0, 0.2) 30%, rgba(0, 0, 0, 0.3) 70%, rgba(20, 10, 0, 0.1) 100%);
+  pointer-events: none;
+  z-index: 1;
+  border-radius: inherit;
+}
+
+/* 失敗メッセージ */
+.failure-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+  font-weight: bold;
+  color: #ff0000;
+  text-shadow: 
+    0 0 10px rgba(255, 0, 0, 0.8),
+    0 0 20px rgba(255, 0, 0, 0.6),
+    0 0 30px rgba(255, 0, 0, 0.4),
+    2px 2px 4px rgba(0, 0, 0, 0.8);
+  z-index: 10001;
+  animation: pulseFailure 2s ease-in-out infinite;
+}
+
+
+/* 操作無効化 */
+.game-disabled {
+  pointer-events: none !important;
+  user-select: none !important;
+}
+
+.game-disabled * {
+  pointer-events: none !important;
+  user-select: none !important;
+}

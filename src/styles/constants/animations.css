@@ -1,0 +1,67 @@
+/* 共通アニメーション */
+@keyframes pulse {
+  0% {
+    opacity: 0.8;
+    text-shadow: 0 0 20px rgba(255, 68, 68, 0.5);
+  }
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 68, 68, 0.8);
+  }
+  100% {
+    opacity: 0.8;
+    text-shadow: 0 0 20px rgba(255, 68, 68, 0.5);
+  }
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px rgba(255, 68, 68, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 68, 68, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(255, 68, 68, 0.3);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes explosion {
+  0% {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+  20% {
+    background-color: rgba(255, 200, 0, 0.8);
+  }
+  40% {
+    background-color: rgba(255, 100, 0, 0.7);
+  }
+  60% {
+    background-color: rgba(100, 50, 0, 0.6);
+  }
+  100% {
+    background-color: rgba(20, 10, 0, 0.4);
+  }
+}
+
+@keyframes pulseFailure {
+  0%, 100% {
+    opacity: 0.8;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+}
