@@ -1,4 +1,5 @@
 import type { WirePosition } from "../types/game/game.types";
+import { BASE_SIZES } from "../utils/responsive";
 
 export interface WireConfig {
   continuousPath: string;
@@ -8,20 +9,26 @@ export interface WireConfig {
   cutCircle2: { cx: number; cy: number };
 }
 
+// ワイヤー位置計算用定数
+const WIRE_SPACING = BASE_SIZES.KEYBOARD_INNER_WIDTH / 3;
+const LEFT_WIRE_X = WIRE_SPACING;
+const RIGHT_WIRE_X = WIRE_SPACING * 2;
+const WIRE_HEIGHT = BASE_SIZES.KEYBOARD_TOTAL_HEIGHT;
+
 export const WIRE_CONFIGS: Record<WirePosition, WireConfig> = {
   left: {
-    continuousPath: "M 108 0 L 108 36 Q 120 65 115 95 Q 98 125 112 155 Q 118 185 108 216",
-    cutPath1: "M 108 0 L 108 36 Q 120 65 115 95 Q 108 110 113 122",
-    cutPath2: "M 109 142 Q 112 152 112 155 Q 118 185 108 216",
-    cutCircle1: { cx: 113, cy: 122 },
-    cutCircle2: { cx: 109, cy: 142 }
+    continuousPath: `M ${LEFT_WIRE_X} 0 L ${LEFT_WIRE_X} ${WIRE_HEIGHT * 0.15} Q ${LEFT_WIRE_X + 15} ${WIRE_HEIGHT * 0.3} ${LEFT_WIRE_X + 10} ${WIRE_HEIGHT * 0.4} Q ${LEFT_WIRE_X - 20} ${WIRE_HEIGHT * 0.55} ${LEFT_WIRE_X + 5} ${WIRE_HEIGHT * 0.7} Q ${LEFT_WIRE_X + 12} ${WIRE_HEIGHT * 0.85} ${LEFT_WIRE_X} ${WIRE_HEIGHT}`,
+    cutPath1: `M ${LEFT_WIRE_X} 0 L ${LEFT_WIRE_X} ${WIRE_HEIGHT * 0.15} Q ${LEFT_WIRE_X + 15} ${WIRE_HEIGHT * 0.3} ${LEFT_WIRE_X + 10} ${WIRE_HEIGHT * 0.4} Q ${LEFT_WIRE_X} ${WIRE_HEIGHT * 0.48} ${LEFT_WIRE_X + 8} ${WIRE_HEIGHT * 0.52}`,
+    cutPath2: `M ${LEFT_WIRE_X + 2} ${WIRE_HEIGHT * 0.6} Q ${LEFT_WIRE_X + 5} ${WIRE_HEIGHT * 0.65} ${LEFT_WIRE_X + 5} ${WIRE_HEIGHT * 0.7} Q ${LEFT_WIRE_X + 12} ${WIRE_HEIGHT * 0.85} ${LEFT_WIRE_X} ${WIRE_HEIGHT}`,
+    cutCircle1: { cx: LEFT_WIRE_X + 8, cy: WIRE_HEIGHT * 0.52 },
+    cutCircle2: { cx: LEFT_WIRE_X + 2, cy: WIRE_HEIGHT * 0.6 }
   },
   right: {
-    continuousPath: "M 288 0 L 288 36 Q 276 65 282 95 Q 298 125 284 155 Q 278 185 288 216",
-    cutPath1: "M 288 0 L 288 36 Q 276 65 282 95 Q 290 110 285 122",
-    cutPath2: "M 281 142 Q 284 152 284 155 Q 278 185 288 216",
-    cutCircle1: { cx: 285, cy: 122 },
-    cutCircle2: { cx: 281, cy: 142 }
+    continuousPath: `M ${RIGHT_WIRE_X} 0 L ${RIGHT_WIRE_X} ${WIRE_HEIGHT * 0.15} Q ${RIGHT_WIRE_X - 15} ${WIRE_HEIGHT * 0.3} ${RIGHT_WIRE_X - 10} ${WIRE_HEIGHT * 0.4} Q ${RIGHT_WIRE_X + 20} ${WIRE_HEIGHT * 0.55} ${RIGHT_WIRE_X - 5} ${WIRE_HEIGHT * 0.7} Q ${RIGHT_WIRE_X - 12} ${WIRE_HEIGHT * 0.85} ${RIGHT_WIRE_X} ${WIRE_HEIGHT}`,
+    cutPath1: `M ${RIGHT_WIRE_X} 0 L ${RIGHT_WIRE_X} ${WIRE_HEIGHT * 0.15} Q ${RIGHT_WIRE_X - 15} ${WIRE_HEIGHT * 0.3} ${RIGHT_WIRE_X - 10} ${WIRE_HEIGHT * 0.4} Q ${RIGHT_WIRE_X} ${WIRE_HEIGHT * 0.48} ${RIGHT_WIRE_X - 8} ${WIRE_HEIGHT * 0.52}`,
+    cutPath2: `M ${RIGHT_WIRE_X - 2} ${WIRE_HEIGHT * 0.6} Q ${RIGHT_WIRE_X - 5} ${WIRE_HEIGHT * 0.65} ${RIGHT_WIRE_X - 5} ${WIRE_HEIGHT * 0.7} Q ${RIGHT_WIRE_X - 12} ${WIRE_HEIGHT * 0.85} ${RIGHT_WIRE_X} ${WIRE_HEIGHT}`,
+    cutCircle1: { cx: RIGHT_WIRE_X - 8, cy: WIRE_HEIGHT * 0.52 },
+    cutCircle2: { cx: RIGHT_WIRE_X - 2, cy: WIRE_HEIGHT * 0.6 }
   }
 };
 
@@ -30,6 +37,6 @@ export const getWireColor = (position: WirePosition): string =>
 
 export const getGameWireStyle = (position: WirePosition) => ({
   stroke: getWireColor(position),
-  strokeWidth: "10",
+  strokeWidth: "12",
   filter: "drop-shadow(0 1px 2px rgba(0,0,0,0.5))"
 });

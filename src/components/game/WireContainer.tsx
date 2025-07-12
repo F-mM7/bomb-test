@@ -20,46 +20,38 @@ export const WireContainer: React.FC<WireContainerProps> = ({
 }) => {
   return (
     <div style={{
-      display: "flex",
-      gap: scaleSize(BASE_SIZES.BUTTON_GAP),
-      justifyContent: "center",
+      width: scaleSize(BASE_SIZES.KEYBOARD_INNER_WIDTH),
+      height: scaleSize(BASE_SIZES.KEYBOARD_TOTAL_HEIGHT),
+      position: "relative"
     }}>
-      <div style={{ width: scaleSize(BASE_SIZES.BUTTON_SIZE) }} />
-      
-      <div style={{
-        width: scaleSize(BASE_SIZES.EXPOSED_WIRES_WIDTH),
-        height: scaleSize(BASE_SIZES.KEYBOARD_ROWS * BASE_SIZES.BUTTON_SIZE + (BASE_SIZES.KEYBOARD_ROWS - 1) * BASE_SIZES.BUTTON_GAP),
-        position: "relative"
-      }}>
-        <svg 
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            pointerEvents: "none",
-            zIndex: 10
-          }}
-        >
-          <SvgWire 
-            position="left" 
-            isCut={isLeftCut} 
-            wireStyle={wireStyle}
-            onWireClick={onWireClick}
-            disabled={disabled}
-          />
-          <SvgWire 
-            position="right" 
-            isCut={isRightCut} 
-            wireStyle={wireStyle}
-            onWireClick={onWireClick}
-            disabled={disabled}
-          />
-        </svg>
-      </div>
-      
-      <div style={{ width: scaleSize(BASE_SIZES.BUTTON_SIZE) }} />
+      <svg 
+        viewBox={`0 0 ${BASE_SIZES.KEYBOARD_INNER_WIDTH} ${BASE_SIZES.KEYBOARD_TOTAL_HEIGHT}`}
+        preserveAspectRatio="none"
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          pointerEvents: "none",
+          zIndex: 10
+        }}
+      >
+        <SvgWire 
+          position="left" 
+          isCut={isLeftCut} 
+          wireStyle={wireStyle}
+          onWireClick={onWireClick}
+          disabled={disabled}
+        />
+        <SvgWire 
+          position="right" 
+          isCut={isRightCut} 
+          wireStyle={wireStyle}
+          onWireClick={onWireClick}
+          disabled={disabled}
+        />
+      </svg>
     </div>
   );
 };

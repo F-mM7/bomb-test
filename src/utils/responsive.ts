@@ -17,13 +17,20 @@ export const BASE_SIZES = {
   // キーボード
   KEYBOARD_ROWS: 5,
   KEYBOARD_COLUMNS: 10,
+  
+  // ワイヤー配置計算用
+  get KEYBOARD_TOTAL_HEIGHT() {
+    // KanaGrid (5行) + gap + ActionKeys (1行)
+    return this.KEYBOARD_ROWS * this.BUTTON_SIZE + (this.KEYBOARD_ROWS - 1) * this.BUTTON_GAP + this.BUTTON_GAP + this.BUTTON_SIZE;
+  },
+  get KEYBOARD_INNER_WIDTH() {
+    return this.CONTAINER_WIDTH - this.CONTAINER_PADDING * 2;
+  },
 
   // ディスプレイ
   DISPLAY_WIDTH: 640,
   DISPLAY_HEIGHT: 360,
 
-  // ワイヤー
-  EXPOSED_WIRES_WIDTH: 396,
 
   // フォント
   FONT_SIZE_SMALL: 12,

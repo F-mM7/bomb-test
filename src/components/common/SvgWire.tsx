@@ -52,13 +52,13 @@ const SvgWire: React.FC<WireProps> = (props) => {
           <circle
             cx={config.cutCircle1.cx}
             cy={config.cutCircle1.cy}
-            r="calc(4px * var(--global-scale, 1))"
+            r="4"
             fill="#666"
           />
           <circle
             cx={config.cutCircle2.cx}
             cy={config.cutCircle2.cy}
-            r="calc(4px * var(--global-scale, 1))"
+            r="4"
             fill="#666"
           />
         </>
