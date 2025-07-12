@@ -3,22 +3,23 @@ import {
   topBorderStyle,
   leftBorderStyle,
 } from "../../styles/components/exposedWires.styles";
+import { scaleSize, BASE_SIZES } from "../../utils/responsive";
 
 const BORDER_STYLES = {
   bottom: {
     position: "absolute" as const,
-    bottom: "14px",
-    left: "17px",
-    right: "14px",
-    height: "1px",
+    bottom: scaleSize(14),
+    left: scaleSize(17),
+    right: scaleSize(14),
+    height: scaleSize(1),
     background: "linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.5), rgba(0,0,0,0.8))",
   },
   rightVertical: {
     position: "absolute" as const,
-    top: "17px",
-    right: "14px",
-    width: "1px",
-    bottom: "14px",
+    top: scaleSize(17),
+    right: scaleSize(14),
+    width: scaleSize(1),
+    bottom: scaleSize(14),
     background: "linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.5))",
   }
 };

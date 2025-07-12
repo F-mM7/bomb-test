@@ -1,13 +1,13 @@
-import { LAYOUT } from "../../constants/layout";
 import { GRADIENTS, SHADOWS } from '../constants/colors';
+import { scaleSize, BASE_SIZES } from '../../utils/responsive';
 
 export const keyboardStyle = {
-  width: `calc(${LAYOUT.CONTAINER_WIDTH}px * var(--keyboard-scale, 1))`,
+  width: scaleSize(BASE_SIZES.CONTAINER_WIDTH),
   background: GRADIENTS.keyboard,
-  borderRadius: `calc(${LAYOUT.CONTAINER_BORDER_RADIUS}px * var(--keyboard-scale, 1))`,
-  padding: `calc(${LAYOUT.CONTAINER_PADDING}px * var(--keyboard-scale, 1))`,
+  borderRadius: scaleSize(BASE_SIZES.CONTAINER_BORDER_RADIUS),
+  padding: scaleSize(BASE_SIZES.CONTAINER_PADDING),
   boxShadow: SHADOWS.keyboard,
-  border: "1px solid #0a0a0a",
+  border: `${scaleSize(1)} solid #0a0a0a`,
   position: "relative" as const,
   boxSizing: "border-box" as const,
 };
@@ -15,22 +15,22 @@ export const keyboardStyle = {
 export const buttonContainerStyle = {
   display: "flex",
   flexDirection: "column" as const,
-  gap: `calc(${LAYOUT.BUTTON_GAP}px * var(--keyboard-scale, 1))`,
+  gap: scaleSize(BASE_SIZES.BUTTON_GAP),
   justifyContent: "center" as const,
 };
 
 export const columnStyle = {
   display: "flex",
   flexDirection: "column" as const,
-  gap: `calc(${LAYOUT.BUTTON_GAP}px * var(--keyboard-scale, 1))`,
+  gap: scaleSize(BASE_SIZES.BUTTON_GAP),
 };
 
 export const baseButtonStyle = {
-  width: `calc(${LAYOUT.BUTTON_SIZE}px * var(--keyboard-scale, 1))`,
-  height: `calc(${LAYOUT.BUTTON_SIZE}px * var(--keyboard-scale, 1))`,
+  width: scaleSize(BASE_SIZES.BUTTON_SIZE),
+  height: scaleSize(BASE_SIZES.BUTTON_SIZE),
   background: GRADIENTS.keyButton,
-  border: "1px solid #666",
-  borderRadius: `calc(6px * var(--keyboard-scale, 1))`,
+  border: `${scaleSize(1)} solid #666`,
+  borderRadius: scaleSize(6),
   cursor: "pointer" as const,
   fontWeight: "bold" as const,
   color: "#333",
@@ -41,7 +41,7 @@ export const baseButtonStyle = {
   alignItems: "center",
   justifyContent: "center",
   padding: "0",
-  fontSize: `calc(${LAYOUT.BUTTON_SIZE * 0.36}px * var(--keyboard-scale, 1))`,
+  fontSize: scaleSize(BASE_SIZES.BUTTON_SIZE * 0.36),
   overflow: "hidden" as const,
   textOverflow: "ellipsis" as const,
   whiteSpace: "nowrap" as const,
@@ -49,23 +49,23 @@ export const baseButtonStyle = {
 
 export const actionRowStyle = {
   display: "flex",
-  gap: `calc(${LAYOUT.BUTTON_GAP}px * var(--keyboard-scale, 1))`,
+  gap: scaleSize(BASE_SIZES.BUTTON_GAP),
   justifyContent: "flex-end" as const,
-  width: `calc((${LAYOUT.BUTTON_SIZE}px * 11 + ${LAYOUT.BUTTON_GAP}px * 10) * var(--keyboard-scale, 1))`,
+  width: scaleSize(BASE_SIZES.BUTTON_SIZE * 11 + BASE_SIZES.BUTTON_GAP * 10),
 };
 
 export const actionButtonStyle = {
   ...baseButtonStyle,
-  width: `calc(${LAYOUT.BUTTON_SIZE * 2 + LAYOUT.BUTTON_GAP}px * var(--keyboard-scale, 1))`,
-  fontSize: `calc(${LAYOUT.BUTTON_SIZE * 0.32}px * var(--keyboard-scale, 1))`,
-  padding: `calc(2px * var(--keyboard-scale, 1))`,
+  width: scaleSize(BASE_SIZES.BUTTON_SIZE * 2 + BASE_SIZES.BUTTON_GAP),
+  fontSize: scaleSize(BASE_SIZES.BUTTON_SIZE * 0.32),
+  padding: scaleSize(2),
 };
 
 export const gridStyle = (groupCount: number) => ({
   display: "grid",
-  gridTemplateColumns: `repeat(${groupCount}, calc(${LAYOUT.BUTTON_SIZE}px * var(--keyboard-scale, 1)))`,
-  gridTemplateRows: `repeat(${LAYOUT.KEYBOARD_ROWS}, calc(${LAYOUT.BUTTON_SIZE}px * var(--keyboard-scale, 1)))`,
-  gridGap: `calc(${LAYOUT.BUTTON_GAP}px * var(--keyboard-scale, 1))`,
+  gridTemplateColumns: `repeat(${groupCount}, ${scaleSize(BASE_SIZES.BUTTON_SIZE)})`,
+  gridTemplateRows: `repeat(${BASE_SIZES.KEYBOARD_ROWS}, ${scaleSize(BASE_SIZES.BUTTON_SIZE)})`,
+  gridGap: scaleSize(BASE_SIZES.BUTTON_GAP),
 });
 
 export const BUTTON_STATES = {

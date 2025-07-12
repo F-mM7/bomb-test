@@ -1,6 +1,7 @@
 import React from "react";
 import type { WirePosition } from "../../types/game/game.types";
 import { WIRE_CONFIGS, getGameWireStyle } from "../../data/wireConfigs";
+import { scaleSize } from "../../utils/responsive";
 
 interface BasicWireProps {
   d: string;
@@ -52,13 +53,13 @@ const SvgWire: React.FC<WireProps> = (props) => {
           <circle
             cx={config.cutCircle1.cx}
             cy={config.cutCircle1.cy}
-            r="4"
+            r="calc(4px * var(--global-scale, 1))"
             fill="#666"
           />
           <circle
             cx={config.cutCircle2.cx}
             cy={config.cutCircle2.cy}
-            r="4"
+            r="calc(4px * var(--global-scale, 1))"
             fill="#666"
           />
         </>

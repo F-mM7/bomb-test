@@ -11,6 +11,11 @@ export const LAYOUT = {
   KEYBOARD_ROWS: 5,
   KEYBOARD_COLUMNS: 10,
   
+  // Scale constraints
+  MIN_SCALE: 0.5,
+  MAX_SCALE: 1.2,
+  SCALE_RATIO: 0.9, // Use 90% of available space
+  
   get KEYBOARD_CONTENT_HEIGHT() {
     return (this.KEYBOARD_ROWS * this.BUTTON_SIZE) + 
            ((this.KEYBOARD_ROWS - 1) * this.BUTTON_GAP);

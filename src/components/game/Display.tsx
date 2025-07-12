@@ -8,6 +8,7 @@ import {
   CircleRenderer, 
   InputRenderer 
 } from "../display/renderers";
+import { scaleSize, BASE_SIZES } from "../../utils/responsive";
 
 const Display: React.FC<DisplayProps> = ({
   width,
@@ -47,14 +48,14 @@ const Display: React.FC<DisplayProps> = ({
 
 
   return (
-    <div style={{ marginBottom: "16px", ...style }}>
+    <div style={{ marginBottom: scaleSize(BASE_SIZES.SPACING_LG), ...style }}>
       <canvas
         ref={canvasRef}
         width={width}
         height={height}
         style={{
-          width: `min(${pixelWidth}px, 85vw)`,
-          height: `min(${pixelHeight}px, 48vw)`,
+          width: scaleSize(pixelWidth),
+          height: scaleSize(pixelHeight),
           imageRendering: "pixelated",
           background: COLORS.black,
           maxWidth: "100%",

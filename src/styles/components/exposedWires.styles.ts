@@ -1,40 +1,40 @@
-import { LAYOUT } from "../../constants/layout";
 import { GRADIENTS, SHADOWS } from '../constants/colors';
+import { scaleSize, BASE_SIZES } from '../../utils/responsive';
 
 export const exposedWiresContainerStyle = {
-  width: `calc(${LAYOUT.CONTAINER_WIDTH}px * var(--wires-scale, 1))`,
+  width: scaleSize(BASE_SIZES.EXPOSED_WIRES_WIDTH),
   background: GRADIENTS.exposedWires,
-  borderRadius: `calc(${LAYOUT.CONTAINER_BORDER_RADIUS}px * var(--wires-scale, 1))`,
-  padding: `calc(${LAYOUT.CONTAINER_PADDING}px * var(--wires-scale, 1))`,
+  borderRadius: scaleSize(BASE_SIZES.CONTAINER_BORDER_RADIUS),
+  padding: scaleSize(BASE_SIZES.CONTAINER_PADDING),
   boxShadow: SHADOWS.exposedWires,
-  border: "1px solid #000",
+  border: `${scaleSize(1)} solid #000`,
   position: "relative" as const,
   boxSizing: "border-box" as const,
 };
 
 export const topBorderStyle = {
   position: "absolute" as const,
-  top: `calc(14px * var(--wires-scale, 1))`,
-  left: `calc(14px * var(--wires-scale, 1))`,
-  right: `calc(14px * var(--wires-scale, 1))`,
-  height: `calc(3px * var(--wires-scale, 1))`,
+  top: scaleSize(14),
+  left: scaleSize(14),
+  right: scaleSize(14),
+  height: scaleSize(3),
   background: "linear-gradient(to right, rgba(255,255,255,0.15), rgba(255,255,255,0.08), rgba(255,255,255,0.15))",
-  borderRadius: `calc(2px * var(--wires-scale, 1))`
+  borderRadius: scaleSize(2)
 };
 
 export const leftBorderStyle = {
   position: "absolute" as const,
-  top: `calc(14px * var(--wires-scale, 1))`,
-  left: `calc(14px * var(--wires-scale, 1))`,
-  width: `calc(3px * var(--wires-scale, 1))`,
-  bottom: `calc(14px * var(--wires-scale, 1))`,
+  top: scaleSize(14),
+  left: scaleSize(14),
+  width: scaleSize(3),
+  bottom: scaleSize(14),
   background: "linear-gradient(to bottom, rgba(255,255,255,0.15), rgba(255,255,255,0.05))",
-  borderRadius: `calc(2px * var(--wires-scale, 1))`
+  borderRadius: scaleSize(2)
 };
 
 export const wireStyle = {
   stroke: "#fff",
-  strokeWidth: "calc(8 * var(--wires-scale, 1))",
+  strokeWidth: scaleSize(8),
   fill: "none",
   strokeLinecap: "round" as const,
 };

@@ -1,14 +1,15 @@
 import React from "react";
 import SvgWire from "../common/SvgWire";
+import { scaleSize } from "../../utils/responsive";
 
 const WireLayer: React.FC = () => {
   return (
     <svg style={{
       position: "absolute",
-      top: "-100px",
-      left: "-100px",
-      width: "calc(100% + 200px)",
-      height: "calc(100% + 200px)",
+      top: scaleSize(-100),
+      left: scaleSize(-100),
+      width: `calc(100% + ${scaleSize(200)})`,
+      height: `calc(100% + ${scaleSize(200)})`,
       pointerEvents: "none",
       zIndex: 0,
     }}>

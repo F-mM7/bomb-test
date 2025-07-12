@@ -1,22 +1,24 @@
+import { scaleSize, BASE_SIZES } from '../../utils/responsive';
+
 export const containerStyle = {
   display: "flex",
   flexDirection: "column" as const,
   alignItems: "center" as const,
   justifyContent: "center" as const,
   minHeight: "100vh",
-  padding: "10px",
-  gap: "16px",
+  padding: scaleSize(10),
+  gap: scaleSize(BASE_SIZES.SPACING_LG),
   width: "100%",
   maxWidth: "100%",
   boxSizing: "border-box" as const,
 };
 
 export const bombBodyStyle = {
-  borderRadius: "12px",
-  padding: "clamp(15px, 3vw, 30px)",
+  borderRadius: scaleSize(BASE_SIZES.SPACING_MD),
+  padding: scaleSize(BASE_SIZES.SPACING_LG),
   background: "linear-gradient(135deg, #5a5a5a 0%, #3a3a3a 50%, #4a4a4a 100%)",
-  width: "min(720px, 95vw)",
-  maxWidth: "100%",
+  width: scaleSize(720),
+  maxWidth: "95vw",
   boxShadow:
     "0 8px 16px rgba(0,0,0,0.5), inset 0 2px 4px rgba(255,255,255,0.1)",
   textAlign: "center" as const,

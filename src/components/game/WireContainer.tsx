@@ -1,7 +1,7 @@
 import React from "react";
 import SvgWire from "../common/SvgWire";
 import type { WirePosition } from "../../types/game/game.types";
-import { LAYOUT } from "../../constants/layout";
+import { BASE_SIZES, scaleSize } from "../../utils/responsive";
 
 interface WireContainerProps {
   onWireClick: (wire: WirePosition) => void;
@@ -21,14 +21,14 @@ export const WireContainer: React.FC<WireContainerProps> = ({
   return (
     <div style={{
       display: "flex",
-      gap: `calc(${LAYOUT.BUTTON_GAP}px * var(--wires-scale, 1))`,
+      gap: scaleSize(BASE_SIZES.BUTTON_GAP),
       justifyContent: "center",
     }}>
-      <div style={{ width: `calc(${LAYOUT.BUTTON_SIZE}px * var(--wires-scale, 1))` }} />
+      <div style={{ width: scaleSize(BASE_SIZES.BUTTON_SIZE) }} />
       
       <div style={{
-        width: `calc(${LAYOUT.EXPOSED_WIRES_CONTENT_WIDTH}px * var(--wires-scale, 1))`,
-        height: `calc(${LAYOUT.EXPOSED_WIRES_CONTENT_HEIGHT}px * var(--wires-scale, 1))`,
+        width: scaleSize(BASE_SIZES.EXPOSED_WIRES_WIDTH),
+        height: scaleSize(BASE_SIZES.KEYBOARD_ROWS * BASE_SIZES.BUTTON_SIZE + (BASE_SIZES.KEYBOARD_ROWS - 1) * BASE_SIZES.BUTTON_GAP),
         position: "relative"
       }}>
         <svg 
@@ -59,7 +59,7 @@ export const WireContainer: React.FC<WireContainerProps> = ({
         </svg>
       </div>
       
-      <div style={{ width: LAYOUT.BUTTON_SIZE }} />
+      <div style={{ width: scaleSize(BASE_SIZES.BUTTON_SIZE) }} />
     </div>
   );
 };
