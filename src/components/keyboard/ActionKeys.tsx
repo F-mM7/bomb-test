@@ -1,6 +1,6 @@
 import React from "react";
 import { KeyboardButton } from "./KeyboardButton";
-import { columnStyle, baseButtonStyle } from "../../styles/components/keyboard.styles";
+import { actionRowStyle, actionButtonStyle } from "../../styles/components/keyboard.styles";
 
 interface ActionKeysProps {
   onBackspace: () => void;
@@ -15,7 +15,6 @@ export const ActionKeys: React.FC<ActionKeysProps> = ({
   onEnter, 
   disabled = false 
 }) => {
-  const actionStyle = { ...baseButtonStyle, fontSize: "12px" } as const;
   
   const actionButtons = [
     { label: "消去", onClick: onBackspace },
@@ -24,16 +23,15 @@ export const ActionKeys: React.FC<ActionKeysProps> = ({
   ];
 
   return (
-    <div style={columnStyle}>
+    <div style={actionRowStyle}>
       {actionButtons.map(({ label, onClick }) => (
-        <div key={label}>
-          <KeyboardButton 
-            content={label} 
-            onClick={onClick || (() => {})} 
-            style={actionStyle}
-            disabled={disabled}
-          />
-        </div>
+        <KeyboardButton 
+          key={label}
+          content={label} 
+          onClick={onClick || (() => {})} 
+          style={actionButtonStyle}
+          disabled={disabled}
+        />
       ))}
     </div>
   );

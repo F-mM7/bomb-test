@@ -1,4 +1,15 @@
+html {
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   background-color: #000000;
+  overflow-x: hidden;
+  overflow-y: auto;
+  touch-action: pan-y;
+}
+
+* {
+  box-sizing: border-box;
 }

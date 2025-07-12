@@ -8,7 +8,6 @@ import {
   keyboardStyle,
   buttonContainerStyle,
 } from "../../styles/components/keyboard.styles";
-import { ExtraKeys } from "./ExtraKeys";
 import type { MarkType } from "../../types/data/font.types";
 import { ActionKeys } from "./ActionKeys";
 import { KanaGrid } from "./KanaGrid";
@@ -89,8 +88,7 @@ const Keyboard: React.FC<KeyboardProps> = ({ setInput, onEnter, disabled = false
     <div ref={containerRef} style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
       <div ref={keyboardRef} style={keyboardStyle}>
         <div style={buttonContainerStyle}>
-          <ExtraKeys onMarkClick={handleMark} disabled={disabled} />
-          <KanaGrid onCharInput={handleCharInput} disabled={disabled} />
+          <KanaGrid onCharInput={handleCharInput} onMarkClick={handleMark} disabled={disabled} />
           <ActionKeys 
             onBackspace={handleBackspace}
             onClear={handleClear}

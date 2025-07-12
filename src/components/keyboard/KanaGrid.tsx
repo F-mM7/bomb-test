@@ -5,11 +5,12 @@ import { gridStyle, baseButtonStyle } from "../../styles/components/keyboard.sty
 
 interface KanaGridProps {
   onCharInput: (char: string) => void;
+  onMarkClick: (mark: "゛" | "゜" | "小字") => void;
   disabled?: boolean;
 }
 
-export const KanaGrid: React.FC<KanaGridProps> = ({ onCharInput, disabled = false }) => {
-  const keyStyle = { ...baseButtonStyle, fontSize: "14px" } as const;
+export const KanaGrid: React.FC<KanaGridProps> = ({ onCharInput, onMarkClick, disabled = false }) => {
+  const keyStyle = { ...baseButtonStyle, fontSize: "18px" } as const;
   const orderedGroups = [...kanaGroups].reverse();
 
   return (
@@ -22,7 +23,16 @@ export const KanaGrid: React.FC<KanaGridProps> = ({ onCharInput, disabled = fals
               <div key={`${row}-${col}`}>
                 <KeyboardButton 
                   content={group[row]!} 
-                  onClick={() => onCharInput(group[row]!)} 
+                  onClick={() => {
+                    const char = group[row]!;
+                    if (char === "゛" || char === "゜") {
+                      onMarkClick(char);
+                    } else if (char === "小") {
+                      onMarkClick("小字");
+                    } else {
+                      onCharInput(char);
+                    }
+                  }} 
                   style={keyStyle}
                   disabled={disabled}
                 />
