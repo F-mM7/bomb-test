@@ -1,6 +1,6 @@
 import React from "react";
 import { KeyboardButton } from "./KeyboardButton";
-import { kanaGroups } from "../../constants";
+import { kanaGroups, LAYOUT } from "../../constants";
 import { gridStyle, baseButtonStyle } from "../../styles/components/keyboard.styles";
 
 interface KanaGridProps {
@@ -30,7 +30,11 @@ export const KanaGrid: React.FC<KanaGridProps> = ({ onCharInput, disabled = fals
             ) : (
               <div
                 key={`${row}-${col}`}
-                style={{ width: 36, height: 36, visibility: "hidden" }}
+                style={{ 
+                  width: `calc(${LAYOUT.BUTTON_SIZE}px * var(--keyboard-scale, 1))`, 
+                  height: `calc(${LAYOUT.BUTTON_SIZE}px * var(--keyboard-scale, 1))`, 
+                  visibility: "hidden" 
+                }}
               />
             )
           )

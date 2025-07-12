@@ -21,14 +21,14 @@ export const WireContainer: React.FC<WireContainerProps> = ({
   return (
     <div style={{
       display: "flex",
-      gap: `${LAYOUT.BUTTON_GAP}px`,
+      gap: `calc(${LAYOUT.BUTTON_GAP}px * var(--wires-scale, 1))`,
       justifyContent: "center",
     }}>
-      <div style={{ width: LAYOUT.BUTTON_SIZE }} />
+      <div style={{ width: `calc(${LAYOUT.BUTTON_SIZE}px * var(--wires-scale, 1))` }} />
       
       <div style={{
-        width: `${LAYOUT.EXPOSED_WIRES_CONTENT_WIDTH}px`,
-        height: `${LAYOUT.EXPOSED_WIRES_CONTENT_HEIGHT}px`,
+        width: `calc(${LAYOUT.EXPOSED_WIRES_CONTENT_WIDTH}px * var(--wires-scale, 1))`,
+        height: `calc(${LAYOUT.EXPOSED_WIRES_CONTENT_HEIGHT}px * var(--wires-scale, 1))`,
         position: "relative"
       }}>
         <svg 

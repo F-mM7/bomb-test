@@ -53,10 +53,11 @@ const Display: React.FC<DisplayProps> = ({
         width={width}
         height={height}
         style={{
-          width: pixelWidth,
-          height: pixelHeight,
+          width: `min(${pixelWidth}px, 85vw)`,
+          height: `min(${pixelHeight}px, 48vw)`,
           imageRendering: "pixelated",
           background: COLORS.black,
+          maxWidth: "100%",
         }}
       />
     </div>

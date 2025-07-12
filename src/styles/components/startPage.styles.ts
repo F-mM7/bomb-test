@@ -13,39 +13,39 @@ export const startPageContainerStyle = {
 };
 
 export const titleStyle = {
-  fontSize: "4rem",
+  fontSize: "clamp(2rem, 8vw, 4rem)",
   fontWeight: "bold" as const,
   margin: "0 0 30px 0",
   color: COLORS.primary,
   textShadow: SHADOWS.text,
   textAlign: "center" as const,
   width: "100%",
-  whiteSpace: "nowrap" as const,
-  lineHeight: "1",
+  whiteSpace: "normal" as const,
+  lineHeight: "1.2",
 };
 
 export const contentBoxStyle = {
   maxWidth: "600px",
   background: "rgba(0, 0, 0, 0.7)",
   borderRadius: "16px",
-  padding: "40px",
+  padding: "clamp(20px, 5vw, 40px)",
   boxShadow: SHADOWS.contentBox,
   border: `1px solid rgba(255, 68, 68, 0.3)`,
   backdropFilter: "blur(10px)",
-  width: "100%",
+  width: "calc(100% - 40px)",
   boxSizing: "border-box" as const,
   margin: "0 auto",
 };
 
 export const descriptionStyle = {
-  fontSize: "1.2rem",
+  fontSize: "clamp(1rem, 3vw, 1.2rem)",
   lineHeight: "1.8",
   marginBottom: "16px",
   color: COLORS.textSecondary,
 };
 
 export const warningTextStyle = {
-  fontSize: "1rem",
+  fontSize: "clamp(0.9rem, 2.5vw, 1rem)",
   lineHeight: "1.6",
   marginBottom: "12px",
   color: COLORS.warning,
@@ -53,7 +53,7 @@ export const warningTextStyle = {
 };
 
 export const noteTextStyle = {
-  fontSize: "0.9rem",
+  fontSize: "clamp(0.8rem, 2vw, 0.9rem)",
   lineHeight: "1.5",
   marginBottom: "12px",
   color: COLORS.textMuted,
@@ -61,9 +61,9 @@ export const noteTextStyle = {
 };
 
 export const startButtonStyle = {
-  fontSize: "2rem",
+  fontSize: "clamp(1.2rem, 4vw, 2rem)",
   fontWeight: "bold" as const,
-  padding: "16px 48px",
+  padding: "clamp(12px, 3vw, 16px) clamp(24px, 6vw, 48px)",
   marginTop: "30px",
   background: GRADIENTS.button,
   color: COLORS.text,
@@ -83,7 +83,7 @@ export const startButtonHoverStyle = {
 };
 
 export const timerWarningStyle = {
-  fontSize: "1.1rem",
+  fontSize: "clamp(0.95rem, 2.5vw, 1.1rem)",
   color: COLORS.timerWarning,
   fontWeight: "bold" as const,
   marginBottom: "16px",

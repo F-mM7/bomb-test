@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useEffect, useRef } from "react";
 import {
   fullDakutenMap,
   fullHandakutenMap,
@@ -66,17 +66,38 @@ const Keyboard: React.FC<KeyboardProps> = ({ setInput, onEnter, disabled = false
     setInput("");
   }, [setInput, disabled]);
 
+  const keyboardRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const updateScale = () => {
+      if (!keyboardRef.current || !containerRef.current) return;
+      
+      const containerWidth = containerRef.current.offsetWidth;
+      const keyboardWidth = 640; // LAYOUT.CONTAINER_WIDTH
+      const scale = Math.min(1, (containerWidth - 40) / keyboardWidth); // 40px margin
+      
+      keyboardRef.current.style.setProperty('--keyboard-scale', scale.toString());
+    };
+
+    updateScale();
+    window.addEventListener('resize', updateScale);
+    return () => window.removeEventListener('resize', updateScale);
+  }, []);
+
   return (
-    <div style={keyboardStyle}>
-      <div style={buttonContainerStyle}>
-        <ExtraKeys onMarkClick={handleMark} disabled={disabled} />
-        <KanaGrid onCharInput={handleCharInput} disabled={disabled} />
-        <ActionKeys 
-          onBackspace={handleBackspace}
-          onClear={handleClear}
-          onEnter={onEnter}
-          disabled={disabled}
-        />
+    <div ref={containerRef} style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+      <div ref={keyboardRef} style={keyboardStyle}>
+        <div style={buttonContainerStyle}>
+          <ExtraKeys onMarkClick={handleMark} disabled={disabled} />
+          <KanaGrid onCharInput={handleCharInput} disabled={disabled} />
+          <ActionKeys 
+            onBackspace={handleBackspace}
+            onClear={handleClear}
+            onEnter={onEnter}
+            disabled={disabled}
+          />
+        </div>
       </div>
     </div>
   );

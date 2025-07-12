@@ -60,6 +60,7 @@ const Device: React.FC<DeviceProps> = ({
             isCleared={isCleared}
             isPaused={isPaused}
             isFailed={isFailed}
+            style={{ maxWidth: "85vw" }}
           />
         </div>
 

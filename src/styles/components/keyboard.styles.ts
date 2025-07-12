@@ -2,33 +2,34 @@ import { LAYOUT } from "../../constants/layout";
 import { GRADIENTS, SHADOWS } from '../constants/colors';
 
 export const keyboardStyle = {
-  width: `${LAYOUT.CONTAINER_WIDTH}px`,
+  width: `calc(${LAYOUT.CONTAINER_WIDTH}px * var(--keyboard-scale, 1))`,
   background: GRADIENTS.keyboard,
-  borderRadius: `${LAYOUT.CONTAINER_BORDER_RADIUS}px`,
-  padding: `${LAYOUT.CONTAINER_PADDING}px`,
+  borderRadius: `calc(${LAYOUT.CONTAINER_BORDER_RADIUS}px * var(--keyboard-scale, 1))`,
+  padding: `calc(${LAYOUT.CONTAINER_PADDING}px * var(--keyboard-scale, 1))`,
   boxShadow: SHADOWS.keyboard,
   border: "1px solid #0a0a0a",
   position: "relative" as const,
+  boxSizing: "border-box" as const,
 };
 
 export const buttonContainerStyle = {
   display: "flex",
-  gap: `${LAYOUT.BUTTON_GAP}px`,
+  gap: `calc(${LAYOUT.BUTTON_GAP}px * var(--keyboard-scale, 1))`,
   justifyContent: "center" as const,
 };
 
 export const columnStyle = {
   display: "flex",
   flexDirection: "column" as const,
-  gap: `${LAYOUT.BUTTON_GAP}px`,
+  gap: `calc(${LAYOUT.BUTTON_GAP}px * var(--keyboard-scale, 1))`,
 };
 
 export const baseButtonStyle = {
-  width: LAYOUT.BUTTON_SIZE,
-  height: LAYOUT.BUTTON_SIZE,
+  width: `calc(${LAYOUT.BUTTON_SIZE}px * var(--keyboard-scale, 1))`,
+  height: `calc(${LAYOUT.BUTTON_SIZE}px * var(--keyboard-scale, 1))`,
   background: GRADIENTS.keyButton,
   border: "1px solid #666",
-  borderRadius: 6,
+  borderRadius: `calc(6px * var(--keyboard-scale, 1))`,
   cursor: "pointer" as const,
   fontWeight: "bold" as const,
   color: "#333",
@@ -39,13 +40,14 @@ export const baseButtonStyle = {
   alignItems: "center",
   justifyContent: "center",
   padding: "0",
+  fontSize: `calc(14px * var(--keyboard-scale, 1))`,
 };
 
 export const gridStyle = (groupCount: number) => ({
   display: "grid",
-  gridTemplateColumns: `repeat(${groupCount}, ${LAYOUT.BUTTON_SIZE}px)`,
-  gridTemplateRows: `repeat(${LAYOUT.KEYBOARD_ROWS}, ${LAYOUT.BUTTON_SIZE}px)`,
-  gridGap: `${LAYOUT.BUTTON_GAP}px`,
+  gridTemplateColumns: `repeat(${groupCount}, calc(${LAYOUT.BUTTON_SIZE}px * var(--keyboard-scale, 1)))`,
+  gridTemplateRows: `repeat(${LAYOUT.KEYBOARD_ROWS}, calc(${LAYOUT.BUTTON_SIZE}px * var(--keyboard-scale, 1)))`,
+  gridGap: `calc(${LAYOUT.BUTTON_GAP}px * var(--keyboard-scale, 1))`,
 });
 
 export const BUTTON_STATES = {
