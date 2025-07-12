@@ -50,7 +50,8 @@ export const baseButtonStyle = {
 export const actionRowStyle = {
   display: "flex",
   gap: `calc(${LAYOUT.BUTTON_GAP}px * var(--keyboard-scale, 1))`,
-  justifyContent: "center" as const,
+  justifyContent: "flex-end" as const,
+  width: `calc((${LAYOUT.BUTTON_SIZE}px * 11 + ${LAYOUT.BUTTON_GAP}px * 10) * var(--keyboard-scale, 1))`,
 };
 
 export const actionButtonStyle = {
