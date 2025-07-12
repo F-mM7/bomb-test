@@ -90,23 +90,8 @@ const Device: React.FC<DeviceProps> = ({
     };
   }, []);
   return (
-    <div
-      ref={containerRef}
-      style={{
-        width: "100%",
-        minHeight: scaleSize(400),
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <div
-        ref={deviceRef}
-        style={{
-          transform: "scale(var(--global-scale, 1))",
-          transformOrigin: "center",
-        }}
-      >
+    <div ref={containerRef}>
+      <div ref={deviceRef}>
         <WireLayer />
 
         <div style={{ ...pcbStyle, zIndex: 1 }}>
@@ -141,10 +126,10 @@ const Device: React.FC<DeviceProps> = ({
 
           <div style={displayMountStyle}>
             <Display
-              width={BASE_SIZES.DISPLAY_WIDTH}
-              height={BASE_SIZES.DISPLAY_HEIGHT}
-              pixelWidth={640}
-              pixelHeight={360}
+              width={96}
+              height={54}
+              pixelWidth={BASE_SIZES.DISPLAY_WIDTH}
+              pixelHeight={BASE_SIZES.DISPLAY_HEIGHT}
               input={input}
               remaining={remaining}
               currentQuestion={currentQuestion}

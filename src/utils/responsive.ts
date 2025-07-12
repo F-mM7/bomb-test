@@ -9,28 +9,28 @@ export const BASE_SIZES = {
   CONTAINER_WIDTH: 640,
   CONTAINER_PADDING: 12,
   CONTAINER_BORDER_RADIUS: 4,
-  
+
   // ボタン
   BUTTON_SIZE: 50,
   BUTTON_GAP: 6,
-  
+
   // キーボード
   KEYBOARD_ROWS: 5,
   KEYBOARD_COLUMNS: 10,
-  
+
   // ディスプレイ
-  DISPLAY_WIDTH: 96,
-  DISPLAY_HEIGHT: 54,
-  
+  DISPLAY_WIDTH: 640,
+  DISPLAY_HEIGHT: 360,
+
   // ワイヤー
   EXPOSED_WIRES_WIDTH: 396,
-  
+
   // フォント
   FONT_SIZE_SMALL: 12,
   FONT_SIZE_MEDIUM: 16,
   FONT_SIZE_LARGE: 20,
   FONT_SIZE_XL: 24,
-  
+
   // スペーシング
   SPACING_XS: 4,
   SPACING_SM: 8,
@@ -49,7 +49,7 @@ export const SCALE_CONFIG = {
 
 // CSS変数名
 export const CSS_VARS = {
-  GLOBAL_SCALE: '--global-scale',
+  GLOBAL_SCALE: "--global-scale",
 } as const;
 
 /**
@@ -67,14 +67,15 @@ export function calculateGlobalScale(
   targetHeight?: number
 ): number {
   const widthScale = (containerWidth * SCALE_CONFIG.SCALE_RATIO) / targetWidth;
-  
+
   let scale = widthScale;
-  
+
   if (targetHeight) {
-    const heightScale = (containerHeight * SCALE_CONFIG.SCALE_RATIO) / targetHeight;
+    const heightScale =
+      (containerHeight * SCALE_CONFIG.SCALE_RATIO) / targetHeight;
     scale = Math.min(widthScale, heightScale);
   }
-  
+
   return Math.max(
     SCALE_CONFIG.MIN_SCALE,
     Math.min(SCALE_CONFIG.MAX_SCALE, scale)
@@ -101,7 +102,7 @@ export function scaleSize(baseSize: number, scale?: number): string {
  * @returns スケール適用後のサイズ配列
  */
 export function scaleSizes(baseSizes: number[], scale?: number): string[] {
-  return baseSizes.map(size => scaleSize(size, scale));
+  return baseSizes.map((size) => scaleSize(size, scale));
 }
 
 /**
@@ -124,7 +125,9 @@ export function setGlobalScale(
 export function getGlobalScale(
   element: HTMLElement = document.documentElement
 ): number {
-  const scaleValue = getComputedStyle(element).getPropertyValue(CSS_VARS.GLOBAL_SCALE);
+  const scaleValue = getComputedStyle(element).getPropertyValue(
+    CSS_VARS.GLOBAL_SCALE
+  );
   return parseFloat(scaleValue) || SCALE_CONFIG.DEFAULT_SCALE;
 }
 

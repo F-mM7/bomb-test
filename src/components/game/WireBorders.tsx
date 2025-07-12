@@ -3,7 +3,7 @@ import {
   topBorderStyle,
   leftBorderStyle,
 } from "../../styles/components/exposedWires.styles";
-import { scaleSize, BASE_SIZES } from "../../utils/responsive";
+import { scaleSize } from "../../utils/responsive";
 
 const BORDER_STYLES = {
   bottom: {

@@ -1,7 +1,6 @@
 import React from "react";
 import type { WirePosition } from "../../types/game/game.types";
 import { WIRE_CONFIGS, getGameWireStyle } from "../../data/wireConfigs";
-import { scaleSize } from "../../utils/responsive";
 
 interface BasicWireProps {
   d: string;
