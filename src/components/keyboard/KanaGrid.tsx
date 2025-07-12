@@ -10,7 +10,7 @@ interface KanaGridProps {
 }
 
 export const KanaGrid: React.FC<KanaGridProps> = ({ onCharInput, onMarkClick, disabled = false }) => {
-  const keyStyle = { ...baseButtonStyle, fontSize: "18px" } as const;
+  const keyStyle = { ...baseButtonStyle } as const;
   const orderedGroups = [...kanaGroups].reverse();
 
   return (

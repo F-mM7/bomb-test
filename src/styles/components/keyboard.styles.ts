@@ -41,7 +41,7 @@ export const baseButtonStyle = {
   alignItems: "center",
   justifyContent: "center",
   padding: "0",
-  fontSize: `calc(18px * var(--keyboard-scale, 1))`,
+  fontSize: `calc(${LAYOUT.BUTTON_SIZE * 0.36}px * var(--keyboard-scale, 1))`,
   overflow: "hidden" as const,
   textOverflow: "ellipsis" as const,
   whiteSpace: "nowrap" as const,
@@ -57,7 +57,7 @@ export const actionRowStyle = {
 export const actionButtonStyle = {
   ...baseButtonStyle,
   width: `calc(${LAYOUT.BUTTON_SIZE * 2 + LAYOUT.BUTTON_GAP}px * var(--keyboard-scale, 1))`,
-  fontSize: `calc(16px * var(--keyboard-scale, 1))`,
+  fontSize: `calc(${LAYOUT.BUTTON_SIZE * 0.32}px * var(--keyboard-scale, 1))`,
   padding: `calc(2px * var(--keyboard-scale, 1))`,
 };
 
