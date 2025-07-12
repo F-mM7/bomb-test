@@ -1,8 +1,6 @@
 import type { Question } from '../data/question.types';
 
 export interface DisplayProps {
-  width: number;
-  height: number;
   pixelWidth: number;
   pixelHeight: number;
   remaining: number;

@@ -10,9 +10,10 @@ import {
 } from "../display/renderers";
 import { scaleSize, BASE_SIZES } from "../../utils/responsive";
 
+const CANVAS_WIDTH = 96;
+const CANVAS_HEIGHT = 54;
+
 const Display: React.FC<DisplayProps> = ({
-  width,
-  height,
   pixelWidth,
   pixelHeight,
   remaining,
@@ -41,18 +42,18 @@ const Display: React.FC<DisplayProps> = ({
       QuestionRenderer.render(ctx, currentQuestion);
     }
     if (showCorrect) {
-      CircleRenderer.render(ctx, showCorrect, width, height);
+      CircleRenderer.render(ctx, showCorrect, CANVAS_WIDTH, CANVAS_HEIGHT);
     }
     InputRenderer.render(ctx, input || "", currentQuestion, isFailed || false, isPaused || false, remaining);
-  }, [remaining, input, currentQuestion, showCorrect, width, height, isCleared, isPaused, isFailed]);
+  }, [remaining, input, currentQuestion, showCorrect, isCleared, isPaused, isFailed]);
 
 
   return (
     <div style={{ marginBottom: scaleSize(BASE_SIZES.SPACING_LG), ...style }}>
       <canvas
         ref={canvasRef}
-        width={width}
-        height={height}
+        width={CANVAS_WIDTH}
+        height={CANVAS_HEIGHT}
         style={{
           width: scaleSize(pixelWidth),
           height: scaleSize(pixelHeight),

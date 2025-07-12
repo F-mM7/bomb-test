@@ -126,8 +126,6 @@ const Device: React.FC<DeviceProps> = ({
 
           <div style={displayMountStyle}>
             <Display
-              width={96}
-              height={54}
               pixelWidth={BASE_SIZES.DISPLAY_WIDTH}
               pixelHeight={BASE_SIZES.DISPLAY_HEIGHT}
               input={input}
