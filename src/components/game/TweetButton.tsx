@@ -55,9 +55,9 @@ const TweetButton: React.FC<TweetButtonProps> = ({
         backgroundColor: "transparent",
         color: "#ffffff",
         border: "none",
-        borderRadius: scaleSize(16),
-        padding: `${scaleSize(20)}px ${scaleSize(40)}px`,
-        fontSize: scaleSize(14),
+        borderRadius: `calc(16px * var(--global-scale, 1))`,
+        padding: `calc(20px * var(--global-scale, 1)) calc(40px * var(--global-scale, 1))`,
+        fontSize: `calc(14px * var(--global-scale, 1))`,
         fontWeight: "700",
         cursor: "pointer",
         boxShadow: isHovered
@@ -66,7 +66,7 @@ const TweetButton: React.FC<TweetButtonProps> = ({
         transition: "all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)",
         display: "flex",
         alignItems: "center",
-        gap: scaleSize(12),
+        gap: `calc(12px * var(--global-scale, 1))`,
         background: isHovered
           ? "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
           : "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
