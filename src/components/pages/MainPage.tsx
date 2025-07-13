@@ -8,7 +8,11 @@ import { useBombState } from "../../hooks/useBombState";
 import { useWireHandler } from "../../hooks/useWireHandler";
 import { useAnswerHandler } from "../../hooks/useAnswerHandler";
 import { questionBitmaps } from "../../data/questions";
-import { calculateGlobalScale, setGlobalScale, BASE_SIZES } from "../../utils/responsive";
+import {
+  calculateGlobalScale,
+  setGlobalScale,
+  BASE_SIZES,
+} from "../../utils/responsive";
 import "../../styles/global/explosion.css";
 
 const MainPage: React.FC = () => {
@@ -16,14 +20,19 @@ const MainPage: React.FC = () => {
   const remaining = useTimer();
   const gameState = useGameState();
   const bombState = useBombState();
-  const questions = useMemo(() => questionBitmaps.map(bitmap => ({
-    id: bitmap.id,
-    text: "",
-    answer: bitmap.answer
-  })), []);
-  
-  const currentQuestionData = useMemo(() => 
-    questions.find(question => question.id === gameState.currentQuestion), 
+  const questions = useMemo(
+    () =>
+      questionBitmaps.map((bitmap) => ({
+        id: bitmap.id,
+        text: "",
+        answer: bitmap.answer,
+      })),
+    []
+  );
+
+  const currentQuestionData = useMemo(
+    () =>
+      questions.find((question) => question.id === gameState.currentQuestion),
     [questions, gameState.currentQuestion]
   );
 
@@ -37,7 +46,7 @@ const MainPage: React.FC = () => {
     cutWire: bombState.cutWire,
     markAsCleared: bombState.markAsCleared,
     markAsFailed: bombState.markAsFailed,
-    onGameClear: gameState.clearGame
+    onGameClear: gameState.clearGame,
   });
 
   const answerHandler = useAnswerHandler({
@@ -48,7 +57,7 @@ const MainPage: React.FC = () => {
     showCorrectAnswer: bombState.showCorrectAnswer,
     hideCorrectAnswer: bombState.hideCorrectAnswer,
     clearInput: bombState.clearInput,
-    onQuestionComplete: gameState.nextQuestion
+    onQuestionComplete: gameState.nextQuestion,
   });
 
   // グローバルスケール計算とセット
@@ -57,7 +66,8 @@ const MainPage: React.FC = () => {
       if (!containerRef.current) return;
 
       // 利用可能なスペースを計算
-      const containerWidth = window.innerWidth - (BASE_SIZES.GLOBAL_CONTAINER_PADDING * 2);
+      const containerWidth =
+        window.innerWidth - BASE_SIZES.GLOBAL_CONTAINER_PADDING * 2;
       const containerHeight = window.innerHeight * 0.8;
 
       // 爆弾の実際のサイズを計算
@@ -72,7 +82,7 @@ const MainPage: React.FC = () => {
         keyboardHeight + displayHeight + BASE_SIZES.CONTAINER_PADDING * 4;
 
       const bombBodyTotalWidth = BASE_SIZES.BOMB_BODY_TOTAL_WIDTH;
-      
+
       // スケールを計算してグローバルに設定
       const scale = calculateGlobalScale(
         containerWidth,
@@ -100,7 +110,12 @@ const MainPage: React.FC = () => {
 
   return (
     <div ref={containerRef} style={containerStyle}>
-      <div style={bombBodyStyle} className={bombState.isFailed && !bombState.showExplosion ? 'burned-bomb' : ''}>
+      <div
+        style={bombBodyStyle}
+        className={
+          bombState.isFailed && !bombState.showExplosion ? "burned-bomb" : ""
+        }
+      >
         <Device
           isKeyboardAttached={bombState.isKeyboardAttached}
           input={bombState.input}
@@ -117,18 +132,18 @@ const MainPage: React.FC = () => {
           isFailed={bombState.isFailed}
         />
       </div>
-      
+
       {bombState.showExplosion && <div className="explosion-overlay" />}
-      
-      <TweetButton 
+
+      <TweetButton
         isCleared={bombState.isCleared || false}
         isFailed={bombState.isFailed || false}
         remaining={bombState.displayTime ?? remaining}
         style={{
-          position: 'fixed',
-          top: '35%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
+          position: "fixed",
+          top: "35%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
         }}
       />
     </div>
