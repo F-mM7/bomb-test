@@ -7,7 +7,7 @@ export const keyboardStyle = {
   borderRadius: scaleSize(BASE_SIZES.CONTAINER_BORDER_RADIUS),
   padding: scaleSize(BASE_SIZES.CONTAINER_PADDING),
   boxShadow: SHADOWS.keyboard,
-  border: `${scaleSize(1)} solid #0a0a0a`,
+  border: `${scaleSize(BASE_SIZES.KEYBOARD_BORDER_WIDTH)} solid #0a0a0a`,
   position: "relative" as const,
   boxSizing: "border-box" as const,
 };
@@ -29,8 +29,8 @@ export const baseButtonStyle = {
   width: scaleSize(BASE_SIZES.BUTTON_SIZE),
   height: scaleSize(BASE_SIZES.BUTTON_SIZE),
   background: GRADIENTS.keyButton,
-  border: `${scaleSize(1)} solid #666`,
-  borderRadius: scaleSize(6),
+  border: `${scaleSize(BASE_SIZES.KEYBOARD_BORDER_WIDTH)} solid #666`,
+  borderRadius: scaleSize(BASE_SIZES.KEYBOARD_BUTTON_BORDER_RADIUS),
   cursor: "pointer" as const,
   fontWeight: "bold" as const,
   color: "#333",
@@ -58,7 +58,7 @@ export const actionButtonStyle = {
   ...baseButtonStyle,
   width: scaleSize(BASE_SIZES.BUTTON_SIZE * 2 + BASE_SIZES.BUTTON_GAP),
   fontSize: scaleSize(BASE_SIZES.BUTTON_SIZE * 0.32),
-  padding: scaleSize(2),
+  padding: scaleSize(BASE_SIZES.KEYBOARD_BUTTON_PADDING),
 };
 
 export const gridStyle = (groupCount: number) => ({

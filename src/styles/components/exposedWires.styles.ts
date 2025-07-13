@@ -8,34 +8,34 @@ export const exposedWiresContainerStyle = {
   borderRadius: scaleSize(BASE_SIZES.CONTAINER_BORDER_RADIUS),
   padding: scaleSize(BASE_SIZES.CONTAINER_PADDING),
   boxShadow: SHADOWS.exposedWires,
-  border: `${scaleSize(1)} solid #000`,
+  border: `${scaleSize(BASE_SIZES.KEYBOARD_BORDER_WIDTH)} solid #000`,
   position: "relative" as const,
   boxSizing: "border-box" as const,
 };
 
 export const topBorderStyle = {
   position: "absolute" as const,
-  top: scaleSize(14),
-  left: scaleSize(14),
-  right: scaleSize(14),
-  height: scaleSize(3),
+  top: scaleSize(BASE_SIZES.WIRE_BORDER_MARGIN),
+  left: scaleSize(BASE_SIZES.WIRE_BORDER_MARGIN),
+  right: scaleSize(BASE_SIZES.WIRE_BORDER_MARGIN),
+  height: scaleSize(BASE_SIZES.WIRE_BORDER_THICKNESS),
   background: "linear-gradient(to right, rgba(255,255,255,0.15), rgba(255,255,255,0.08), rgba(255,255,255,0.15))",
-  borderRadius: scaleSize(2)
+  borderRadius: scaleSize(BASE_SIZES.WIRE_BORDER_RADIUS)
 };
 
 export const leftBorderStyle = {
   position: "absolute" as const,
-  top: scaleSize(14),
-  left: scaleSize(14),
-  width: scaleSize(3),
-  bottom: scaleSize(14),
+  top: scaleSize(BASE_SIZES.WIRE_BORDER_MARGIN),
+  left: scaleSize(BASE_SIZES.WIRE_BORDER_MARGIN),
+  width: scaleSize(BASE_SIZES.WIRE_BORDER_THICKNESS),
+  bottom: scaleSize(BASE_SIZES.WIRE_BORDER_MARGIN),
   background: "linear-gradient(to bottom, rgba(255,255,255,0.15), rgba(255,255,255,0.05))",
-  borderRadius: scaleSize(2)
+  borderRadius: scaleSize(BASE_SIZES.WIRE_BORDER_RADIUS)
 };
 
 export const wireStyle = {
   stroke: "#fff",
-  strokeWidth: scaleSize(8),
+  strokeWidth: scaleSize(BASE_SIZES.WIRE_STROKE_WIDTH),
   fill: "none",
   strokeLinecap: "round" as const,
 };

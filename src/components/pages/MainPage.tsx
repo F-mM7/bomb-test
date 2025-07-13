@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from "react";
+import React, { useEffect, useMemo, useRef } from "react";
 import Device from "../game/Device";
 import { containerStyle, bombBodyStyle } from "../../styles";
 import { useTimer } from "../../hooks/useTimer";
@@ -7,9 +7,11 @@ import { useBombState } from "../../hooks/useBombState";
 import { useWireHandler } from "../../hooks/useWireHandler";
 import { useAnswerHandler } from "../../hooks/useAnswerHandler";
 import { questionBitmaps } from "../../data/questions";
+import { calculateGlobalScale, setGlobalScale, BASE_SIZES } from "../../utils/responsive";
 import "../../styles/global/explosion.css";
 
 const MainPage: React.FC = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
   const remaining = useTimer();
   const gameState = useGameState();
   const bombState = useBombState();
@@ -48,6 +50,44 @@ const MainPage: React.FC = () => {
     onQuestionComplete: gameState.nextQuestion
   });
 
+  // グローバルスケール計算とセット
+  useEffect(() => {
+    const updateScale = () => {
+      if (!containerRef.current) return;
+
+      // 利用可能なスペースを計算
+      const containerWidth = window.innerWidth - (BASE_SIZES.GLOBAL_CONTAINER_PADDING * 2);
+      const containerHeight = window.innerHeight * 0.8;
+
+      // 爆弾の実際のサイズを計算
+      const keyboardHeight =
+        BASE_SIZES.KEYBOARD_ROWS * BASE_SIZES.BUTTON_SIZE +
+        (BASE_SIZES.KEYBOARD_ROWS - 1) * BASE_SIZES.BUTTON_GAP +
+        BASE_SIZES.BUTTON_SIZE + // Action buttons
+        BASE_SIZES.BUTTON_GAP; // Gap between grid and actions
+      const displayHeight =
+        BASE_SIZES.DISPLAY_HEIGHT + BASE_SIZES.SPACING_LG * 2; // Display + mounting
+      const deviceHeight =
+        keyboardHeight + displayHeight + BASE_SIZES.CONTAINER_PADDING * 4;
+
+      const bombBodyTotalWidth = BASE_SIZES.BOMB_BODY_TOTAL_WIDTH;
+      
+      // スケールを計算してグローバルに設定
+      const scale = calculateGlobalScale(
+        containerWidth,
+        containerHeight,
+        bombBodyTotalWidth,
+        deviceHeight
+      );
+
+      setGlobalScale(scale, containerRef.current);
+    };
+
+    updateScale();
+    window.addEventListener("resize", updateScale);
+    return () => window.removeEventListener("resize", updateScale);
+  }, []);
+
   useEffect(() => {
     if (gameState.currentQuestion === 4) {
       bombState.setIsKeyboardAttached(false);
@@ -58,7 +98,7 @@ const MainPage: React.FC = () => {
   }, [gameState.currentQuestion, remaining, bombState]);
 
   return (
-    <div style={containerStyle}>
+    <div ref={containerRef} style={containerStyle}>
       <div style={bombBodyStyle} className={bombState.isFailed && !bombState.showExplosion ? 'burned-bomb' : ''}>
         <Device
           isKeyboardAttached={bombState.isKeyboardAttached}

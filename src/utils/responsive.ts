@@ -40,7 +40,7 @@ export const BASE_SIZES = {
   DISPLAY_HEIGHT: 360, // ディスプレイキャンバスの高さ
 
   // 爆弾本体（全体を包む外枠）
-  BOMB_BODY_WIDTH: 650, // 爆弾本体の幅
+  BOMB_BODY_WIDTH: 720, // 爆弾本体の幅
   BOMB_BODY_HEIGHT: 800, // 爆弾本体の高さ
   BOMB_BODY_PADDING: 16, // 爆弾本体の内部パディング
 
