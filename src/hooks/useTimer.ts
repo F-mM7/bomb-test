@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
-import { TOTAL_TIME } from "../constants/layout";
 import { DISPLAY_CONSTANTS } from "../constants/display";
 import { GameStorage } from "../services/gameStorage";
 
 export const useTimer = () => {
-  const [remaining, setRemaining] = useState<number>(TOTAL_TIME);
+  const [remaining, setRemaining] = useState<number>(DISPLAY_CONSTANTS.TIMER.TOTAL_TIME);
 
   useEffect(() => {
     const startTime = GameStorage.getStartTime();
@@ -24,7 +23,7 @@ export const useTimer = () => {
     const updateRemaining = () => {
       const currentTimeMs = Date.now();
       const elapsedTimeMs = currentTimeMs - startTimeMs;
-      const remainingTime = TOTAL_TIME - elapsedTimeMs;
+      const remainingTime = DISPLAY_CONSTANTS.TIMER.TOTAL_TIME - elapsedTimeMs;
       setRemaining(remainingTime > 0 ? remainingTime : 0);
     };
 

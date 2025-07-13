@@ -1,2 +1,2 @@
 export * from './keyboard';
-export * from './layout';
+export * from './display';
