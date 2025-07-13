@@ -13,7 +13,7 @@ const WireLayer: React.FC = () => {
         width: `calc(100% + ${scaleSize(BASE_SIZES.WIRE_LAYER_OVERFLOW)})`,
         height: `calc(100% + ${scaleSize(BASE_SIZES.WIRE_LAYER_OVERFLOW)})`,
         pointerEvents: "none",
-        zIndex: 15,
+        zIndex: 0,
       }}
     >
       <SvgWire d="M 380 180 Q 380 60 460 60 Q 540 60 540 180" stroke="#d00" />
