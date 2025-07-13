@@ -3,6 +3,8 @@
  * 全てのコンポーネントサイズを基準サイズ × グローバルスケールで管理
  */
 
+import { Z_INDEX_CSS_VARS } from '../styles/constants/zIndex';
+
 // 基準サイズ定数
 export const BASE_SIZES = {
   // キーボード・露出ワイヤー共通コンテナ（基盤上の部品用）
@@ -151,4 +153,16 @@ export function setGlobalScale(
   element: HTMLElement = document.documentElement
 ): void {
   element.style.setProperty(CSS_VARS.GLOBAL_SCALE, scale.toString());
+}
+
+/**
+ * z-index CSS変数を注入
+ * @param element 対象要素（デフォルト: document.documentElement）
+ */
+export function setZIndexVariables(
+  element: HTMLElement = document.documentElement
+): void {
+  Object.entries(Z_INDEX_CSS_VARS).forEach(([cssVar, value]) => {
+    element.style.setProperty(cssVar, value);
+  });
 }

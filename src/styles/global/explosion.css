@@ -1,12 +1,5 @@
 @import "../constants/animations.css";
 
-/* CSS変数でz-indexを定義 */
-:root {
-  --z-burned-mask: 1000;
-  --z-explosion-overlay: 1001;
-  --z-failure-message: 1002;
-}
-
 /* 爆発エフェクトのスタイル */
 .explosion-overlay {
   position: fixed;

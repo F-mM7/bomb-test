@@ -11,6 +11,7 @@ import { questionBitmaps } from "../../data/questions";
 import {
   calculateGlobalScale,
   setGlobalScale,
+  setZIndexVariables,
   BASE_SIZES,
 } from "../../utils/responsive";
 import "../../styles/global/explosion.css";
@@ -62,6 +63,9 @@ const MainPage: React.FC = () => {
 
   // グローバルスケール計算とセット
   useEffect(() => {
+    // z-index CSS変数を初期化時に注入
+    setZIndexVariables();
+
     const updateScale = () => {
       if (!containerRef.current) return;
 
