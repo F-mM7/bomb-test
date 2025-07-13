@@ -5,14 +5,7 @@ import {
 } from "../../styles/components/exposedWires.styles";
 import { WireBorders } from "./WireBorders";
 import { WireContainer } from "./WireContainer";
-import type { WirePosition } from "../../types/game/game.types";
-
-interface ExposedWiresProps {
-  onWireClick: (wire: WirePosition) => void;
-  isLeftCut?: boolean;
-  isRightCut?: boolean;
-  disabled?: boolean;
-}
+import type { ExposedWiresProps } from "../../types/components/wires.types";
 
 const ExposedWires: React.FC<ExposedWiresProps> = ({
   onWireClick,

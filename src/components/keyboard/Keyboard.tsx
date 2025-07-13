@@ -8,20 +8,10 @@ import {
   keyboardStyle,
   buttonContainerStyle,
 } from "../../styles/components/keyboard.styles";
+import type { KeyboardProps, MarkMapping } from "../../types/components/keyboard.types";
 import type { MarkType } from "../../types/data/font.types";
 import { ActionKeys } from "./ActionKeys";
 import { KanaGrid } from "./KanaGrid";
-
-interface KeyboardProps {
-  setInput: (value: string | ((prev: string) => string)) => void;
-  onEnter?: () => void;
-  disabled?: boolean;
-}
-
-interface MarkMapping {
-  mark: MarkType;
-  map: Record<string, string>;
-}
 
 const MARK_MAPPINGS: MarkMapping[] = [
   { mark: "゛", map: fullDakutenMap },
