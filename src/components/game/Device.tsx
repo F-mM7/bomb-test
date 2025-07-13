@@ -6,6 +6,7 @@ import WireLayer from "./WireLayer";
 import { pcbStyle, screwStyle, displayMountStyle } from "../../styles";
 import { BASE_SIZES, scaleSize } from "../../utils/responsive";
 import type { Question } from "../../types";
+import { Z_INDEX } from "../../styles/constants/zIndex";
 
 interface DeviceProps {
   isKeyboardAttached: boolean;
@@ -42,7 +43,7 @@ const Device: React.FC<DeviceProps> = ({
     <div>
       <WireLayer />
 
-      <div style={{ ...pcbStyle, zIndex: 1 }}>
+      <div style={{ ...pcbStyle, zIndex: Z_INDEX.DEVICE_BASE }}>
         <div
           style={{
             ...screwStyle,

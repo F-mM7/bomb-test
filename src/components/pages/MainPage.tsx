@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useRef } from "react";
 import Device from "../game/Device";
+import TweetButton from "../game/TweetButton";
 import { containerStyle, bombBodyStyle } from "../../styles";
 import { useTimer } from "../../hooks/useTimer";
 import { useGameState } from "../../hooks/useGameState";
@@ -7,7 +8,7 @@ import { useBombState } from "../../hooks/useBombState";
 import { useWireHandler } from "../../hooks/useWireHandler";
 import { useAnswerHandler } from "../../hooks/useAnswerHandler";
 import { questionBitmaps } from "../../data/questions";
-import { calculateGlobalScale, setGlobalScale, BASE_SIZES } from "../../utils/responsive";
+import { calculateGlobalScale, setGlobalScale, BASE_SIZES, scaleSize } from "../../utils/responsive";
 import "../../styles/global/explosion.css";
 
 const MainPage: React.FC = () => {
@@ -118,6 +119,18 @@ const MainPage: React.FC = () => {
       </div>
       
       {bombState.showExplosion && <div className="explosion-overlay" />}
+      
+      <TweetButton 
+        isCleared={bombState.isCleared || false}
+        isFailed={bombState.isFailed || false}
+        remaining={bombState.displayTime ?? remaining}
+        style={{
+          position: 'fixed',
+          top: '35%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+        }}
+      />
     </div>
   );
 };

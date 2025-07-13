@@ -2,6 +2,7 @@ import React from "react";
 import SvgWire from "../common/SvgWire";
 import type { WirePosition } from "../../types/game/game.types";
 import { BASE_SIZES, scaleSize } from "../../utils/responsive";
+import { Z_INDEX } from "../../styles/constants/zIndex";
 
 interface WireContainerProps {
   onWireClick: (wire: WirePosition) => void;
@@ -34,7 +35,7 @@ export const WireContainer: React.FC<WireContainerProps> = ({
           width: "100%",
           height: "100%",
           pointerEvents: "none",
-          zIndex: 10
+          zIndex: Z_INDEX.WIRE_CONTAINER
         }}
       >
         <SvgWire 

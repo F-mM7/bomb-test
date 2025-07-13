@@ -1,5 +1,12 @@
 @import "../constants/animations.css";
 
+/* CSS変数でz-indexを定義 */
+:root {
+  --z-burned-mask: 1000;
+  --z-explosion-overlay: 1001;
+  --z-failure-message: 1002;
+}
+
 /* 爆発エフェクトのスタイル */
 .explosion-overlay {
   position: fixed;
@@ -7,7 +14,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 9999;
+  z-index: var(--z-explosion-overlay);
   pointer-events: none;
   animation: explosion 0.5s ease-out forwards;
 }
@@ -44,7 +51,7 @@
       rgba(20, 10, 0, 0.1) 100%
     );
   pointer-events: none;
-  z-index: 9998;
+  z-index: var(--z-burned-mask);
 }
 
 /* 失敗メッセージ */
@@ -58,7 +65,7 @@
   color: #ff0000;
   text-shadow: 0 0 10px rgba(255, 0, 0, 0.8), 0 0 20px rgba(255, 0, 0, 0.6),
     0 0 30px rgba(255, 0, 0, 0.4), 2px 2px 4px rgba(0, 0, 0, 0.8);
-  z-index: 10001;
+  z-index: var(--z-failure-message);
   animation: pulseFailure 2s ease-in-out infinite;
 }
 

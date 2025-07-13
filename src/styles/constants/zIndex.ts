@@ -1,0 +1,23 @@
+export const Z_INDEX = {
+  // 基本レイヤー（0-10）
+  WIRE_LAYER: 0,
+  DEVICE_BASE: 1,
+  WIRE_CONTAINER: 10,
+  
+  // オーバーレイ系（100-900）
+  MODAL_BACKDROP: 100,
+  MODAL_CONTENT: 101,
+  DROPDOWN: 200,
+  TOOLTIP: 300,
+  
+  // 特殊エフェクト（1000-1999）
+  BURNED_MASK: 1000,
+  EXPLOSION_OVERLAY: 1001,
+  FAILURE_MESSAGE: 1002,
+  
+  // 最優先UI（2000-）
+  TWEET_BUTTON: 2000,
+  EMERGENCY_NOTIFICATION: 2001,
+} as const;
+
+export type ZIndexLevel = typeof Z_INDEX[keyof typeof Z_INDEX];

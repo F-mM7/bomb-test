@@ -1,6 +1,7 @@
 import React from "react";
 import SvgWire from "../common/SvgWire";
 import { scaleSize, BASE_SIZES } from "../../utils/responsive";
+import { Z_INDEX } from "../../styles/constants/zIndex";
 
 const WireLayer: React.FC = () => {
   return (
@@ -13,7 +14,7 @@ const WireLayer: React.FC = () => {
         width: `calc(100% + ${scaleSize(BASE_SIZES.WIRE_LAYER_OVERFLOW)})`,
         height: `calc(100% + ${scaleSize(BASE_SIZES.WIRE_LAYER_OVERFLOW)})`,
         pointerEvents: "none",
-        zIndex: 0,
+        zIndex: Z_INDEX.WIRE_LAYER,
       }}
     >
       <SvgWire d="M 380 180 Q 380 60 460 60 Q 540 60 540 180" stroke="#d00" />
