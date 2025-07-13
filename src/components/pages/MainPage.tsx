@@ -75,11 +75,7 @@ const MainPage: React.FC = () => {
       const containerHeight = window.innerHeight * 0.8;
 
       // 爆弾の実際のサイズを計算
-      const keyboardHeight =
-        BASE_SIZES.KEYBOARD_ROWS * BASE_SIZES.BUTTON_SIZE +
-        (BASE_SIZES.KEYBOARD_ROWS - 1) * BASE_SIZES.BUTTON_GAP +
-        BASE_SIZES.BUTTON_SIZE + // Action buttons
-        BASE_SIZES.BUTTON_GAP; // Gap between grid and actions
+      const keyboardHeight = BASE_SIZES.KEYBOARD_TOTAL_HEIGHT;
       const displayHeight =
         BASE_SIZES.DISPLAY_HEIGHT + BASE_SIZES.SPACING_LG * 2; // Display + mounting
       const deviceHeight =
