@@ -5,9 +5,7 @@ html {
 body {
   margin: 0;
   background-color: #000000;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  touch-action: none;
+  touch-action: pan-y;
 }
 
 * {

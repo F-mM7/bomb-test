@@ -5,11 +5,10 @@ export const containerStyle = {
   flexDirection: "column" as const,
   alignItems: "center" as const,
   justifyContent: "center" as const,
-  minHeight: "100vh",
+  width: "100vw",
+  height: "100vh",
   padding: scaleSize(BASE_SIZES.GLOBAL_CONTAINER_PADDING),
   gap: scaleSize(BASE_SIZES.SPACING_LG),
-  width: "100%",
-  maxWidth: "100%",
   boxSizing: "border-box" as const,
 };
 
