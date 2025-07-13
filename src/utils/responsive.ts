@@ -13,7 +13,7 @@ export const BASE_SIZES = {
   CONTAINER_BORDER_RADIUS: 4, // 角丸半径
 
   // 爆弾全体の最外層コンテナ（ページレベル）
-  GLOBAL_CONTAINER_PADDING: 10, // ページ全体のパディング
+  GLOBAL_CONTAINER_PADDING: 0, // ページ全体のパディング
 
   // キーボードボタン
   BUTTON_SIZE: 50, // 各ボタンの幅・高さ
@@ -44,7 +44,11 @@ export const BASE_SIZES = {
 
   // デバイス全体の高さ（キーボード + ディスプレイ + パディング）
   get DEVICE_TOTAL_HEIGHT() {
-    return this.KEYBOARD_TOTAL_HEIGHT + this.DISPLAY_TOTAL_HEIGHT + this.CONTAINER_PADDING * 4;
+    return (
+      this.KEYBOARD_TOTAL_HEIGHT +
+      this.DISPLAY_TOTAL_HEIGHT +
+      this.CONTAINER_PADDING * 4
+    );
   },
 
   // ディスプレイ（基盤上のスクリーン）
@@ -102,7 +106,7 @@ export const SCALE_CONFIG = {
   MIN_SCALE: 0.3,
   MAX_SCALE: 1.2,
   DEFAULT_SCALE: 1.0,
-  SCALE_RATIO: 1,
+  SCALE_RATIO: 0.96,
 } as const;
 
 // CSS変数名
@@ -120,12 +124,13 @@ export function calculateGlobalScale(
   containerWidth: number,
   containerHeight: number
 ): number {
-  const targetWidth = BASE_SIZES.BOMB_BODY_TOTAL_WIDTH;
-  const targetHeight = BASE_SIZES.DEVICE_TOTAL_HEIGHT;
+  const targetWidth = BASE_SIZES.BOMB_BODY_WIDTH;
+  const targetHeight = BASE_SIZES.BOMB_BODY_HEIGHT;
 
   const widthScale = (containerWidth * SCALE_CONFIG.SCALE_RATIO) / targetWidth;
-  const heightScale = (containerHeight * SCALE_CONFIG.SCALE_RATIO) / targetHeight;
-  
+  const heightScale =
+    (containerHeight * SCALE_CONFIG.SCALE_RATIO) / targetHeight;
+
   const scale = Math.min(widthScale, heightScale);
 
   return Math.max(

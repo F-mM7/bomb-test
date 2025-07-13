@@ -70,9 +70,8 @@ const MainPage: React.FC = () => {
       if (!containerRef.current) return;
 
       // 利用可能なスペースを計算
-      const containerWidth =
-        window.innerWidth - BASE_SIZES.GLOBAL_CONTAINER_PADDING * 2;
-      const containerHeight = window.innerHeight * 0.8;
+      const containerWidth = window.innerWidth;
+      const containerHeight = window.innerHeight;
 
       // スケールを計算してグローバルに設定
       const scale = calculateGlobalScale(containerWidth, containerHeight);
