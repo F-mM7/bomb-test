@@ -8,7 +8,7 @@ import { useBombState } from "../../hooks/useBombState";
 import { useWireHandler } from "../../hooks/useWireHandler";
 import { useAnswerHandler } from "../../hooks/useAnswerHandler";
 import { questionBitmaps } from "../../data/questions";
-import { calculateGlobalScale, setGlobalScale, BASE_SIZES, scaleSize } from "../../utils/responsive";
+import { calculateGlobalScale, setGlobalScale, BASE_SIZES } from "../../utils/responsive";
 import "../../styles/global/explosion.css";
 
 const MainPage: React.FC = () => {
