@@ -5,32 +5,49 @@
 
 // 基準サイズ定数
 export const BASE_SIZES = {
-  // コンテナ
-  CONTAINER_WIDTH: 640,
-  CONTAINER_PADDING: 12,
-  CONTAINER_BORDER_RADIUS: 4,
+  // キーボード・露出ワイヤー共通コンテナ（基盤上の部品用）
+  CONTAINER_WIDTH: 640, // キーボードと露出ワイヤーの幅
+  CONTAINER_PADDING: 12, // キーボードと露出ワイヤーの内部パディング
+  CONTAINER_BORDER_RADIUS: 4, // 角丸半径
 
-  // ボタン
-  BUTTON_SIZE: 50,
-  BUTTON_GAP: 6,
+  // 爆弾全体の最外層コンテナ（ページレベル）
+  GLOBAL_CONTAINER_PADDING: 10, // ページ全体のパディング
 
-  // キーボード
-  KEYBOARD_ROWS: 5,
-  KEYBOARD_COLUMNS: 10,
-  
+  // キーボードボタン
+  BUTTON_SIZE: 50, // 各ボタンの幅・高さ
+  BUTTON_GAP: 6, // ボタン間の隙間
+
+  // キーボードレイアウト
+  KEYBOARD_ROWS: 5, // キーボードの行数
+  KEYBOARD_COLUMNS: 10, // キーボードの列数
+
   // ワイヤー配置計算用
   get KEYBOARD_TOTAL_HEIGHT() {
     // KanaGrid (5行) + gap + ActionKeys (1行)
-    return this.KEYBOARD_ROWS * this.BUTTON_SIZE + (this.KEYBOARD_ROWS - 1) * this.BUTTON_GAP + this.BUTTON_GAP + this.BUTTON_SIZE;
+    return (
+      this.KEYBOARD_ROWS * this.BUTTON_SIZE +
+      (this.KEYBOARD_ROWS - 1) * this.BUTTON_GAP +
+      this.BUTTON_GAP +
+      this.BUTTON_SIZE
+    );
   },
   get KEYBOARD_INNER_WIDTH() {
     return this.CONTAINER_WIDTH - this.CONTAINER_PADDING * 2;
   },
 
-  // ディスプレイ
-  DISPLAY_WIDTH: 640,
-  DISPLAY_HEIGHT: 360,
+  // ディスプレイ（基盤上のスクリーン）
+  DISPLAY_WIDTH: 640, // ディスプレイキャンバスの幅
+  DISPLAY_HEIGHT: 360, // ディスプレイキャンバスの高さ
 
+  // 爆弾本体（全体を包む外枠）
+  BOMB_BODY_WIDTH: 650, // 爆弾本体の幅
+  BOMB_BODY_HEIGHT: 800, // 爆弾本体の高さ
+  BOMB_BODY_PADDING: 16, // 爆弾本体の内部パディング
+
+  // 爆弾本体の計算値
+  get BOMB_BODY_TOTAL_WIDTH() {
+    return this.BOMB_BODY_WIDTH + this.BOMB_BODY_PADDING * 2;
+  },
 
   // フォント
   FONT_SIZE_SMALL: 12,
@@ -44,6 +61,25 @@ export const BASE_SIZES = {
   SPACING_MD: 12,
   SPACING_LG: 16,
   SPACING_XL: 24,
+
+  // 基盤（PCB）スタイル用
+  PCB_BORDER_WIDTH: 2, // 基盤の境界線幅
+
+  // ディスプレイマウント用
+  DISPLAY_MOUNT_PADDING: 7, // ディスプレイマウントの内部パディング
+  DISPLAY_MOUNT_MARGIN: 10, // ディスプレイマウントの下マージン
+  DISPLAY_MOUNT_BORDER_WIDTH: 1, // ディスプレイマウントの境界線幅
+
+  // キーボード装飾用
+  KEYBOARD_BORDER_WIDTH: 1, // キーボードの境界線幅
+  KEYBOARD_BUTTON_BORDER_RADIUS: 6, // キーボードボタンの角丸
+  KEYBOARD_BUTTON_PADDING: 2, // アクションボタンのパディング
+
+  // ワイヤー関連
+  WIRE_STROKE_WIDTH: 8, // ワイヤーの線幅
+  WIRE_BORDER_MARGIN: 14, // ワイヤー境界のマージン
+  WIRE_BORDER_THICKNESS: 3, // ワイヤー境界の厚さ
+  WIRE_BORDER_RADIUS: 2, // ワイヤー境界の角丸
 } as const;
 
 // スケール設定

@@ -10,6 +10,7 @@ import {
 } from "../display/renderers";
 import { scaleSize, BASE_SIZES } from "../../utils/responsive";
 
+// Canvas内部解像度（ピクセル数）- レスポンシブとは無関係
 const CANVAS_WIDTH = 96;
 const CANVAS_HEIGHT = 54;
 
@@ -59,7 +60,6 @@ const Display: React.FC<DisplayProps> = ({
           height: scaleSize(pixelHeight),
           imageRendering: "pixelated",
           background: COLORS.black,
-          maxWidth: "100%",
         }}
       />
     </div>

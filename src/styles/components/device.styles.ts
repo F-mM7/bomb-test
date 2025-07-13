@@ -7,9 +7,8 @@ export const pcbStyle = {
   padding: scaleSize(BASE_SIZES.SPACING_MD),
   boxShadow: "0 4px 8px rgba(0,0,0,0.6), inset 0 -2px 4px rgba(0,0,0,0.4)",
   display: "inline-block",
-  border: `${scaleSize(2)} solid ${COLORS.pcbGreenDark}`,
+  border: `${scaleSize(BASE_SIZES.PCB_BORDER_WIDTH)} solid ${COLORS.pcbGreenDark}`,
   position: "relative" as const,
-  maxWidth: "100%",
   boxSizing: "border-box" as const,
 };
 
@@ -25,8 +24,8 @@ export const screwStyle = {
 export const displayMountStyle = {
   background: GRADIENTS.display,
   borderRadius: scaleSize(BASE_SIZES.SPACING_XS),
-  padding: scaleSize(7),
+  padding: scaleSize(BASE_SIZES.DISPLAY_MOUNT_PADDING),
   boxShadow: "0 3px 6px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.1)",
-  marginBottom: scaleSize(10),
-  border: `${scaleSize(1)} solid #0a0a0a`,
+  marginBottom: scaleSize(BASE_SIZES.DISPLAY_MOUNT_MARGIN),
+  border: `${scaleSize(BASE_SIZES.DISPLAY_MOUNT_BORDER_WIDTH)} solid #0a0a0a`,
 };

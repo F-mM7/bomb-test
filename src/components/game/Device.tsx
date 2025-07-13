@@ -54,7 +54,7 @@ const Device: React.FC<DeviceProps> = ({
       const parent = containerRef.current.parentElement;
       if (!parent) return;
 
-      const containerWidth = parent.offsetWidth;
+      const containerWidth = parent.offsetWidth - (BASE_SIZES.GLOBAL_CONTAINER_PADDING * 2); // Subtract container padding
       const containerHeight = window.innerHeight * 0.8;
 
       // Calculate total device height using BASE_SIZES
@@ -68,11 +68,14 @@ const Device: React.FC<DeviceProps> = ({
       const deviceHeight =
         keyboardHeight + displayHeight + BASE_SIZES.CONTAINER_PADDING * 4;
 
+      // Use calculated total bombBody width from BASE_SIZES
+      const bombBodyTotalWidth = BASE_SIZES.BOMB_BODY_TOTAL_WIDTH;
+      
       // Use unified scale calculation
       const scale = calculateGlobalScale(
         containerWidth,
         containerHeight,
-        BASE_SIZES.CONTAINER_WIDTH,
+        bombBodyTotalWidth,
         deviceHeight
       );
 
@@ -135,7 +138,6 @@ const Device: React.FC<DeviceProps> = ({
               isCleared={isCleared}
               isPaused={isPaused}
               isFailed={isFailed}
-              style={{ maxWidth: "85vw" }}
             />
           </div>
 
