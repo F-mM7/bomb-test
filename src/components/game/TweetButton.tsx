@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { scaleSize } from "../../utils/responsive";
 import { Z_INDEX } from "../../styles/constants/zIndex";
 
 interface TweetButtonProps {
