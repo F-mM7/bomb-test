@@ -12,7 +12,6 @@ import {
   calculateGlobalScale,
   setGlobalScale,
   setZIndexVariables,
-  BASE_SIZES,
 } from "../../utils/responsive";
 import "../../styles/global/explosion.css";
 
