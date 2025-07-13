@@ -8,6 +8,7 @@ export class GameStorage {
   private static readonly IS_LEFT_CUT_KEY = "isLeftCut";
   private static readonly IS_RIGHT_CUT_KEY = "isRightCut";
   private static readonly FAILED_TIME_KEY = "failedTime";
+  private static readonly STAGE_4_REACHED_KEY = "stage4Reached";
 
   static getGameProgress(): GameProgress | null {
     return StorageHelper.get<GameProgress | null>(this.GAME_PROGRESS_KEY, null);
@@ -91,5 +92,13 @@ export class GameStorage {
 
   static setFailedTime(time: number): void {
     localStorage.setItem(this.FAILED_TIME_KEY, time.toString());
+  }
+
+  static getStage4Reached(): boolean {
+    return localStorage.getItem(this.STAGE_4_REACHED_KEY) === "true";
+  }
+
+  static setStage4Reached(reached: boolean): void {
+    localStorage.setItem(this.STAGE_4_REACHED_KEY, reached.toString());
   }
 }

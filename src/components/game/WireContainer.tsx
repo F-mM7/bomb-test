@@ -17,15 +17,17 @@ export const WireContainer: React.FC<WireContainerProps> = ({
   isLeftCut,
   isRightCut,
   wireStyle,
-  disabled
+  disabled,
 }) => {
   return (
-    <div style={{
-      width: scaleSize(BASE_SIZES.KEYBOARD_INNER_WIDTH),
-      height: scaleSize(BASE_SIZES.KEYBOARD_TOTAL_HEIGHT),
-      position: "relative"
-    }}>
-      <svg 
+    <div
+      style={{
+        width: scaleSize(BASE_SIZES.KEYBOARD_INNER_WIDTH),
+        height: scaleSize(BASE_SIZES.KEYBOARD_TOTAL_HEIGHT),
+        position: "relative",
+      }}
+    >
+      <svg
         viewBox={`0 0 ${BASE_SIZES.KEYBOARD_INNER_WIDTH} ${BASE_SIZES.KEYBOARD_TOTAL_HEIGHT}`}
         preserveAspectRatio="none"
         style={{
@@ -35,19 +37,19 @@ export const WireContainer: React.FC<WireContainerProps> = ({
           width: "100%",
           height: "100%",
           pointerEvents: "none",
-          zIndex: Z_INDEX.WIRE_CONTAINER
+          zIndex: Z_INDEX.EXPOSED_WIRES,
         }}
       >
-        <SvgWire 
-          position="left" 
-          isCut={isLeftCut} 
+        <SvgWire
+          position="left"
+          isCut={isLeftCut}
           wireStyle={wireStyle}
           onWireClick={onWireClick}
           disabled={disabled}
         />
-        <SvgWire 
-          position="right" 
-          isCut={isRightCut} 
+        <SvgWire
+          position="right"
+          isCut={isRightCut}
           wireStyle={wireStyle}
           onWireClick={onWireClick}
           disabled={disabled}

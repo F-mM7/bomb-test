@@ -12,7 +12,10 @@ export const useBombState = () => {
   const [isCleared, setIsCleared] = useState<boolean>(() => GameStorage.initializeBooleanFromGameState('cleared'));
   const [isFailed, setIsFailed] = useState<boolean>(() => GameStorage.initializeBooleanFromGameState('failed'));
   const [finalTime, setFinalTime] = useState<number | null>(() => GameStorage.initializeFinalTime());
-  const [isKeyboardAttached, setIsKeyboardAttached] = useState<boolean>(true);
+  const [isKeyboardAttached, setIsKeyboardAttached] = useState<boolean>(() => {
+    // ステージ4に一度到達済みなら最初からキーボードを非表示
+    return !GameStorage.getStage4Reached();
+  });
   const markAsCleared = useCallback((remaining: number, onGameClear: () => void) => {
     setIsCleared(true);
     setFinalTime(remaining);

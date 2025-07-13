@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import Device from "../game/Device";
 import TweetButton from "../game/TweetButton";
 import { containerStyle, bombBodyStyle } from "../../styles";
@@ -13,6 +13,7 @@ import {
   setGlobalScale,
   setZIndexVariables,
 } from "../../utils/responsive";
+import { GameStorage } from "../../services/gameStorage";
 import "../../styles/global/explosion.css";
 
 const MainPage: React.FC = () => {
@@ -20,6 +21,7 @@ const MainPage: React.FC = () => {
   const remaining = useTimer();
   const gameState = useGameState();
   const bombState = useBombState();
+  const [isDetaching, setIsDetaching] = useState(false);
   const questions = useMemo(
     () =>
       questionBitmaps.map((bitmap) => ({
@@ -85,12 +87,21 @@ const MainPage: React.FC = () => {
 
   useEffect(() => {
     if (gameState.currentQuestion === 4) {
-      bombState.setIsKeyboardAttached(false);
+      // ステージ4到達をlocalStorageに記録
+      GameStorage.setStage4Reached(true);
+      
+      if (bombState.isKeyboardAttached && !isDetaching) {
+        setIsDetaching(true);
+        setTimeout(() => {
+          bombState.setIsKeyboardAttached(false);
+          setIsDetaching(false);
+        }, 1500); // 移動600ms + 静止400ms + フェード500ms
+      }
     }
     if (remaining <= 0 && !bombState.isCleared && !bombState.isFailed) {
       bombState.markAsFailed(remaining);
     }
-  }, [gameState.currentQuestion, remaining, bombState]);
+  }, [gameState.currentQuestion, remaining, bombState, isDetaching]);
 
   return (
     <div ref={containerRef} style={containerStyle}>
@@ -114,6 +125,7 @@ const MainPage: React.FC = () => {
           isRightCut={bombState.isRightCut}
           isLeftCut={bombState.isLeftCut}
           isFailed={bombState.isFailed}
+          isDetaching={isDetaching}
         />
       </div>
 

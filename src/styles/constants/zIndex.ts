@@ -2,6 +2,8 @@ export const Z_INDEX = {
   // 基本レイヤー（0-10）
   WIRE_LAYER: 0,
   DEVICE_BASE: 1,
+  EXPOSED_WIRES: 2,
+  KEYBOARD: 3,
   WIRE_CONTAINER: 10,
 
   // 特殊エフェクト（1000-1999）
