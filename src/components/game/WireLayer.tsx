@@ -1,18 +1,20 @@
 import React from "react";
 import SvgWire from "../common/SvgWire";
-import { scaleSize } from "../../utils/responsive";
+import { scaleSize, BASE_SIZES, createScaledWirePath } from "../../utils/responsive";
 
 const WireLayer: React.FC = () => {
   return (
-    <svg style={{
-      position: "absolute",
-      top: scaleSize(-100),
-      left: scaleSize(-100),
-      width: `calc(100% + ${scaleSize(200)})`,
-      height: `calc(100% + ${scaleSize(200)})`,
-      pointerEvents: "none",
-      zIndex: 0,
-    }}>
+    <svg 
+      viewBox="0 0 920 1000"
+      style={{
+        position: "absolute",
+        top: scaleSize(-BASE_SIZES.WIRE_LAYER_OFFSET),
+        left: scaleSize(-BASE_SIZES.WIRE_LAYER_OFFSET),
+        width: `calc(100% + ${scaleSize(BASE_SIZES.WIRE_LAYER_OVERFLOW)})`,
+        height: `calc(100% + ${scaleSize(BASE_SIZES.WIRE_LAYER_OVERFLOW)})`,
+        pointerEvents: "none",
+        zIndex: 0,
+      }}>
       <SvgWire 
         d="M 380 180 Q 380 60 460 60 Q 540 60 540 180"
         stroke="#d00"
@@ -51,7 +53,7 @@ const WireLayer: React.FC = () => {
       <SvgWire 
         d="M 200 732 L 720 732"
         stroke="#ff0"
-        strokeWidth={8}
+        strokeWidth={BASE_SIZES.WIRE_STROKE_WIDTH}
         strokeDasharray="10 5"
       />
       

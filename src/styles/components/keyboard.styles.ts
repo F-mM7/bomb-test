@@ -42,9 +42,6 @@ export const baseButtonStyle = {
   justifyContent: "center",
   padding: "0",
   fontSize: scaleSize(BASE_SIZES.BUTTON_SIZE * 0.36),
-  overflow: "hidden" as const,
-  textOverflow: "ellipsis" as const,
-  whiteSpace: "nowrap" as const,
 };
 
 export const actionRowStyle = {

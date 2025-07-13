@@ -41,7 +41,7 @@ export const BASE_SIZES = {
 
   // 爆弾本体（全体を包む外枠）
   BOMB_BODY_WIDTH: 720, // 爆弾本体の幅
-  BOMB_BODY_HEIGHT: 800, // 爆弾本体の高さ
+  BOMB_BODY_HEIGHT: 750, // 爆弾本体の高さ
   BOMB_BODY_PADDING: 16, // 爆弾本体の内部パディング
 
   // 爆弾本体の計算値
@@ -80,11 +80,21 @@ export const BASE_SIZES = {
   WIRE_BORDER_MARGIN: 14, // ワイヤー境界のマージン
   WIRE_BORDER_THICKNESS: 3, // ワイヤー境界の厚さ
   WIRE_BORDER_RADIUS: 2, // ワイヤー境界の角丸
+
+  // 装飾ワイヤー座標系（720px基準）
+  WIRE_LAYER_OFFSET: 100, // SVGレイヤーのオフセット
+  WIRE_LAYER_OVERFLOW: 200, // SVGレイヤーのはみ出し分
+
+  // 装飾ワイヤー基準座標（BOMB_BODY_WIDTH: 720基準）
+  WIRE_DECO_LEFT_X: 140, // 左側ワイヤーのX座標
+  WIRE_DECO_RIGHT_X: 780, // 右側ワイヤーのX座標
+  WIRE_DECO_CENTER_X: 380, // 中央ワイヤーのX座標
+  WIRE_DECO_CENTER2_X: 450, // 中央ワイヤー2のX座標
 } as const;
 
 // スケール設定
 export const SCALE_CONFIG = {
-  MIN_SCALE: 0.5,
+  MIN_SCALE: 0.3,
   MAX_SCALE: 1.2,
   DEFAULT_SCALE: 1.0,
   SCALE_RATIO: 0.9, // 利用可能スペースの90%を使用
@@ -194,4 +204,37 @@ export function getBreakpointScaleModifier(width: number): number {
   if (width < BREAKPOINTS.TABLET) return 0.9;
   if (width < BREAKPOINTS.DESKTOP) return 1.0;
   return 1.1;
+}
+
+/**
+ * 装飾ワイヤー用の座標をスケール適用して取得
+ * @param x 基準X座標
+ * @param y 基準Y座標
+ * @returns スケール適用済み座標
+ */
+export function getWireCoordinates(
+  x: number,
+  y: number
+): { x: number; y: number } {
+  // CSS変数 --global-scale を使用してスケール適用
+  // 実際の描画時にブラウザが計算するため、ここでは基準値をそのまま返す
+  return { x, y };
+}
+
+/**
+ * 装飾ワイヤー用SVGパス文字列を生成（スケール対応）
+ * @param pathCommands パス命令の配列
+ * @returns CSS calc()を使用したパス文字列
+ */
+export function createScaledWirePath(
+  pathCommands: Array<{ cmd: string; coords: number[] }>
+): string {
+  return pathCommands
+    .map(({ cmd, coords }) => {
+      const scaledCoords = coords.map(
+        (coord) => `calc(${coord}px * var(--global-scale, 1))`
+      );
+      return `${cmd} ${scaledCoords.join(" ")}`;
+    })
+    .join(" ");
 }
