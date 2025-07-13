@@ -37,6 +37,16 @@ export const BASE_SIZES = {
     return this.CONTAINER_WIDTH - this.CONTAINER_PADDING * 2;
   },
 
+  // ディスプレイ全体の高さ（マウント部分込み）
+  get DISPLAY_TOTAL_HEIGHT() {
+    return this.DISPLAY_HEIGHT + this.SPACING_LG * 2;
+  },
+
+  // デバイス全体の高さ（キーボード + ディスプレイ + パディング）
+  get DEVICE_TOTAL_HEIGHT() {
+    return this.KEYBOARD_TOTAL_HEIGHT + this.DISPLAY_TOTAL_HEIGHT + this.CONTAINER_PADDING * 4;
+  },
+
   // ディスプレイ（基盤上のスクリーン）
   DISPLAY_WIDTH: 640, // ディスプレイキャンバスの幅
   DISPLAY_HEIGHT: 360, // ディスプレイキャンバスの高さ

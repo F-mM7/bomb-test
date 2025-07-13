@@ -75,12 +75,7 @@ const MainPage: React.FC = () => {
       const containerHeight = window.innerHeight * 0.8;
 
       // 爆弾の実際のサイズを計算
-      const keyboardHeight = BASE_SIZES.KEYBOARD_TOTAL_HEIGHT;
-      const displayHeight =
-        BASE_SIZES.DISPLAY_HEIGHT + BASE_SIZES.SPACING_LG * 2; // Display + mounting
-      const deviceHeight =
-        keyboardHeight + displayHeight + BASE_SIZES.CONTAINER_PADDING * 4;
-
+      const deviceHeight = BASE_SIZES.DEVICE_TOTAL_HEIGHT;
       const bombBodyTotalWidth = BASE_SIZES.BOMB_BODY_TOTAL_WIDTH;
 
       // スケールを計算してグローバルに設定
