@@ -41,7 +41,7 @@ export const BASE_SIZES = {
 
   // 爆弾本体（全体を包む外枠）
   BOMB_BODY_WIDTH: 720, // 爆弾本体の幅
-  BOMB_BODY_HEIGHT: 750, // 爆弾本体の高さ
+  BOMB_BODY_HEIGHT: 730, // 爆弾本体の高さ
   BOMB_BODY_PADDING: 16, // 爆弾本体の内部パディング
 
   // 爆弾本体の計算値
