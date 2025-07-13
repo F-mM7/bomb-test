@@ -3,7 +3,7 @@
  * 全てのコンポーネントサイズを基準サイズ × グローバルスケールで管理
  */
 
-import { Z_INDEX_CSS_VARS } from '../styles/constants/zIndex';
+import { Z_INDEX_CSS_VARS } from "../styles/constants/zIndex";
 
 // 基準サイズ定数
 export const BASE_SIZES = {
@@ -43,7 +43,7 @@ export const BASE_SIZES = {
 
   // 爆弾本体（全体を包む外枠）
   BOMB_BODY_WIDTH: 720, // 爆弾本体の幅
-  BOMB_BODY_HEIGHT: 730, // 爆弾本体の高さ
+  BOMB_BODY_HEIGHT: 820, // 爆弾本体の高さ
   BOMB_BODY_PADDING: 16, // 爆弾本体の内部パディング
 
   // 爆弾本体の計算値
@@ -92,7 +92,7 @@ export const SCALE_CONFIG = {
   MIN_SCALE: 0.3,
   MAX_SCALE: 1.2,
   DEFAULT_SCALE: 1.0,
-  SCALE_RATIO: 1, // 利用可能スペースの90%を使用
+  SCALE_RATIO: 1,
 } as const;
 
 // CSS変数名
