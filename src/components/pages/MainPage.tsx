@@ -74,17 +74,8 @@ const MainPage: React.FC = () => {
         window.innerWidth - BASE_SIZES.GLOBAL_CONTAINER_PADDING * 2;
       const containerHeight = window.innerHeight * 0.8;
 
-      // 爆弾の実際のサイズを計算
-      const deviceHeight = BASE_SIZES.DEVICE_TOTAL_HEIGHT;
-      const bombBodyTotalWidth = BASE_SIZES.BOMB_BODY_TOTAL_WIDTH;
-
       // スケールを計算してグローバルに設定
-      const scale = calculateGlobalScale(
-        containerWidth,
-        containerHeight,
-        bombBodyTotalWidth,
-        deviceHeight
-      );
+      const scale = calculateGlobalScale(containerWidth, containerHeight);
 
       setGlobalScale(scale, containerRef.current);
     };

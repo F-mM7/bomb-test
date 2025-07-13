@@ -114,25 +114,19 @@ export const CSS_VARS = {
  * グローバルスケールを計算
  * @param containerWidth コンテナの幅
  * @param containerHeight コンテナの高さ
- * @param targetWidth 目標幅（デフォルト: BASE_SIZES.CONTAINER_WIDTH）
- * @param targetHeight 目標高さ（オプション）
  * @returns 計算されたスケール値
  */
 export function calculateGlobalScale(
   containerWidth: number,
-  containerHeight: number,
-  targetWidth: number = BASE_SIZES.CONTAINER_WIDTH,
-  targetHeight?: number
+  containerHeight: number
 ): number {
+  const targetWidth = BASE_SIZES.BOMB_BODY_TOTAL_WIDTH;
+  const targetHeight = BASE_SIZES.DEVICE_TOTAL_HEIGHT;
+
   const widthScale = (containerWidth * SCALE_CONFIG.SCALE_RATIO) / targetWidth;
-
-  let scale = widthScale;
-
-  if (targetHeight) {
-    const heightScale =
-      (containerHeight * SCALE_CONFIG.SCALE_RATIO) / targetHeight;
-    scale = Math.min(widthScale, heightScale);
-  }
+  const heightScale = (containerHeight * SCALE_CONFIG.SCALE_RATIO) / targetHeight;
+  
+  const scale = Math.min(widthScale, heightScale);
 
   return Math.max(
     SCALE_CONFIG.MIN_SCALE,
