@@ -81,15 +81,8 @@ export const BASE_SIZES = {
   WIRE_BORDER_THICKNESS: 3, // ワイヤー境界の厚さ
   WIRE_BORDER_RADIUS: 2, // ワイヤー境界の角丸
 
-  // 装飾ワイヤー座標系（720px基準）
   WIRE_LAYER_OFFSET: 100, // SVGレイヤーのオフセット
   WIRE_LAYER_OVERFLOW: 200, // SVGレイヤーのはみ出し分
-
-  // 装飾ワイヤー基準座標（BOMB_BODY_WIDTH: 720基準）
-  WIRE_DECO_LEFT_X: 140, // 左側ワイヤーのX座標
-  WIRE_DECO_RIGHT_X: 780, // 右側ワイヤーのX座標
-  WIRE_DECO_CENTER_X: 380, // 中央ワイヤーのX座標
-  WIRE_DECO_CENTER2_X: 450, // 中央ワイヤー2のX座標
 } as const;
 
 // スケール設定
@@ -148,7 +141,6 @@ export function scaleSize(baseSize: number, scale?: number): string {
   return `calc(${baseSize}px * var(${CSS_VARS.GLOBAL_SCALE}, ${SCALE_CONFIG.DEFAULT_SCALE}))`;
 }
 
-
 /**
  * CSS変数としてグローバルスケールを設定
  * @param element 対象要素（デフォルト: document.documentElement）
@@ -160,8 +152,3 @@ export function setGlobalScale(
 ): void {
   element.style.setProperty(CSS_VARS.GLOBAL_SCALE, scale.toString());
 }
-
-
-
-
-
