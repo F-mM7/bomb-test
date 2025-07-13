@@ -90,7 +90,7 @@ export const SCALE_CONFIG = {
   MIN_SCALE: 0.3,
   MAX_SCALE: 1.2,
   DEFAULT_SCALE: 1.0,
-  SCALE_RATIO: 0.9, // 利用可能スペースの90%を使用
+  SCALE_RATIO: 1, // 利用可能スペースの90%を使用
 } as const;
 
 // CSS変数名
