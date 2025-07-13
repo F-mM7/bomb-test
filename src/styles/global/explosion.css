@@ -1,4 +1,4 @@
-@import '../constants/animations.css';
+@import "../constants/animations.css";
 
 /* 爆発エフェクトのスタイル */
 .explosion-overlay {
@@ -18,19 +18,33 @@
 }
 
 .burned-bomb::after {
-  content: '';
-  position: absolute;
+  content: "";
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: 
-    radial-gradient(ellipse at 60% 40%, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 50%, transparent 70%),
-    radial-gradient(ellipse at 30% 70%, rgba(40, 20, 0, 0.3) 0%, rgba(20, 10, 0, 0.2) 40%, transparent 60%),
-    linear-gradient(135deg, rgba(0, 0, 0, 0.1) 0%, rgba(40, 20, 0, 0.2) 30%, rgba(0, 0, 0, 0.3) 70%, rgba(20, 10, 0, 0.1) 100%);
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(
+      ellipse at 60% 40%,
+      rgba(0, 0, 0, 0.4) 0%,
+      rgba(0, 0, 0, 0.2) 50%,
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse at 30% 70%,
+      rgba(40, 20, 0, 0.3) 0%,
+      rgba(20, 10, 0, 0.2) 40%,
+      transparent 60%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.1) 0%,
+      rgba(40, 20, 0, 0.2) 30%,
+      rgba(0, 0, 0, 0.3) 70%,
+      rgba(20, 10, 0, 0.1) 100%
+    );
   pointer-events: none;
-  z-index: 1;
-  border-radius: inherit;
+  z-index: 9998;
 }
 
 /* 失敗メッセージ */
@@ -42,15 +56,11 @@
   font-size: 4rem;
   font-weight: bold;
   color: #ff0000;
-  text-shadow: 
-    0 0 10px rgba(255, 0, 0, 0.8),
-    0 0 20px rgba(255, 0, 0, 0.6),
-    0 0 30px rgba(255, 0, 0, 0.4),
-    2px 2px 4px rgba(0, 0, 0, 0.8);
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.8), 0 0 20px rgba(255, 0, 0, 0.6),
+    0 0 30px rgba(255, 0, 0, 0.4), 2px 2px 4px rgba(0, 0, 0, 0.8);
   z-index: 10001;
   animation: pulseFailure 2s ease-in-out infinite;
 }
-
 
 /* 操作無効化 */
 .game-disabled {
