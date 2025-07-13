@@ -126,7 +126,7 @@ const MainPage: React.FC = () => {
         remaining={bombState.displayTime ?? remaining}
         style={{
           position: "fixed",
-          top: "35%",
+          top: "50%",
           left: "50%",
           transform: "translate(-50%, -50%)",
         }}
