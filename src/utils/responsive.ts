@@ -148,15 +148,6 @@ export function scaleSize(baseSize: number, scale?: number): string {
   return `calc(${baseSize}px * var(${CSS_VARS.GLOBAL_SCALE}, ${SCALE_CONFIG.DEFAULT_SCALE}))`;
 }
 
-/**
- * 複数の基準サイズにスケールを適用
- * @param baseSizes 基準サイズの配列
- * @param scale スケール値（デフォルト: CSS変数から取得）
- * @returns スケール適用後のサイズ配列
- */
-export function scaleSizes(baseSizes: number[], scale?: number): string[] {
-  return baseSizes.map((size) => scaleSize(size, scale));
-}
 
 /**
  * CSS変数としてグローバルスケールを設定
@@ -170,71 +161,7 @@ export function setGlobalScale(
   element.style.setProperty(CSS_VARS.GLOBAL_SCALE, scale.toString());
 }
 
-/**
- * CSS変数からグローバルスケールを取得
- * @param element 対象要素（デフォルト: document.documentElement）
- * @returns 現在のスケール値
- */
-export function getGlobalScale(
-  element: HTMLElement = document.documentElement
-): number {
-  const scaleValue = getComputedStyle(element).getPropertyValue(
-    CSS_VARS.GLOBAL_SCALE
-  );
-  return parseFloat(scaleValue) || SCALE_CONFIG.DEFAULT_SCALE;
-}
 
-/**
- * レスポンシブブレークポイント
- */
-export const BREAKPOINTS = {
-  MOBILE: 480,
-  TABLET: 768,
-  DESKTOP: 1024,
-  LARGE: 1200,
-} as const;
 
-/**
- * ブレークポイントに基づいてスケール調整値を取得
- * @param width 画面幅
- * @returns スケール調整値（ベーススケールに乗算）
- */
-export function getBreakpointScaleModifier(width: number): number {
-  if (width < BREAKPOINTS.MOBILE) return 0.8;
-  if (width < BREAKPOINTS.TABLET) return 0.9;
-  if (width < BREAKPOINTS.DESKTOP) return 1.0;
-  return 1.1;
-}
 
-/**
- * 装飾ワイヤー用の座標をスケール適用して取得
- * @param x 基準X座標
- * @param y 基準Y座標
- * @returns スケール適用済み座標
- */
-export function getWireCoordinates(
-  x: number,
-  y: number
-): { x: number; y: number } {
-  // CSS変数 --global-scale を使用してスケール適用
-  // 実際の描画時にブラウザが計算するため、ここでは基準値をそのまま返す
-  return { x, y };
-}
 
-/**
- * 装飾ワイヤー用SVGパス文字列を生成（スケール対応）
- * @param pathCommands パス命令の配列
- * @returns CSS calc()を使用したパス文字列
- */
-export function createScaledWirePath(
-  pathCommands: Array<{ cmd: string; coords: number[] }>
-): string {
-  return pathCommands
-    .map(({ cmd, coords }) => {
-      const scaledCoords = coords.map(
-        (coord) => `calc(${coord}px * var(--global-scale, 1))`
-      );
-      return `${cmd} ${scaledCoords.join(" ")}`;
-    })
-    .join(" ");
-}

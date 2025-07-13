@@ -32,7 +32,7 @@ export const WIRE_CONFIGS: Record<WirePosition, WireConfig> = {
   }
 };
 
-export const getWireColor = (position: WirePosition): string => 
+const getWireColor = (position: WirePosition): string => 
   position === 'left' ? "#ff4444" : "#4488ff";
 
 export const getGameWireStyle = (position: WirePosition) => ({

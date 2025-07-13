@@ -6,11 +6,3 @@ export interface ExposedWiresProps {
   isRightCut?: boolean;
   disabled?: boolean;
 }
-
-export interface WireConfig {
-  continuousPath: string;
-  cutPath1: string;
-  cutPath2: string;
-  cutCircle1: { cx: number; cy: number };
-  cutCircle2: { cx: number; cy: number };
-}

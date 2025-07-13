@@ -19,5 +19,3 @@ export const Z_INDEX = {
   TWEET_BUTTON: 2000,
   EMERGENCY_NOTIFICATION: 2001,
 } as const;
-
-export type ZIndexLevel = typeof Z_INDEX[keyof typeof Z_INDEX];

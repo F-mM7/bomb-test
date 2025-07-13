@@ -25,8 +25,9 @@ const TweetButton: React.FC<TweetButtonProps> = ({
 
   const handleTweet = () => {
     const gameUrl = "https://example.com"; // TODO: 実際のゲームURLに置き換える
+    const remainingSeconds = Math.floor(remaining / 1000);
     const resultText = isCleared
-      ? `${remaining}秒残して時限爆弾の解除に成功した！\n${gameUrl}`
+      ? `${remainingSeconds}秒残して時限爆弾の解除に成功した！\n${gameUrl}`
       : `時限爆弾が爆発してしまった...\n${gameUrl}`;
 
     const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
