@@ -1,1 +1,0 @@
-export { SvgWire } from '../../features/wires';

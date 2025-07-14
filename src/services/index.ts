@@ -1,1 +1,0 @@
-export { GameStorage } from '../features/game';
