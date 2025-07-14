@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { KEYBOARD_DETACHMENT_ANIMATION } from '../../../constants/animations';
 
 export const useKeyboardDetachment = (currentQuestion: number, isKeyboardAttached: boolean, setIsKeyboardAttached: (attached: boolean) => void) => {
   const [isDetaching, setIsDetaching] = useState(false);
@@ -10,7 +11,7 @@ export const useKeyboardDetachment = (currentQuestion: number, isKeyboardAttache
       const timer = setTimeout(() => {
         setIsKeyboardAttached(false);
         setIsDetaching(false);
-      }, 1000);
+      }, KEYBOARD_DETACHMENT_ANIMATION.TOTAL_DURATION);
       
       return () => clearTimeout(timer);
     }

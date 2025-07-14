@@ -6,6 +6,7 @@ import { pcbStyle, screwStyle, displayMountStyle } from "../styles";
 import { BASE_SIZES, scaleSize } from "../../../utils/responsive";
 import type { Question } from "../types/question.types";
 import { Z_INDEX } from "../../../constants/zIndex";
+import { KEYBOARD_DETACHMENT_ANIMATION } from "../../../constants/animations";
 
 interface DeviceProps {
   isKeyboardAttached: boolean;
@@ -48,15 +49,15 @@ const Device: React.FC<DeviceProps> = ({
     if (isDetaching && animationPhase === "idle") {
       setAnimationPhase("moving");
 
-      // 1段階目: 移動（600ms）
+      // 1段階目: 移動
       setTimeout(() => {
         setAnimationPhase("settled");
 
-        // 2段階目: 少し静止してからフェードアウト（400ms後にフェード開始）
+        // 2段階目: 静止してからフェードアウト
         setTimeout(() => {
           setAnimationPhase("fading");
-        }, 400);
-      }, 600);
+        }, KEYBOARD_DETACHMENT_ANIMATION.SETTLE_DURATION);
+      }, KEYBOARD_DETACHMENT_ANIMATION.MOVE_DURATION);
     }
 
     if (!isDetaching) {
@@ -132,9 +133,9 @@ const Device: React.FC<DeviceProps> = ({
               opacity: animationPhase === "fading" ? 0 : 1,
               transition:
                 animationPhase === "moving"
-                  ? "transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+                  ? `transform ${KEYBOARD_DETACHMENT_ANIMATION.MOVE_DURATION}ms cubic-bezier(0.25, 0.46, 0.45, 0.94)`
                   : animationPhase === "fading"
-                  ? "opacity 0.5s ease-out"
+                  ? `opacity ${KEYBOARD_DETACHMENT_ANIMATION.FADE_DURATION}ms ease-out`
                   : "none",
               transformOrigin: "center bottom",
             }}
