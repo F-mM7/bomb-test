@@ -5,4 +5,4 @@ export * from '../features/game/types/game.types';
 export * from '../features/game/types/hooks.types';
 export * from '../features/game/types/question.types';
 
-export * from './data/font.types';
+export * from './font.types';

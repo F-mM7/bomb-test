@@ -9,7 +9,7 @@ import {
   buttonContainerStyle,
 } from "../styles";
 import type { KeyboardProps, MarkMapping } from "../types/keyboard.types";
-import type { MarkType } from "../../../types/data/font.types";
+import type { MarkType } from "../../../types/font.types";
 import ActionKeys from "./ActionKeys";
 import KanaGrid from "./KanaGrid";
 

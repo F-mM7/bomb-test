@@ -4,7 +4,7 @@ import { Keyboard } from "../../keyboard";
 import { ExposedWires, WireLayer } from "../../wires";
 import { pcbStyle, screwStyle, displayMountStyle } from "../../../styles";
 import { BASE_SIZES, scaleSize } from "../../../utils/responsive";
-import type { Question } from "../../../types";
+import type { Question } from "../types/question.types";
 import { Z_INDEX } from "../../../styles/constants/zIndex";
 
 interface DeviceProps {
