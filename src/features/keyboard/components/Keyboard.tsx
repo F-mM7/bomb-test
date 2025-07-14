@@ -3,15 +3,15 @@ import {
   fullDakutenMap,
   fullHandakutenMap,
   fullSmallMap,
-} from "../../constants";
+} from "../constants";
 import {
   keyboardStyle,
   buttonContainerStyle,
-} from "../../styles/components/keyboard.styles";
-import type { KeyboardProps, MarkMapping } from "../../types/components/keyboard.types";
-import type { MarkType } from "../../types/data/font.types";
-import { ActionKeys } from "./ActionKeys";
-import { KanaGrid } from "./KanaGrid";
+} from "../styles";
+import type { KeyboardProps, MarkMapping } from "../types/keyboard.types";
+import type { MarkType } from "../../../types/data/font.types";
+import ActionKeys from "./ActionKeys";
+import KanaGrid from "./KanaGrid";
 
 const MARK_MAPPINGS: MarkMapping[] = [
   { mark: "゛", map: fullDakutenMap },

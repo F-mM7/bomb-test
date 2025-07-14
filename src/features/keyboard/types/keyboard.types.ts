@@ -1,4 +1,4 @@
-import type { MarkType } from '../data/font.types';
+import type { MarkType } from '../../../types/data/font.types';
 
 export interface KeyboardProps {
   setInput: (value: string | ((prev: string) => string)) => void;

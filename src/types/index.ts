@@ -1,5 +1,5 @@
 export * from './components/display.types';
-export * from './components/keyboard.types';
+export * from '../features/keyboard/types/keyboard.types';
 export * from './components/wires.types';
 
 export * from './data/question.types';

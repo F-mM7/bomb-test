@@ -1,6 +1,6 @@
 import React from "react";
-import { KeyboardButton } from "./KeyboardButton";
-import { actionRowStyle, actionButtonStyle } from "../../styles/components/keyboard.styles";
+import KeyboardButton from "./KeyboardButton";
+import { actionRowStyle, actionButtonStyle } from "../styles";
 
 interface ActionKeysProps {
   onBackspace: () => void;
@@ -9,7 +9,7 @@ interface ActionKeysProps {
   disabled?: boolean;
 }
 
-export const ActionKeys: React.FC<ActionKeysProps> = ({ 
+const ActionKeys: React.FC<ActionKeysProps> = ({ 
   onBackspace, 
   onClear, 
   onEnter, 
@@ -36,3 +36,5 @@ export const ActionKeys: React.FC<ActionKeysProps> = ({
     </div>
   );
 };
+
+export default ActionKeys;

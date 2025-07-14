@@ -1,8 +1,8 @@
 import React from "react";
-import { KeyboardButton } from "./KeyboardButton";
-import { kanaGroups } from "../../constants";
-import { BASE_SIZES, scaleSize } from "../../utils/responsive";
-import { gridStyle, baseButtonStyle } from "../../styles/components/keyboard.styles";
+import KeyboardButton from "./KeyboardButton";
+import { kanaGroups } from "../constants";
+import { BASE_SIZES, scaleSize } from "../../../utils/responsive";
+import { gridStyle, baseButtonStyle } from "../styles";
 
 interface KanaGridProps {
   onCharInput: (char: string) => void;
@@ -10,7 +10,7 @@ interface KanaGridProps {
   disabled?: boolean;
 }
 
-export const KanaGrid: React.FC<KanaGridProps> = ({ onCharInput, onMarkClick, disabled = false }) => {
+const KanaGrid: React.FC<KanaGridProps> = ({ onCharInput, onMarkClick, disabled = false }) => {
   const keyStyle = { ...baseButtonStyle } as const;
   const orderedGroups = [...kanaGroups].reverse();
 
@@ -53,3 +53,5 @@ export const KanaGrid: React.FC<KanaGridProps> = ({ onCharInput, onMarkClick, di
     </div>
   );
 };
+
+export default KanaGrid;
