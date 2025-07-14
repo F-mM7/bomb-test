@@ -5,7 +5,7 @@ import { containerStyle, bombBodyStyle } from "../../styles";
 import { useTimer } from "../../features/timer";
 import { useGameState } from "../../hooks/useGameState";
 import { useBombState } from "../../hooks/useBombState";
-import { useWireHandler } from "../../hooks/useWireHandler";
+import { useWireHandler } from "../../features/wires";
 import { useAnswerHandler } from "../../hooks/useAnswerHandler";
 import { questionBitmaps } from "../../data/questions";
 import {

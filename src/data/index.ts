@@ -1,2 +1,2 @@
 export * from './questions';
-export * from './wireConfigs';
+export * from '../features/wires/constants';

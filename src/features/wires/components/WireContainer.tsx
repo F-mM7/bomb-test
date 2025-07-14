@@ -1,8 +1,8 @@
 import React from "react";
-import SvgWire from "../common/SvgWire";
-import type { WirePosition } from "../../types/game/game.types";
-import { BASE_SIZES, scaleSize } from "../../utils/responsive";
-import { Z_INDEX } from "../../styles/constants/zIndex";
+import SvgWire from "./SvgWire";
+import type { WirePosition } from "../../../types/game/game.types";
+import { BASE_SIZES, scaleSize } from "../../../utils/responsive";
+import { Z_INDEX } from "../../../styles/constants/zIndex";
 
 interface WireContainerProps {
   onWireClick: (wire: WirePosition) => void;
@@ -12,7 +12,7 @@ interface WireContainerProps {
   disabled: boolean;
 }
 
-export const WireContainer: React.FC<WireContainerProps> = ({
+const WireContainer: React.FC<WireContainerProps> = ({
   onWireClick,
   isLeftCut,
   isRightCut,
@@ -58,3 +58,5 @@ export const WireContainer: React.FC<WireContainerProps> = ({
     </div>
   );
 };
+
+export default WireContainer;

@@ -2,10 +2,10 @@ import React from "react";
 import {
   exposedWiresContainerStyle,
   getWireStyleWithState,
-} from "../../styles/components/exposedWires.styles";
-import { WireBorders } from "./WireBorders";
-import { WireContainer } from "./WireContainer";
-import type { ExposedWiresProps } from "../../types/components/wires.types";
+} from "../styles";
+import WireBorders from "./WireBorders";
+import WireContainer from "./WireContainer";
+import type { ExposedWiresProps } from "../types/wires.types";
 
 const ExposedWires: React.FC<ExposedWiresProps> = ({
   onWireClick,

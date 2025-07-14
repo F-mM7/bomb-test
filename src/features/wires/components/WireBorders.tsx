@@ -2,9 +2,9 @@ import React from "react";
 import {
   topBorderStyle,
   leftBorderStyle,
-} from "../../styles/components/exposedWires.styles";
-import { GRADIENTS } from "../../styles/constants/colors";
-import { scaleSize } from "../../utils/responsive";
+} from "../styles";
+import { GRADIENTS } from "../../../styles/constants/colors";
+import { scaleSize } from "../../../utils/responsive";
 
 const BORDER_STYLES = {
   bottom: {
@@ -25,7 +25,7 @@ const BORDER_STYLES = {
   }
 };
 
-export const WireBorders: React.FC = () => {
+const WireBorders: React.FC = () => {
   return (
     <>
       <div style={topBorderStyle} />
@@ -35,3 +35,5 @@ export const WireBorders: React.FC = () => {
     </>
   );
 };
+
+export default WireBorders;

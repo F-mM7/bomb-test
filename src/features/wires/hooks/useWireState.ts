@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react';
-import { GameStorage } from '../services/gameStorage';
-import type { WirePosition } from '../types/game/game.types';
+import { GameStorage } from '../../../services/gameStorage';
+import type { WirePosition } from '../../../types/game/game.types';
 
 export const useWireState = () => {
   const [isRightCut, setIsRightCut] = useState<boolean>(() => GameStorage.getWireCutState('right'));

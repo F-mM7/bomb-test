@@ -1,7 +1,7 @@
 import React from "react";
-import SvgWire from "../common/SvgWire";
-import { scaleSize, BASE_SIZES } from "../../utils/responsive";
-import { Z_INDEX } from "../../styles/constants/zIndex";
+import SvgWire from "./SvgWire";
+import { scaleSize, BASE_SIZES } from "../../../utils/responsive";
+import { Z_INDEX } from "../../../styles/constants/zIndex";
 
 // ワイヤー生成関数
 type WireSide = "top" | "left" | "right" | "bottom";

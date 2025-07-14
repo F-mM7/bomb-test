@@ -1,1 +1,1 @@
-export { default as SvgWire } from './SvgWire';
+export { SvgWire } from '../../features/wires';

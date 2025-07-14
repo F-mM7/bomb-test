@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import type { UseWireHandlerProps, WirePosition } from '../types/game';
+import type { UseWireHandlerProps, WirePosition } from '../../../types/game';
 
 export const useWireHandler = ({
   currentQuestion,

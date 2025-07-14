@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Display from "./Display";
 import { Keyboard } from "../../features/keyboard";
-import ExposedWires from "./ExposedWires";
-import WireLayer from "./WireLayer";
+import { ExposedWires, WireLayer } from "../../features/wires";
 import { pcbStyle, screwStyle, displayMountStyle } from "../../styles";
 import { BASE_SIZES, scaleSize } from "../../utils/responsive";
 import type { Question } from "../../types";

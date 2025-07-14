@@ -1,5 +1,5 @@
-import type { WirePosition } from "../types/game/game.types";
-import { BASE_SIZES } from "../utils/responsive";
+import type { WirePosition } from "../../types/game/game.types";
+import { BASE_SIZES } from "../../utils/responsive";
 
 export interface WireConfig {
   continuousPath: string;

@@ -1,3 +1,3 @@
 export * from './display.types';
 export * from '../../features/keyboard/types/keyboard.types';
-export * from './wires.types';
+export * from '../../features/wires/types/wires.types';

@@ -1,4 +1,4 @@
-import type { WirePosition } from '../game/game.types';
+import type { WirePosition } from '../../../types/game/game.types';
 
 export interface ExposedWiresProps {
   onWireClick: (wire: WirePosition) => void;
