@@ -2,7 +2,7 @@ import { useState, useCallback } from 'react';
 import { useWireState } from '../features/wires';
 import { useExplosionState } from './useExplosionState';
 import { useInputState } from './useInputState';
-import { GameStorage } from '../services/gameStorage';
+import { GameStorage } from '../features/game';
 
 export const useBombState = () => {
   const wireState = useWireState();

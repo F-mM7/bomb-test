@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Display } from "../../features/display";
-import { Keyboard } from "../../features/keyboard";
-import { ExposedWires, WireLayer } from "../../features/wires";
-import { pcbStyle, screwStyle, displayMountStyle } from "../../styles";
-import { BASE_SIZES, scaleSize } from "../../utils/responsive";
-import type { Question } from "../../types";
-import { Z_INDEX } from "../../styles/constants/zIndex";
+import { Display } from "../../display";
+import { Keyboard } from "../../keyboard";
+import { ExposedWires, WireLayer } from "../../wires";
+import { pcbStyle, screwStyle, displayMountStyle } from "../../../styles";
+import { BASE_SIZES, scaleSize } from "../../../utils/responsive";
+import type { Question } from "../../../types";
+import { Z_INDEX } from "../../../styles/constants/zIndex";
 
 interface DeviceProps {
   isKeyboardAttached: boolean;

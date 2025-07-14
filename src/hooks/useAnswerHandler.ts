@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import type { UseAnswerHandlerProps } from '../types/game';
+import type { UseAnswerHandlerProps } from '../features/game/types/hooks.types';
 
 export const useAnswerHandler = ({
   currentQuestion,

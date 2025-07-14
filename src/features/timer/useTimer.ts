@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { TIMER_CONSTANTS } from "./constants";
-import { GameStorage } from "../../services/gameStorage";
+import { GameStorage } from "../game";
 
 export const useTimer = () => {
   const [remaining, setRemaining] = useState<number>(TIMER_CONSTANTS.TOTAL_TIME);

@@ -10,7 +10,7 @@ import {
   startButtonHoverStyle,
   timerWarningStyle,
 } from "../../styles/components/startPage.styles";
-import { GameStorage } from "../../services/gameStorage";
+import { GameStorage } from "../../features/game";
 import "../../styles/global/startPage.css";
 
 interface StartPageProps {

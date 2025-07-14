@@ -1,1 +1,1 @@
-export * from './gameStorage';
+export { GameStorage } from '../features/game';

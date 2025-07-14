@@ -1,5 +1,5 @@
 import React from "react";
-import type { WirePosition } from "../../../types/game/game.types";
+import type { WirePosition } from "../../game/types/game.types";
 import { WIRE_CONFIGS, getGameWireStyle } from "../constants";
 
 interface BasicWireProps {

@@ -1,9 +1,8 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import Device from "../game/Device";
-import TweetButton from "../game/TweetButton";
+import { Device, TweetButton } from "../../features/game";
 import { containerStyle, bombBodyStyle } from "../../styles";
 import { useTimer } from "../../features/timer";
-import { useGameState } from "../../hooks/useGameState";
+import { useGameState } from "../../features/game";
 import { useBombState } from "../../hooks/useBombState";
 import { useWireHandler } from "../../features/wires";
 import { useAnswerHandler } from "../../hooks/useAnswerHandler";
@@ -13,7 +12,7 @@ import {
   setGlobalScale,
   setZIndexVariables,
 } from "../../utils/responsive";
-import { GameStorage } from "../../services/gameStorage";
+import { GameStorage } from "../../features/game";
 import "../../styles/global/explosion.css";
 
 const MainPage: React.FC = () => {

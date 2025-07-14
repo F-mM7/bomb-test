@@ -1,5 +1,5 @@
-import type { GameProgress, WirePosition } from '../types/game/game.types';
-import { StorageHelper } from '../utils/storageHelper';
+import type { GameProgress, WirePosition } from '../types/game.types';
+import { StorageHelper } from '../../../utils/storageHelper';
 
 export class GameStorage {
   private static readonly GAME_PROGRESS_KEY = "gameProgress";

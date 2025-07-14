@@ -1,4 +1,4 @@
-import type { WirePosition } from "../../types/game/game.types";
+import type { WirePosition } from "../game/types/game.types";
 import { BASE_SIZES } from "../../utils/responsive";
 
 export interface WireConfig {

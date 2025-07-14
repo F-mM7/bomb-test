@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react';
 import { GameStorage } from '../services/gameStorage';
-import type { GameState, GameProgress } from '../types/game/game.types';
+import type { GameState, GameProgress } from '../types/game.types';
 
 export const useGameState = () => {
   const [gameState, setGameState] = useState<GameState>(() => {
