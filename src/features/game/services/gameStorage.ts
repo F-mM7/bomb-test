@@ -24,12 +24,11 @@ export class GameStorage {
   }
 
   static initializeFinalTime(): number | null {
-    const finalTime = localStorage.getItem(this.FINAL_TIME_KEY);
-    return finalTime ? parseInt(finalTime) : null;
+    return StorageHelper.get<number | null>(this.FINAL_TIME_KEY, null);
   }
 
   static initializeBooleanFromStorage(key: string): boolean {
-    return localStorage.getItem(key) === "true";
+    return StorageHelper.get<boolean>(key, false);
   }
 
   static saveGameProgressWithCurrentQuestion(currentQuestion: number, gameState: 'cleared' | 'failed' | 'playing'): void {
@@ -59,46 +58,40 @@ export class GameStorage {
   }
 
   static getWireStates(): Record<number, number[]> {
-    try {
-      const saved = localStorage.getItem(this.WIRE_STATES_KEY);
-      return saved ? JSON.parse(saved) : {};
-    } catch {
-      return {};
-    }
+    return StorageHelper.get<Record<number, number[]>>(this.WIRE_STATES_KEY, {});
   }
 
   static saveWireStates(wireStates: Record<number, number[]>): void {
-    localStorage.setItem(this.WIRE_STATES_KEY, JSON.stringify(wireStates));
+    StorageHelper.set(this.WIRE_STATES_KEY, wireStates);
   }
 
   static getWireCutState(wire: WirePosition): boolean {
     const key = wire === 'left' ? this.IS_LEFT_CUT_KEY : this.IS_RIGHT_CUT_KEY;
-    return localStorage.getItem(key) === "true";
+    return StorageHelper.get<boolean>(key, false);
   }
 
   static setWireCutState(wire: WirePosition, isCut: boolean): void {
     const key = wire === 'left' ? this.IS_LEFT_CUT_KEY : this.IS_RIGHT_CUT_KEY;
-    localStorage.setItem(key, isCut.toString());
+    StorageHelper.set(key, isCut);
   }
 
   static setFinalTime(time: number): void {
-    localStorage.setItem(this.FINAL_TIME_KEY, time.toString());
+    StorageHelper.set(this.FINAL_TIME_KEY, time);
   }
 
   static getFailedTime(): number | null {
-    const failedTime = localStorage.getItem(this.FAILED_TIME_KEY);
-    return failedTime ? parseInt(failedTime) : null;
+    return StorageHelper.get<number | null>(this.FAILED_TIME_KEY, null);
   }
 
   static setFailedTime(time: number): void {
-    localStorage.setItem(this.FAILED_TIME_KEY, time.toString());
+    StorageHelper.set(this.FAILED_TIME_KEY, time);
   }
 
   static getStage4Reached(): boolean {
-    return localStorage.getItem(this.STAGE_4_REACHED_KEY) === "true";
+    return StorageHelper.get<boolean>(this.STAGE_4_REACHED_KEY, false);
   }
 
   static setStage4Reached(reached: boolean): void {
-    localStorage.setItem(this.STAGE_4_REACHED_KEY, reached.toString());
+    StorageHelper.set(this.STAGE_4_REACHED_KEY, reached);
   }
 }
