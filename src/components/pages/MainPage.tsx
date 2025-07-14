@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import Device from "../game/Device";
 import TweetButton from "../game/TweetButton";
 import { containerStyle, bombBodyStyle } from "../../styles";
-import { useTimer } from "../../hooks/useTimer";
+import { useTimer } from "../../features/timer";
 import { useGameState } from "../../hooks/useGameState";
 import { useBombState } from "../../hooks/useBombState";
 import { useWireHandler } from "../../hooks/useWireHandler";

@@ -1,4 +1,4 @@
-export { TimerRenderer } from './TimerRenderer';
+export { TimerRenderer } from '../../../features/timer';
 export { StatusRenderer } from './StatusRenderer';
 export { QuestionRenderer } from './QuestionRenderer';
 export { CircleRenderer } from './CircleRenderer';

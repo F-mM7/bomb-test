@@ -1,19 +1,9 @@
+// Re-export timer constants for backward compatibility
+import { TIMER_CONSTANTS } from '../features/timer/constants';
+
 export const DISPLAY_CONSTANTS = {
-  // Timer display
-  TIMER: {
-    TOTAL_TIME: 600000,
-    DIGIT_WIDTH_WITH_SPACING: 4,
-    MILLISECONDS_PER_SECOND: 1000,
-    SECONDS_PER_MINUTE: 60,
-    CURSOR_BLINK_THRESHOLD: 440,
-    POSITION: {
-      X: 0,
-      Y: 0,
-      SPACING: 2,
-      COLON_OFFSET: 8,
-      LABEL_OFFSET: 3,
-    },
-  },
+  // Timer display (re-exported for backward compatibility)
+  TIMER: TIMER_CONSTANTS,
 
   // Input display
   INPUT: {
