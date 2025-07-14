@@ -1,4 +1,4 @@
-import type { Question } from '../../../types/data/question.types';
+import type { Question } from '../../game/types/question.types';
 
 export interface DisplayProps {
   pixelWidth: number;

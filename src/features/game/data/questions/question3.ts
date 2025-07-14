@@ -1,4 +1,4 @@
-import type { QuestionBitmap } from "../../types";
+import type { QuestionBitmap } from "../../types/question.types";
 
 export const question3: QuestionBitmap = {
   id: 3,

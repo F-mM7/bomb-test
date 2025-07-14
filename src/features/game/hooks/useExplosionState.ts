@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react';
-import { DISPLAY_CONSTANTS } from '../constants/display';
+import { DISPLAY_CONSTANTS } from '../../display/constants';
 
 export const useExplosionState = () => {
   const [showExplosion, setShowExplosion] = useState<boolean>(false);

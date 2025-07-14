@@ -1,4 +1,4 @@
-import type { Question } from '../../../types/data/question.types';
+import type { Question } from './question.types';
 import type { WirePosition } from './game.types';
 
 export interface BombState {

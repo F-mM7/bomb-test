@@ -1,4 +1,4 @@
-import { questionBitmaps } from "../../../data/questions";
+import { questionBitmaps } from "../../game/data/questions";
 import { DISPLAY_CONSTANTS } from "../constants";
 import { COLORS } from "../../../styles/constants/colors";
 import type { Question } from "../../../types";
@@ -18,8 +18,8 @@ export class QuestionRenderer {
     const { QUESTION } = DISPLAY_CONSTANTS;
     ctx.fillStyle = COLORS.inputRed;
     
-    questionBitmap.data.forEach((row, yIndex) => {
-      row.forEach((pixel, xIndex) => {
+    questionBitmap.data.forEach((row: number[], yIndex: number) => {
+      row.forEach((pixel: number, xIndex: number) => {
         if (pixel === 1) {
           ctx.fillRect(
             QUESTION.START_X + xIndex,

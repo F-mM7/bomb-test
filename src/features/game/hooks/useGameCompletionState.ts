@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react';
-import { GameStorage } from '../features/game';
+import { GameStorage } from '../services/gameStorage';
 import { useExplosionState } from './useExplosionState';
 
 export const useGameCompletionState = () => {

@@ -8,6 +8,13 @@ export * from './types/hooks.types';
 
 // Hooks
 export { useGameState } from './hooks/useGameState';
+export { useAnswerHandler } from './hooks/useAnswerHandler';
+export { useInputState } from './hooks/useInputState';
+export { useExplosionState } from './hooks/useExplosionState';
+export { useGameCompletionState } from './hooks/useGameCompletionState';
 
 // Services
 export { GameStorage } from './services/gameStorage';
+
+// Data
+export * from './data/questions';

@@ -3,8 +3,8 @@ import { useTimer } from '../features/timer';
 import { useGameState } from '../features/game';
 import { useBombState } from './useBombState';
 import { useWireHandler } from '../features/wires';
-import { useAnswerHandler } from './useAnswerHandler';
-import { questionBitmaps } from '../data/questions';
+import { useAnswerHandler } from '../features/game/hooks/useAnswerHandler';
+import { questionBitmaps } from '../features/game/data/questions';
 
 export const useGameOrchestration = () => {
   const remaining = useTimer();

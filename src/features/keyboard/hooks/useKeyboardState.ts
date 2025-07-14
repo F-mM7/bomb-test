@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { GameStorage } from '../features/game';
+import { GameStorage } from '../../game/services/gameStorage';
 
 export const useKeyboardState = () => {
   const [isKeyboardAttached, setIsKeyboardAttached] = useState<boolean>(() => {
