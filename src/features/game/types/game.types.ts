@@ -6,4 +6,9 @@ export interface GameProgress {
   startTime: string;
 }
 
+export interface WireCutState {
+  isLeftCut: boolean;
+  isRightCut: boolean;
+}
+
 export type WirePosition = 'left' | 'right';
