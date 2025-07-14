@@ -72,13 +72,6 @@ export class GameStorage {
     StorageHelper.set(this.STORAGE_KEYS.WIRE_CUT_STATE, newState);
   }
 
-  static getWireCutStates(): WireCutState {
-    return StorageHelper.get<WireCutState>(this.STORAGE_KEYS.WIRE_CUT_STATE, {
-      isLeftCut: false,
-      isRightCut: false
-    });
-  }
-
 
   // ========== Time Management ==========
   static getFinalTime(): number | null {
@@ -89,14 +82,6 @@ export class GameStorage {
     StorageHelper.set(this.STORAGE_KEYS.FINAL_TIME, time);
   }
 
-  static getFailedTime(): number | null {
-    return StorageHelper.get<number | null>(this.STORAGE_KEYS.FAILED_TIME, null);
-  }
-
-  static setFailedTime(time: number): void {
-    StorageHelper.set(this.STORAGE_KEYS.FAILED_TIME, time);
-  }
-
   // ========== Utility Methods ==========
   static initializeFinalTime(): number | null {
     return this.getFinalTime();
@@ -104,11 +89,6 @@ export class GameStorage {
 
   static saveGameProgressWithCurrentQuestion(currentQuestion: number, gameState: 'cleared' | 'failed' | 'playing'): void {
     this.updateGameProgress({ currentQuestion, gameState });
-  }
-
-  // Deprecated methods - for compatibility during transition
-  static initializeBooleanFromStorage(key: string): boolean {
-    return StorageHelper.get<boolean>(key, false);
   }
 
 }

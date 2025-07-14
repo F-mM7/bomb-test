@@ -63,7 +63,7 @@ const StartPage: React.FC<StartPageProps> = ({ onStart }) => {
           <p style={noteTextStyle}>
             ※ ハックはお控えください。答えを見つけてしまったり、
             <br />
-            複数回挑戦できてしまい、楽しさやスリルが損なわれてしまうと思います。
+            複数回挑戦できてしまったりと、楽しさやスリルが損なわれてしまうと思います。
           </p>
         </div>
 

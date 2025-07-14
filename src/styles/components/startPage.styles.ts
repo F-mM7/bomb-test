@@ -1,4 +1,4 @@
-import { COLORS, GRADIENTS, SHADOWS } from '../constants/colors';
+import { COLORS, GRADIENTS, SHADOWS } from "../constants/colors";
 
 export const startPageContainerStyle = {
   display: "flex",

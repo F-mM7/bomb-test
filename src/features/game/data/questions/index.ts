@@ -11,4 +11,3 @@ export const questionBitmaps: QuestionBitmap[] = [
   question4,
 ];
 
-export { question1, question2, question3, question4 };

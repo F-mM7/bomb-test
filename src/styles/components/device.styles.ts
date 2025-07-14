@@ -8,7 +8,7 @@ export const pcbStyle = {
   boxShadow: SHADOWS.pcb,
   display: "inline-block",
   border: `${scaleSize(BASE_SIZES.PCB_BORDER_WIDTH)} solid ${
-    COLORS.pcbGreenDark
+    COLORS.pcbGreen
   }`,
   position: "relative" as const,
   boxSizing: "border-box" as const,

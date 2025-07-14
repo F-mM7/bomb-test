@@ -24,11 +24,4 @@ export class StorageHelper {
     }
   }
 
-  static clear(): void {
-    try {
-      localStorage.clear();
-    } catch (error) {
-      console.warn(`Failed to clear localStorage:`, error);
-    }
-  }
 }
