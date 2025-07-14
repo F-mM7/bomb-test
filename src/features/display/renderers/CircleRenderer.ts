@@ -1,5 +1,5 @@
 import { COLORS } from "../../../styles/constants/colors";
-import { DISPLAY_CONSTANTS } from "../../../constants/display";
+import { DISPLAY_CONSTANTS } from "../constants";
 
 export class CircleRenderer {
 

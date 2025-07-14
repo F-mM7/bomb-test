@@ -1,14 +1,14 @@
 import React, { useEffect, useRef } from "react";
-import type { DisplayProps } from "../../types";
-import { COLORS } from "../../styles/constants/colors";
+import type { DisplayProps } from "../types/display.types";
+import { COLORS } from "../../../styles/constants/colors";
+import { TimerRenderer } from "../../timer";
 import { 
-  TimerRenderer, 
   StatusRenderer, 
   QuestionRenderer, 
   CircleRenderer, 
   InputRenderer 
-} from "../display/renderers";
-import { scaleSize, BASE_SIZES } from "../../utils/responsive";
+} from "../renderers";
+import { scaleSize, BASE_SIZES } from "../../../utils/responsive";
 
 // Canvas内部解像度（ピクセル数）- レスポンシブとは無関係
 const CANVAS_WIDTH = 96;

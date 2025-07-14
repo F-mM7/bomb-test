@@ -2,7 +2,7 @@ import { DIGIT_FONT_3x5, KATAKANA_FONT_5x5 } from "../../../fonts";
 import { toKatakana } from "../../../utils/kanaConverter";
 import { shouldShowCursor } from "../../../utils/cursorUtils";
 import { FontRenderer } from "../../../utils/fontRenderer";
-import { DISPLAY_CONSTANTS } from "../../../constants/display";
+import { DISPLAY_CONSTANTS } from "../constants";
 import { COLORS } from "../../../styles/constants/colors";
 import type { Question } from "../../../types";
 

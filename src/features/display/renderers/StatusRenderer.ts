@@ -1,6 +1,6 @@
 import { KATAKANA_FONT_5x5 } from "../../../fonts";
 import { FontRenderer } from "../../../utils/fontRenderer";
-import { DISPLAY_CONSTANTS } from "../../../constants/display";
+import { DISPLAY_CONSTANTS } from "../constants";
 
 export class StatusRenderer {
   static render(

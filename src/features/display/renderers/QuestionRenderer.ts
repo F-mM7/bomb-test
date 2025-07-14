@@ -1,5 +1,5 @@
 import { questionBitmaps } from "../../../data/questions";
-import { DISPLAY_CONSTANTS } from "../../../constants/display";
+import { DISPLAY_CONSTANTS } from "../constants";
 import { COLORS } from "../../../styles/constants/colors";
 import type { Question } from "../../../types";
 

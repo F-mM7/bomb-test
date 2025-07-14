@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Display from "./Display";
+import { Display } from "../../features/display";
 import { Keyboard } from "../../features/keyboard";
 import { ExposedWires, WireLayer } from "../../features/wires";
 import { pcbStyle, screwStyle, displayMountStyle } from "../../styles";
