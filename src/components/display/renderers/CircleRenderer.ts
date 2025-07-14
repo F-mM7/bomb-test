@@ -1,11 +1,7 @@
 import { COLORS } from "../../../styles/constants/colors";
+import { DISPLAY_CONSTANTS } from "../../../constants/display";
 
 export class CircleRenderer {
-  private static readonly CIRCLE_RADIUS = 20;
-  private static readonly OUTER_BORDER_THICKNESS = 3;
-  private static readonly MIDDLE_RING_THICKNESS = 3;
-  private static readonly INNER_RING_THICKNESS = 3;
-  private static readonly CIRCLE_BORDER_OFFSET = 0.5;
 
   static render(
     ctx: CanvasRenderingContext2D,
@@ -28,14 +24,15 @@ export class CircleRenderer {
     centerX: number,
     centerY: number
   ): void {
+    const { RADIUS, OUTER_BORDER_THICKNESS, BORDER_OFFSET } = DISPLAY_CONSTANTS.CIRCLE;
     ctx.fillStyle = COLORS.black;
-    const outerRadius = this.CIRCLE_RADIUS + this.OUTER_BORDER_THICKNESS;
+    const outerRadius = RADIUS + OUTER_BORDER_THICKNESS;
     
     this.drawRing(
       ctx,
       centerX,
       centerY,
-      this.CIRCLE_RADIUS + this.CIRCLE_BORDER_OFFSET,
+      RADIUS + BORDER_OFFSET,
       outerRadius
     );
   }
@@ -45,15 +42,16 @@ export class CircleRenderer {
     centerX: number,
     centerY: number
   ): void {
+    const { RADIUS, MIDDLE_RING_THICKNESS, BORDER_OFFSET } = DISPLAY_CONSTANTS.CIRCLE;
     ctx.fillStyle = COLORS.inputRed;
-    const innerRadius = this.CIRCLE_RADIUS - this.MIDDLE_RING_THICKNESS;
+    const innerRadius = RADIUS - MIDDLE_RING_THICKNESS;
     
     this.drawRing(
       ctx,
       centerX,
       centerY,
       innerRadius,
-      this.CIRCLE_RADIUS + this.CIRCLE_BORDER_OFFSET
+      RADIUS + BORDER_OFFSET
     );
   }
 
@@ -62,9 +60,10 @@ export class CircleRenderer {
     centerX: number,
     centerY: number
   ): void {
+    const { RADIUS, MIDDLE_RING_THICKNESS, INNER_RING_THICKNESS } = DISPLAY_CONSTANTS.CIRCLE;
     ctx.fillStyle = COLORS.black;
-    const outerRadius = this.CIRCLE_RADIUS - this.MIDDLE_RING_THICKNESS;
-    const innerRadius = outerRadius - this.INNER_RING_THICKNESS;
+    const outerRadius = RADIUS - MIDDLE_RING_THICKNESS;
+    const innerRadius = outerRadius - INNER_RING_THICKNESS;
     
     this.drawRing(ctx, centerX, centerY, innerRadius, outerRadius);
   }

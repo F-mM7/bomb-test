@@ -1,6 +1,7 @@
 import { DIGIT_FONT_3x5, KATAKANA_FONT_5x5 } from "../../../fonts";
 import { toKatakana } from "../../../utils/kanaConverter";
 import { shouldShowCursor } from "../../../utils/cursorUtils";
+import { FontRenderer } from "../../../utils/fontRenderer";
 import { DISPLAY_CONSTANTS } from "../../../constants/display";
 import { COLORS } from "../../../styles/constants/colors";
 import type { Question } from "../../../types";
@@ -34,7 +35,7 @@ export class InputRenderer {
     this.INPUT_LABEL.split("").forEach((character, index) => {
       const pattern = DIGIT_FONT_3x5[character];
       if (pattern) {
-        this.renderFontPattern(
+        FontRenderer.renderFontPattern(
           ctx,
           pattern,
           INPUT.LABEL_START_X + index * INPUT.TEXT_SPACING,
@@ -58,7 +59,7 @@ export class InputRenderer {
     katakanaText.split("").forEach((character, index) => {
       const pattern = KATAKANA_FONT_5x5[character] || KATAKANA_FONT_5x5["　"];
       if (pattern) {
-        this.renderFontPattern(
+        FontRenderer.renderFontPattern(
           ctx,
           pattern,
           inputStartX + index * this.KATAKANA_SPACING,
@@ -91,19 +92,4 @@ export class InputRenderer {
     }
   }
 
-  private static renderFontPattern(
-    ctx: CanvasRenderingContext2D,
-    pattern: string[],
-    startX: number,
-    startY: number,
-    fontWidth: number
-  ): void {
-    pattern.forEach((row, y) => {
-      for (let x = 0; x < fontWidth; x++) {
-        if (row[x] === "1") {
-          ctx.fillRect(startX + x, startY + y, 1, 1);
-        }
-      }
-    });
-  }
 }

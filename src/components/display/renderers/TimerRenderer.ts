@@ -1,6 +1,7 @@
 import { DIGIT_FONT_3x5 } from "../../../fonts";
 import { DISPLAY_CONSTANTS } from "../../../constants/display";
 import { shouldShowCursor } from "../../../utils/cursorUtils";
+import { FontRenderer } from "../../../utils/fontRenderer";
 import { COLORS } from "../../../styles/constants/colors";
 
 export class TimerRenderer {
@@ -33,13 +34,13 @@ export class TimerRenderer {
       const pattern = DIGIT_FONT_3x5[character] || DIGIT_FONT_3x5["0"];
       const xOffset = index * DIGIT_WIDTH_WITH_SPACING + (index > 1 ? POSITION.SPACING : 0);
       
-      pattern.forEach((row, y) => {
-        for (let x = 0; x < POSITION.LABEL_OFFSET; x++) {
-          if (row[x] === "1") {
-            ctx.fillRect(xOffset + x, y, 1, 1);
-          }
-        }
-      });
+      FontRenderer.renderFontPattern(
+        ctx,
+        pattern,
+        xOffset,
+        0,
+        POSITION.LABEL_OFFSET
+      );
     });
   }
 

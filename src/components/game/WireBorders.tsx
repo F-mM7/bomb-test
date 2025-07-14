@@ -3,6 +3,7 @@ import {
   topBorderStyle,
   leftBorderStyle,
 } from "../../styles/components/exposedWires.styles";
+import { GRADIENTS } from "../../styles/constants/colors";
 import { scaleSize } from "../../utils/responsive";
 
 const BORDER_STYLES = {
@@ -12,7 +13,7 @@ const BORDER_STYLES = {
     left: scaleSize(17),
     right: scaleSize(14),
     height: scaleSize(1),
-    background: "linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.5), rgba(0,0,0,0.8))",
+    background: GRADIENTS.borderHorizontal,
   },
   rightVertical: {
     position: "absolute" as const,
@@ -20,7 +21,7 @@ const BORDER_STYLES = {
     right: scaleSize(14),
     width: scaleSize(1),
     bottom: scaleSize(14),
-    background: "linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.5))",
+    background: GRADIENTS.borderVertical,
   }
 };
 

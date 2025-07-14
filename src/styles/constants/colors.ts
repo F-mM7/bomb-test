@@ -24,6 +24,8 @@ export const GRADIENTS = {
   keyButton: "linear-gradient(to bottom, #f8f8f8 0%, #e8e8e8 50%, #d8d8d8 100%)",
   display: "linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 50%, #151515 100%)",
   exposedWires: "linear-gradient(145deg, #020202 0%, #080808 30%, #0f0f0f 70%, #050505 100%)",
+  borderHorizontal: "linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.5), rgba(0,0,0,0.8))",
+  borderVertical: "linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.5))",
 } as const;
 
 export const SHADOWS = {
@@ -36,4 +38,7 @@ export const SHADOWS = {
   keyboard: "0 4px 8px rgba(0,0,0,0.6), 0 2px 4px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1)",
   keyButton: "0 2px 4px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.8)",
   exposedWires: "inset 0 8px 16px rgba(0,0,0,0.98), inset 0 -3px 6px rgba(0,0,0,0.9), 0 1px 2px rgba(0,0,0,0.4)",
+  pcb: "0 4px 8px rgba(0,0,0,0.6), inset 0 -2px 4px rgba(0,0,0,0.4)",
+  screw: "inset 0 1px 2px rgba(0,0,0,0.4)",
+  displayMount: "0 3px 6px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.1)",
 } as const;
