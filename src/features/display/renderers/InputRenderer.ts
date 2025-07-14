@@ -1,6 +1,6 @@
 import { DIGIT_FONT_3x5, KATAKANA_FONT_5x5 } from "../../../fonts";
-import { toKatakana } from "../../../utils/kanaConverter";
-import { shouldShowCursor } from "../../../utils/cursorUtils";
+import { toKatakana } from "../utils/kanaConverter";
+import { shouldShowCursor } from "../../timer/utils/cursorUtils";
 import { FontRenderer } from "../../../utils/fontRenderer";
 import { DISPLAY_CONSTANTS } from "../constants";
 import { COLORS } from "../../../constants/colors";

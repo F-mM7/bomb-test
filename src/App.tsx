@@ -1,6 +1,5 @@
 import React from "react";
-import StartPage from "./components/pages/StartPage";
-import MainPage from "./components/pages/MainPage";
+import { StartPage, MainPage } from "./features/game";
 import { useGameState } from "./features/game";
 
 const App: React.FC = () => {

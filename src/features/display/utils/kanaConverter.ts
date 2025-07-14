@@ -1,4 +1,4 @@
-import { DISPLAY_CONSTANTS } from "../features/display/constants";
+import { DISPLAY_CONSTANTS } from "../constants";
 
 const SMALL_LETTER_MAP: Readonly<Record<string, string>> = {
   'ぁ': 'ァ', 'ぃ': 'ィ', 'ぅ': 'ゥ', 'ぇ': 'ェ', 'ぉ': 'ォ',

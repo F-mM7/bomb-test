@@ -1,4 +1,4 @@
-import { TIMER_CONSTANTS } from "../features/timer/constants";
+import { TIMER_CONSTANTS } from "../constants";
 
 export function shouldShowCursor(
   isPaused: boolean,

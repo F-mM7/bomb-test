@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import { Device, TweetButton } from "../../features/game";
-import { containerStyle, bombBodyStyle } from "../../features/game/styles";
-import { useGameOrchestration } from "../../features/game";
-import { useResponsiveSetup } from "../../utils/useResponsiveSetup";
-import { useKeyboardDetachment } from "../../features/keyboard/hooks/useKeyboardDetachment";
-import "../../features/game/styles/explosion.css";
+import { Device, TweetButton } from "../index";
+import { containerStyle, bombBodyStyle } from "../styles";
+import { useGameOrchestration } from "../hooks/useGameOrchestration";
+import { useResponsiveSetup } from "../../../utils/useResponsiveSetup";
+import { useKeyboardDetachment } from "../../keyboard/hooks/useKeyboardDetachment";
+import "../styles/explosion.css";
 
 const MainPage: React.FC = () => {
   const { containerRef } = useResponsiveSetup();

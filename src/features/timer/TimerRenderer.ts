@@ -1,6 +1,6 @@
 import { DIGIT_FONT_3x5 } from "../../fonts";
 import { TIMER_CONSTANTS } from "./constants";
-import { shouldShowCursor } from "../../utils/cursorUtils";
+import { shouldShowCursor } from "./utils/cursorUtils";
 import { FontRenderer } from "../../utils/fontRenderer";
 import { COLORS } from "../../constants/colors";
 

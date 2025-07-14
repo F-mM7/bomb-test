@@ -1,6 +1,8 @@
 // Components
 export { default as Device } from './components/Device';
 export { default as TweetButton } from './components/TweetButton';
+export { default as MainPage } from './components/MainPage';
+export { default as StartPage } from './components/StartPage';
 
 // Types
 export * from './types/game.types';
