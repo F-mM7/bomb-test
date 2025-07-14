@@ -1,10 +1,10 @@
 import { useMemo } from 'react';
-import { useTimer } from '../features/timer';
-import { useGameState } from '../features/game';
+import { useTimer } from '../../timer';
+import { useGameState } from './useGameState';
 import { useBombState } from './useBombState';
-import { useWireHandler } from '../features/wires';
-import { useAnswerHandler } from '../features/game/hooks/useAnswerHandler';
-import { questionBitmaps } from '../features/game/data/questions';
+import { useWireHandler } from '../../wires';
+import { useAnswerHandler } from './useAnswerHandler';
+import { questionBitmaps } from '../data/questions';
 
 export const useGameOrchestration = () => {
   const remaining = useTimer();

@@ -9,9 +9,9 @@ import {
   startButtonStyle,
   startButtonHoverStyle,
   timerWarningStyle,
-} from "../../styles/components/startPage.styles";
+} from "../../features/game/styles/startPage.styles";
 import { GameStorage } from "../../features/game";
-import "../../styles/global/startPage.css";
+import "../../features/game/styles/startPage.css";
 
 interface StartPageProps {
   onStart?: () => void;

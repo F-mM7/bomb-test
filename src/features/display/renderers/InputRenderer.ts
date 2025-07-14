@@ -3,7 +3,7 @@ import { toKatakana } from "../../../utils/kanaConverter";
 import { shouldShowCursor } from "../../../utils/cursorUtils";
 import { FontRenderer } from "../../../utils/fontRenderer";
 import { DISPLAY_CONSTANTS } from "../constants";
-import { COLORS } from "../../../styles/constants/colors";
+import { COLORS } from "../../../constants/colors";
 import type { Question } from "../../game/types/question.types";
 
 export class InputRenderer {

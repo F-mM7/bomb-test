@@ -2,7 +2,7 @@ import React from "react";
 import SvgWire from "./SvgWire";
 import type { WirePosition } from "../../game/types/game.types";
 import { BASE_SIZES, scaleSize } from "../../../utils/responsive";
-import { Z_INDEX } from "../../../styles/constants/zIndex";
+import { Z_INDEX } from "../../../constants/zIndex";
 
 interface WireContainerProps {
   onWireClick: (wire: WirePosition) => void;

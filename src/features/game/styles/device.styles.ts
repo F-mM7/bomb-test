@@ -1,5 +1,5 @@
-import { COLORS, GRADIENTS, SHADOWS } from "../constants/colors";
-import { scaleSize, BASE_SIZES } from "../../utils/responsive";
+import { COLORS, GRADIENTS, SHADOWS } from "../../../constants/colors";
+import { scaleSize, BASE_SIZES } from "../../../utils/responsive";
 
 export const pcbStyle = {
   background: COLORS.pcbGreen,

@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import { Display } from "../../display";
 import { Keyboard } from "../../keyboard";
 import { ExposedWires, WireLayer } from "../../wires";
-import { pcbStyle, screwStyle, displayMountStyle } from "../../../styles";
+import { pcbStyle, screwStyle, displayMountStyle } from "../styles";
 import { BASE_SIZES, scaleSize } from "../../../utils/responsive";
 import type { Question } from "../types/question.types";
-import { Z_INDEX } from "../../../styles/constants/zIndex";
+import { Z_INDEX } from "../../../constants/zIndex";
 
 interface DeviceProps {
   isKeyboardAttached: boolean;

@@ -1,4 +1,4 @@
-import { GRADIENTS, SHADOWS } from '../../styles/constants/colors';
+import { GRADIENTS, SHADOWS } from '../../constants/colors';
 import { scaleSize, BASE_SIZES } from '../../utils/responsive';
 
 export const exposedWiresContainerStyle = {

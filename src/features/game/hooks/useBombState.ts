@@ -1,8 +1,8 @@
 import { useCallback } from 'react';
-import { useWireState } from '../features/wires';
-import { useInputState } from '../features/game/hooks/useInputState';
-import { useGameCompletionState } from '../features/game/hooks/useGameCompletionState';
-import { useKeyboardState } from '../features/keyboard/hooks/useKeyboardState';
+import { useWireState } from '../../wires';
+import { useInputState } from './useInputState';
+import { useGameCompletionState } from './useGameCompletionState';
+import { useKeyboardState } from '../../keyboard/hooks/useKeyboardState';
 
 export const useBombState = () => {
   const wireState = useWireState();

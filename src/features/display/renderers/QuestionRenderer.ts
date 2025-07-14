@@ -1,6 +1,6 @@
 import { questionBitmaps } from "../../game/data/questions";
 import { DISPLAY_CONSTANTS } from "../constants";
-import { COLORS } from "../../../styles/constants/colors";
+import { COLORS } from "../../../constants/colors";
 import type { Question } from "../../game/types/question.types";
 
 export class QuestionRenderer {

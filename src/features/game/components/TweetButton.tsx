@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Z_INDEX } from "../../../styles/constants/zIndex";
+import { Z_INDEX } from "../../../constants/zIndex";
 
 interface TweetButtonProps {
   isCleared: boolean;

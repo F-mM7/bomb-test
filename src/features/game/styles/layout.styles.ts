@@ -1,4 +1,4 @@
-import { scaleSize, BASE_SIZES } from "../../utils/responsive";
+import { scaleSize, BASE_SIZES } from "../../../utils/responsive";
 
 export const containerStyle = {
   display: "flex",

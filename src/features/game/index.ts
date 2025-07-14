@@ -12,6 +12,8 @@ export { useAnswerHandler } from './hooks/useAnswerHandler';
 export { useInputState } from './hooks/useInputState';
 export { useExplosionState } from './hooks/useExplosionState';
 export { useGameCompletionState } from './hooks/useGameCompletionState';
+export { useBombState } from './hooks/useBombState';
+export { useGameOrchestration } from './hooks/useGameOrchestration';
 
 // Services
 export { GameStorage } from './services/gameStorage';

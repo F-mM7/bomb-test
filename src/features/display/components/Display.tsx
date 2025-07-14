@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import type { DisplayProps } from "../types/display.types";
-import { COLORS } from "../../../styles/constants/colors";
+import { COLORS } from "../../../constants/colors";
 import { TimerRenderer } from "../../timer";
 import { 
   StatusRenderer, 

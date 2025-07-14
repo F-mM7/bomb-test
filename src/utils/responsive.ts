@@ -3,7 +3,7 @@
  * 全てのコンポーネントサイズを基準サイズ × グローバルスケールで管理
  */
 
-import { Z_INDEX_CSS_VARS } from "../styles/constants/zIndex";
+import { Z_INDEX_CSS_VARS } from "../constants/zIndex";
 
 // 基準サイズ定数
 export const BASE_SIZES = {

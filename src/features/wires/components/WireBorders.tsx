@@ -3,7 +3,7 @@ import {
   topBorderStyle,
   leftBorderStyle,
 } from "../styles";
-import { GRADIENTS } from "../../../styles/constants/colors";
+import { GRADIENTS } from "../../../constants/colors";
 import { scaleSize } from "../../../utils/responsive";
 
 const BORDER_STYLES = {
