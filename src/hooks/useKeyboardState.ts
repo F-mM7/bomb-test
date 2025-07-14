@@ -3,8 +3,9 @@ import { GameStorage } from '../features/game';
 
 export const useKeyboardState = () => {
   const [isKeyboardAttached, setIsKeyboardAttached] = useState<boolean>(() => {
-    // ステージ4に一度到達済みなら最初からキーボードを非表示
-    return !GameStorage.getStage4Reached();
+    // ステージ4以降なら最初からキーボードを非表示
+    const progress = GameStorage.getGameProgress();
+    return !progress || progress.currentQuestion < 4;
   });
 
   return {
