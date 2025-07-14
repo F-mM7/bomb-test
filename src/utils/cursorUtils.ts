@@ -1,4 +1,4 @@
-import { DISPLAY_CONSTANTS } from "../constants/display";
+import { TIMER_CONSTANTS } from "../features/timer/constants";
 
 export function shouldShowCursor(
   isPaused: boolean,
@@ -9,7 +9,7 @@ export function shouldShowCursor(
   }
 
   const { CURSOR_BLINK_THRESHOLD, MILLISECONDS_PER_SECOND } =
-    DISPLAY_CONSTANTS.TIMER;
+    TIMER_CONSTANTS;
 
   return (
     remaining <= 0 ||

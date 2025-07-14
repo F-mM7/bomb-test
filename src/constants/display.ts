@@ -1,10 +1,4 @@
-// Re-export timer constants for backward compatibility
-import { TIMER_CONSTANTS } from '../features/timer/constants';
-
 export const DISPLAY_CONSTANTS = {
-  // Timer display (re-exported for backward compatibility)
-  TIMER: TIMER_CONSTANTS,
-
   // Input display
   INPUT: {
     LABEL_START_X: 27,
@@ -31,9 +25,8 @@ export const DISPLAY_CONSTANTS = {
     BORDER_OFFSET: 0.5,
   },
 
-  // Animation timings
+  // Animation timings (non-timer related)
   ANIMATION: {
-    TIMER_UPDATE_INTERVAL: 10,
     EXPLOSION_DELAY: 500,
   },
 

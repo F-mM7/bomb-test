@@ -1,69 +1,37 @@
-import { useState, useCallback } from 'react';
+import { useCallback } from 'react';
 import { useWireState } from '../features/wires';
-import { useExplosionState } from './useExplosionState';
 import { useInputState } from './useInputState';
-import { GameStorage } from '../features/game';
+import { useGameCompletionState } from './useGameCompletionState';
+import { useKeyboardState } from './useKeyboardState';
 
 export const useBombState = () => {
   const wireState = useWireState();
-  const explosionState = useExplosionState();
   const inputState = useInputState();
-  
-  const [isCleared, setIsCleared] = useState<boolean>(() => GameStorage.initializeBooleanFromGameState('cleared'));
-  const [isFailed, setIsFailed] = useState<boolean>(() => GameStorage.initializeBooleanFromGameState('failed'));
-  const [finalTime, setFinalTime] = useState<number | null>(() => GameStorage.initializeFinalTime());
-  const [isKeyboardAttached, setIsKeyboardAttached] = useState<boolean>(() => {
-    // ステージ4に一度到達済みなら最初からキーボードを非表示
-    return !GameStorage.getStage4Reached();
-  });
-  const markAsCleared = useCallback((remaining: number, onGameClear: () => void) => {
-    setIsCleared(true);
-    setFinalTime(remaining);
-    GameStorage.setWireCutState('left', true);
-    GameStorage.setFinalTime(remaining);
-    GameStorage.saveGameProgressWithCurrentQuestion(4, 'cleared');
-    
-    onGameClear();
-  }, []);
-
-  const markAsFailed = useCallback((remaining: number) => {
-    if (!isFailed) {
-      explosionState.triggerExplosion(() => {
-        setIsFailed(true);
-        setFinalTime(remaining);
-        
-        const currentProgress = GameStorage.getGameProgress();
-        const currentQuestion = currentProgress ? currentProgress.currentQuestion : 4;
-        
-        GameStorage.setFinalTime(remaining);
-        GameStorage.saveGameProgressWithCurrentQuestion(currentQuestion, 'failed');
-      });
-    }
-  }, [isFailed, explosionState]);
+  const completionState = useGameCompletionState();
+  const keyboardState = useKeyboardState();
 
   const updateInput = useCallback((value: string | ((prev: string) => string)) => {
-    inputState.updateInput(value, !isFailed);
-  }, [isFailed, inputState]);
+    inputState.updateInput(value, !completionState.isFailed);
+  }, [completionState.isFailed, inputState]);
 
   return {
-    isCleared,
-    isFailed,
-    finalTime,
+    // Game completion state
+    ...completionState,
+    
+    // Wire state
     isRightCut: wireState.isRightCut,
     isLeftCut: wireState.isLeftCut,
-    showExplosion: explosionState.showExplosion,
+    cutWire: wireState.cutWire,
+    
+    // Input state
     showCorrect: inputState.showCorrect,
     input: inputState.input,
-    isKeyboardAttached,
-    markAsCleared,
-    markAsFailed,
-    cutWire: wireState.cutWire,
     showCorrectAnswer: inputState.showCorrectAnswer,
     hideCorrectAnswer: inputState.hideCorrectAnswer,
     clearInput: inputState.clearInput,
     updateInput,
-    setIsKeyboardAttached,
-    isPaused: isCleared || isFailed,
-    displayTime: finalTime
+    
+    // Keyboard state
+    ...keyboardState,
   };
 };
