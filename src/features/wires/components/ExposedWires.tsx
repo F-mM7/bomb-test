@@ -11,9 +11,8 @@ const ExposedWires: React.FC<ExposedWiresProps> = ({
   onWireClick,
   isLeftCut = false,
   isRightCut = false,
-  disabled = false,
 }) => {
-  const wireStyleWithState = getWireStyleWithState(disabled);
+  const wireStyleWithState = getWireStyleWithState(false);
 
   return (
     <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
@@ -24,7 +23,7 @@ const ExposedWires: React.FC<ExposedWiresProps> = ({
           isLeftCut={isLeftCut}
           isRightCut={isRightCut}
           wireStyle={wireStyleWithState}
-          disabled={disabled}
+          disabled={false}
         />
       </div>
     </div>
