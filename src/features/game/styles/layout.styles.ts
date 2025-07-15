@@ -8,7 +8,6 @@ export const containerStyle = {
   width: "100vw",
   height: "100vh",
   gap: scaleSize(BASE_SIZES.SPACING_LG),
-  boxSizing: "border-box" as const,
 };
 
 export const bombBodyStyle = {
@@ -22,5 +21,4 @@ export const bombBodyStyle = {
   textAlign: "center" as const,
   position: "relative" as const,
   overflow: "visible" as const,
-  boxSizing: "border-box" as const,
 };

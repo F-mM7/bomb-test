@@ -33,7 +33,6 @@ export const contentBoxStyle = {
   border: `1px solid rgba(255, 68, 68, 0.3)`,
   backdropFilter: "blur(10px)",
   width: "calc(100% - 40px)",
-  boxSizing: "border-box" as const,
   margin: "0 auto",
 };
 

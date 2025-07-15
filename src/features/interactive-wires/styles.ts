@@ -10,7 +10,6 @@ export const exposedWiresContainerStyle = {
   boxShadow: SHADOWS.exposedWires,
   border: `${scaleSize(BASE_SIZES.KEYBOARD_BORDER_WIDTH)} solid #000`,
   position: "relative" as const,
-  boxSizing: "border-box" as const,
 };
 
 export const topBorderStyle = {

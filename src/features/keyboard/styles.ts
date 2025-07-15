@@ -9,7 +9,6 @@ export const keyboardStyle = {
   boxShadow: SHADOWS.keyboard,
   border: `${scaleSize(BASE_SIZES.KEYBOARD_BORDER_WIDTH)} solid #0a0a0a`,
   position: "relative" as const,
-  boxSizing: "border-box" as const,
 };
 
 export const buttonContainerStyle = {

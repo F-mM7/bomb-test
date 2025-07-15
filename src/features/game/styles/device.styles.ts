@@ -9,7 +9,6 @@ export const pcbStyle = {
   display: "inline-block",
   border: `${scaleSize(BASE_SIZES.PCB_BORDER_WIDTH)} solid ${COLORS.pcbGreen}`,
   position: "relative" as const,
-  boxSizing: "border-box" as const,
   height: scaleSize(BASE_SIZES.PCB_HEIGHT),
 };
 
