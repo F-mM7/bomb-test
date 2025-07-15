@@ -1,14 +1,13 @@
 import { GRADIENTS, SHADOWS } from "../../constants/colors";
 import { scaleSize, BASE_SIZES } from "../../utils/responsive";
+import { commonPatterns } from "../../styles/common";
 
 export const keyboardStyle = {
+  ...commonPatterns.baseContainer,
   width: scaleSize(BASE_SIZES.KEYBOARD_OUTER_WIDTH),
   background: GRADIENTS.keyboard,
-  borderRadius: scaleSize(BASE_SIZES.CONTAINER_BORDER_RADIUS),
-  padding: scaleSize(BASE_SIZES.CONTAINER_PADDING),
   boxShadow: SHADOWS.keyboard,
   border: `${scaleSize(BASE_SIZES.KEYBOARD_BORDER_WIDTH)} solid #0a0a0a`,
-  position: "relative" as const,
 };
 
 export const buttonContainerStyle = {

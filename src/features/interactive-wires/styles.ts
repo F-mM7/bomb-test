@@ -1,15 +1,14 @@
 import { GRADIENTS, SHADOWS } from "../../constants/colors";
 import { scaleSize, BASE_SIZES } from "../../utils/responsive";
+import { commonPatterns } from "../../styles/common";
 
 export const exposedWiresContainerStyle = {
+  ...commonPatterns.baseContainer,
   width: scaleSize(BASE_SIZES.KEYBOARD_OUTER_WIDTH),
   height: scaleSize(BASE_SIZES.KEYBOARD_WITH_PADDING_HEIGHT),
   background: GRADIENTS.exposedWires,
-  borderRadius: scaleSize(BASE_SIZES.CONTAINER_BORDER_RADIUS),
-  padding: scaleSize(BASE_SIZES.CONTAINER_PADDING),
   boxShadow: SHADOWS.exposedWires,
   border: `${scaleSize(BASE_SIZES.KEYBOARD_BORDER_WIDTH)} solid #000`,
-  position: "relative" as const,
 };
 
 export const topBorderStyle = {

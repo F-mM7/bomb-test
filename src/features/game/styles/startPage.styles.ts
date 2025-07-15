@@ -1,10 +1,8 @@
 import { COLORS, GRADIENTS, SHADOWS } from "../../../constants/colors";
+import { commonPatterns } from "../../../styles/common";
 
 export const startPageContainerStyle = {
-  display: "flex",
-  flexDirection: "column" as const,
-  alignItems: "center" as const,
-  justifyContent: "center" as const,
+  ...commonPatterns.flexCenterColumn,
   minHeight: "100vh",
   padding: "40px 20px",
   textAlign: "center" as const,
