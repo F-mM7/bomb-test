@@ -1,8 +1,8 @@
-import { GRADIENTS, SHADOWS } from '../../constants/colors';
-import { scaleSize, BASE_SIZES } from '../../utils/responsive';
+import { GRADIENTS, SHADOWS } from "../../constants/colors";
+import { scaleSize, BASE_SIZES } from "../../utils/responsive";
 
 export const keyboardStyle = {
-  width: scaleSize(BASE_SIZES.CONTAINER_WIDTH),
+  width: scaleSize(BASE_SIZES.KEYBOARD_OUTER_WIDTH),
   background: GRADIENTS.keyboard,
   borderRadius: scaleSize(BASE_SIZES.CONTAINER_BORDER_RADIUS),
   padding: scaleSize(BASE_SIZES.CONTAINER_PADDING),
@@ -41,27 +41,31 @@ export const baseButtonStyle = {
   alignItems: "center",
   justifyContent: "center",
   padding: "0",
-  fontSize: scaleSize(BASE_SIZES.BUTTON_SIZE * 0.36),
+  fontSize: scaleSize(BASE_SIZES.BUTTON_FONSTIZE),
 };
 
 export const actionRowStyle = {
   display: "flex",
   gap: scaleSize(BASE_SIZES.BUTTON_GAP),
   justifyContent: "flex-end" as const,
-  width: scaleSize(BASE_SIZES.BUTTON_SIZE * 11 + BASE_SIZES.BUTTON_GAP * 10),
+  width: scaleSize(BASE_SIZES.KEYBOARD_INNER_WIDTH),
 };
 
 export const actionButtonStyle = {
   ...baseButtonStyle,
-  width: scaleSize(BASE_SIZES.BUTTON_SIZE * 2 + BASE_SIZES.BUTTON_GAP),
-  fontSize: scaleSize(BASE_SIZES.BUTTON_SIZE * 0.32),
+  width: scaleSize(BASE_SIZES.ACTION_BUTTON_WIDTH),
+  fontSize: scaleSize(BASE_SIZES.BUTTON_FONSTIZE),
   padding: scaleSize(BASE_SIZES.KEYBOARD_BUTTON_PADDING),
 };
 
 export const gridStyle = (groupCount: number) => ({
   display: "grid",
-  gridTemplateColumns: `repeat(${groupCount}, ${scaleSize(BASE_SIZES.BUTTON_SIZE)})`,
-  gridTemplateRows: `repeat(${BASE_SIZES.KEYBOARD_ROWS}, ${scaleSize(BASE_SIZES.BUTTON_SIZE)})`,
+  gridTemplateColumns: `repeat(${groupCount}, ${scaleSize(
+    BASE_SIZES.BUTTON_SIZE
+  )})`,
+  gridTemplateRows: `repeat(${BASE_SIZES.KEYBOARD_ROWS}, ${scaleSize(
+    BASE_SIZES.BUTTON_SIZE
+  )})`,
   gridGap: scaleSize(BASE_SIZES.BUTTON_GAP),
 });
 
@@ -81,4 +85,3 @@ export const BUTTON_STATES = {
     opacity: 0.6,
   },
 };
-

@@ -17,7 +17,7 @@ export const BASE_SIZES = {
   DISPLAY_WIDTH: 640, // ディスプレイキャンバスの幅
   DISPLAY_HEIGHT: 360, // ディスプレイキャンバスの高さ
 
-  // ディスプレイマウント用
+  // ディスプレイマウント
   DISPLAY_MOUNT_PADDING: 7, // ディスプレイマウントの内部パディング
   DISPLAY_MOUNT_MARGIN: 10, // ディスプレイマウントの下マージン
   DISPLAY_MOUNT_BORDER_WIDTH: 1, // ディスプレイマウントの境界線幅
@@ -27,8 +27,13 @@ export const BASE_SIZES = {
   KEYBOARD_COLUMNS: 11, // キーボードの列数
 
   // キーボードボタン
-  BUTTON_SIZE: 53, // 各ボタンの幅・高さ
-  BUTTON_GAP: 6, // ボタン間の隙間
+  BUTTON_SIZE: 53,
+  BUTTON_GAP: 6,
+  BUTTON_FONSTIZE: 32,
+
+  get ACTION_BUTTON_WIDTH() {
+    return this.BUTTON_SIZE * 2 + this.BUTTON_GAP;
+  },
 
   get KEYBOARD_INNER_WIDTH() {
     return (
@@ -48,14 +53,13 @@ export const BASE_SIZES = {
   CONTAINER_PADDING: 6, // キーボードと露出ワイヤーの内部パディング
   CONTAINER_BORDER_RADIUS: 4, // 角丸半径
 
-  // コンテナ幅は内部幅 + パディングで計算
-  get CONTAINER_WIDTH() {
+  get KEYBOARD_OUTER_WIDTH() {
     return this.KEYBOARD_INNER_WIDTH + this.CONTAINER_PADDING * 2;
   },
 
   // ディスプレイ全体の高さ（マウント部分込み）
   get DISPLAY_TOTAL_HEIGHT() {
-    return this.DISPLAY_HEIGHT + this.SPACING_LG * 2;
+    return this.DISPLAY_HEIGHT + this.CONTAINER_PADDING * 2;
   },
 
   // デバイス全体の高さ（キーボード + ディスプレイ + パディング）

@@ -2,7 +2,7 @@ import { GRADIENTS, SHADOWS } from "../../constants/colors";
 import { scaleSize, BASE_SIZES } from "../../utils/responsive";
 
 export const exposedWiresContainerStyle = {
-  width: scaleSize(BASE_SIZES.CONTAINER_WIDTH),
+  width: scaleSize(BASE_SIZES.KEYBOARD_OUTER_WIDTH),
   height: scaleSize(
     BASE_SIZES.KEYBOARD_INNER_HEIGHT + BASE_SIZES.CONTAINER_PADDING * 2
   ),
