@@ -1,5 +1,5 @@
 import React from "react";
-import SvgWire from "./SvgWire";
+import BasicWire from "./BasicWire";
 import { scaleSize, BASE_SIZES } from "../../../utils/responsive";
 import { Z_INDEX } from "../../../constants/zIndex";
 
@@ -122,7 +122,7 @@ const WireLayer: React.FC = () => {
       }}
     >
       {wireConfigs.map((config, index) => (
-        <SvgWire
+        <BasicWire
           key={index}
           d={generateWirePath(config)}
           stroke={config.color}

@@ -1,5 +1,5 @@
 import React from "react";
-import SvgWire from "./SvgWire";
+import GameWire from "./GameWire";
 import type { WirePosition } from "../../game/types/game.types";
 import { BASE_SIZES, scaleSize } from "../../../utils/responsive";
 import { Z_INDEX } from "../../../constants/zIndex";
@@ -38,13 +38,13 @@ const WireContainer: React.FC<WireContainerProps> = ({
           zIndex: Z_INDEX.EXPOSED_WIRES,
         }}
       >
-        <SvgWire
+        <GameWire
           position="left"
           isCut={isLeftCut}
           wireStyle={wireStyle}
           onWireClick={onWireClick}
         />
-        <SvgWire
+        <GameWire
           position="right"
           isCut={isRightCut}
           wireStyle={wireStyle}
