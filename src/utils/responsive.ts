@@ -29,6 +29,7 @@ export const BASE_SIZES = {
     );
   },
   get KEYBOARD_INNER_HEIGHT() {
+    //ActionKeyの分1行多い
     return (
       (this.KEYBOARD_ROWS + 1) * this.BUTTON_SIZE +
       this.KEYBOARD_ROWS * this.BUTTON_GAP
