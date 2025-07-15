@@ -72,29 +72,29 @@ const Device: React.FC<DeviceProps> = ({
         <div
           style={{
             ...screwStyle,
-            top: scaleSize(BASE_SIZES.SPACING_SM),
-            left: scaleSize(BASE_SIZES.SPACING_SM),
+            top: scaleSize(BASE_SIZES.PCB_BORDER_RADIUS),
+            left: scaleSize(BASE_SIZES.PCB_BORDER_RADIUS),
           }}
         />
         <div
           style={{
             ...screwStyle,
-            top: scaleSize(BASE_SIZES.SPACING_SM),
-            right: scaleSize(BASE_SIZES.SPACING_SM),
+            top: scaleSize(BASE_SIZES.PCB_BORDER_RADIUS),
+            right: scaleSize(BASE_SIZES.PCB_BORDER_RADIUS),
           }}
         />
         <div
           style={{
             ...screwStyle,
-            bottom: scaleSize(BASE_SIZES.SPACING_SM),
-            left: scaleSize(BASE_SIZES.SPACING_SM),
+            bottom: scaleSize(BASE_SIZES.PCB_BORDER_RADIUS),
+            left: scaleSize(BASE_SIZES.PCB_BORDER_RADIUS),
           }}
         />
         <div
           style={{
             ...screwStyle,
-            bottom: scaleSize(BASE_SIZES.SPACING_SM),
-            right: scaleSize(BASE_SIZES.SPACING_SM),
+            bottom: scaleSize(BASE_SIZES.PCB_BORDER_RADIUS),
+            right: scaleSize(BASE_SIZES.PCB_BORDER_RADIUS),
           }}
         />
 
@@ -128,7 +128,9 @@ const Device: React.FC<DeviceProps> = ({
                 animationPhase === "moving" ||
                 animationPhase === "settled" ||
                 animationPhase === "fading"
-                  ? `translateY(${scaleSize(50)}) rotateX(-15deg) rotateZ(3deg) scale(0.98)`
+                  ? `translateY(${scaleSize(
+                      50
+                    )}) rotateX(-15deg) rotateZ(3deg) scale(0.98)`
                   : "translateY(0) rotateX(0deg) rotateZ(0deg) scale(1)",
               opacity: animationPhase === "fading" ? 0 : 1,
               transition:

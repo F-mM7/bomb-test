@@ -41,7 +41,7 @@ export const baseButtonStyle = {
   alignItems: "center",
   justifyContent: "center",
   padding: "0",
-  fontSize: scaleSize(BASE_SIZES.BUTTON_FONSTIZE),
+  fontSize: scaleSize(BASE_SIZES.BUTTON_FONTSIZE),
 };
 
 export const actionRowStyle = {
@@ -54,7 +54,7 @@ export const actionRowStyle = {
 export const actionButtonStyle = {
   ...baseButtonStyle,
   width: scaleSize(BASE_SIZES.ACTION_BUTTON_WIDTH),
-  fontSize: scaleSize(BASE_SIZES.BUTTON_FONSTIZE),
+  fontSize: scaleSize(BASE_SIZES.BUTTON_FONTSIZE),
   padding: scaleSize(BASE_SIZES.KEYBOARD_BUTTON_PADDING),
 };
 

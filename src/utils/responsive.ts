@@ -9,7 +9,6 @@ import { Z_INDEX_CSS_VARS } from "../constants/zIndex";
 export const BASE_SIZES = {
   // スペーシング
   SPACING_XS: 4,
-  SPACING_SM: 8,
   SPACING_MD: 12,
   SPACING_LG: 16,
 
@@ -29,7 +28,7 @@ export const BASE_SIZES = {
   // キーボードボタン
   BUTTON_SIZE: 53,
   BUTTON_GAP: 6,
-  BUTTON_FONSTIZE: 32,
+  BUTTON_FONTSIZE: 32,
 
   get ACTION_BUTTON_WIDTH() {
     return this.BUTTON_SIZE * 2 + this.BUTTON_GAP;
@@ -84,6 +83,9 @@ export const BASE_SIZES = {
   // 基盤（PCB）スタイル用
   PCB_HEIGHT: 780, // 基盤の高さ
   PCB_BORDER_WIDTH: 2, // 基盤の境界線幅
+  PCB_BORDER_RADIUS: 8,
+
+  SCREW_SISZE: 8,
 
   // キーボード装飾用
   KEYBOARD_BORDER_WIDTH: 1, // キーボードの境界線幅

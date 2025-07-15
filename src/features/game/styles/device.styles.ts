@@ -3,13 +3,11 @@ import { scaleSize, BASE_SIZES } from "../../../utils/responsive";
 
 export const pcbStyle = {
   background: COLORS.pcbGreen,
-  borderRadius: scaleSize(BASE_SIZES.SPACING_SM),
+  borderRadius: scaleSize(BASE_SIZES.PCB_BORDER_RADIUS),
   padding: scaleSize(BASE_SIZES.SPACING_MD),
   boxShadow: SHADOWS.pcb,
   display: "inline-block",
-  border: `${scaleSize(BASE_SIZES.PCB_BORDER_WIDTH)} solid ${
-    COLORS.pcbGreen
-  }`,
+  border: `${scaleSize(BASE_SIZES.PCB_BORDER_WIDTH)} solid ${COLORS.pcbGreen}`,
   position: "relative" as const,
   boxSizing: "border-box" as const,
   height: scaleSize(BASE_SIZES.PCB_HEIGHT),
@@ -17,8 +15,8 @@ export const pcbStyle = {
 
 export const screwStyle = {
   position: "absolute" as const,
-  width: scaleSize(BASE_SIZES.SPACING_SM),
-  height: scaleSize(BASE_SIZES.SPACING_SM),
+  width: scaleSize(BASE_SIZES.SCREW_SISZE),
+  height: scaleSize(BASE_SIZES.SCREW_SISZE),
   borderRadius: "50%",
   background: "radial-gradient(circle at 30% 30%, #e0e0e0, #808080)",
   boxShadow: SHADOWS.screw,
