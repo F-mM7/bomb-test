@@ -98,6 +98,17 @@ export const BASE_SIZES = {
 
   WIRE_LAYER_OFFSET: 100, // SVGレイヤーのオフセット
   WIRE_LAYER_OVERFLOW: 200, // SVGレイヤーのはみ出し分
+
+  // 計算済み定数（よく使われる計算式を事前定義）
+  get KEYBOARD_WITH_PADDING_HEIGHT() {
+    return this.KEYBOARD_INNER_HEIGHT + this.CONTAINER_PADDING * 2;
+  },
+  get KEYBOARD_WITH_PADDING_HEIGHT_NEGATIVE() {
+    return -(this.KEYBOARD_INNER_HEIGHT + this.CONTAINER_PADDING * 2);
+  },
+  get WIRE_SPACING() {
+    return this.KEYBOARD_INNER_WIDTH / 3;
+  },
 } as const;
 
 // スケール設定

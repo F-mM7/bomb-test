@@ -3,9 +3,7 @@ import { scaleSize, BASE_SIZES } from "../../utils/responsive";
 
 export const exposedWiresContainerStyle = {
   width: scaleSize(BASE_SIZES.KEYBOARD_OUTER_WIDTH),
-  height: scaleSize(
-    BASE_SIZES.KEYBOARD_INNER_HEIGHT + BASE_SIZES.CONTAINER_PADDING * 2
-  ),
+  height: scaleSize(BASE_SIZES.KEYBOARD_WITH_PADDING_HEIGHT),
   background: GRADIENTS.exposedWires,
   borderRadius: scaleSize(BASE_SIZES.CONTAINER_BORDER_RADIUS),
   padding: scaleSize(BASE_SIZES.CONTAINER_PADDING),
