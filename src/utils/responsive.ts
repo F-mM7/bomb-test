@@ -8,7 +8,6 @@ import { Z_INDEX_CSS_VARS } from "../constants/zIndex";
 // 基準サイズ定数
 export const BASE_SIZES = {
   // キーボード・露出ワイヤー共通コンテナ（基盤上の部品用）
-  CONTAINER_WIDTH: 640, // キーボードと露出ワイヤーの幅
   CONTAINER_PADDING: 12, // キーボードと露出ワイヤーの内部パディング
   CONTAINER_BORDER_RADIUS: 4, // 角丸半径
 
@@ -16,25 +15,29 @@ export const BASE_SIZES = {
   GLOBAL_CONTAINER_PADDING: 0, // ページ全体のパディング
 
   // キーボードボタン
-  BUTTON_SIZE: 50, // 各ボタンの幅・高さ
+  BUTTON_SIZE: 52, // 各ボタンの幅・高さ
   BUTTON_GAP: 6, // ボタン間の隙間
 
   // キーボードレイアウト
   KEYBOARD_ROWS: 5, // キーボードの行数
-  KEYBOARD_COLUMNS: 10, // キーボードの列数
+  KEYBOARD_COLUMNS: 11, // キーボードの列数
 
-  // ワイヤー配置計算用
-  get KEYBOARD_TOTAL_HEIGHT() {
-    // KanaGrid (5行) + gap + ActionKeys (1行)
+  get KEYBOARD_INNER_WIDTH() {
     return (
-      this.KEYBOARD_ROWS * this.BUTTON_SIZE +
-      (this.KEYBOARD_ROWS - 1) * this.BUTTON_GAP +
-      this.BUTTON_GAP +
-      this.BUTTON_SIZE
+      this.KEYBOARD_COLUMNS * this.BUTTON_SIZE +
+      (this.KEYBOARD_COLUMNS - 1) * this.BUTTON_GAP
     );
   },
-  get KEYBOARD_INNER_WIDTH() {
-    return this.CONTAINER_WIDTH - this.CONTAINER_PADDING * 2;
+  get KEYBOARD_INNER_HEIGHT() {
+    return (
+      (this.KEYBOARD_ROWS + 1) * this.BUTTON_SIZE +
+      this.KEYBOARD_ROWS * this.BUTTON_GAP
+    );
+  },
+
+  // コンテナ幅は内部幅 + パディングで計算
+  get CONTAINER_WIDTH() {
+    return this.KEYBOARD_INNER_WIDTH + this.CONTAINER_PADDING * 2;
   },
 
   // ディスプレイ全体の高さ（マウント部分込み）
@@ -45,7 +48,7 @@ export const BASE_SIZES = {
   // デバイス全体の高さ（キーボード + ディスプレイ + パディング）
   get DEVICE_TOTAL_HEIGHT() {
     return (
-      this.KEYBOARD_TOTAL_HEIGHT +
+      this.KEYBOARD_INNER_HEIGHT +
       this.DISPLAY_TOTAL_HEIGHT +
       this.CONTAINER_PADDING * 4
     );
@@ -106,7 +109,7 @@ export const SCALE_CONFIG = {
   MIN_SCALE: 0.3,
   MAX_SCALE: 1.2,
   DEFAULT_SCALE: 1.0,
-  SCALE_RATIO: 0.96,
+  SCALE_RATIO: 0.97,
 } as const;
 
 // CSS変数名

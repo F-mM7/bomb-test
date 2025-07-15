@@ -121,7 +121,7 @@ const Device: React.FC<DeviceProps> = ({
           <div
             style={{
               position: "relative",
-              top: scaleSize(-BASE_SIZES.KEYBOARD_TOTAL_HEIGHT - 25),
+              top: scaleSize(-BASE_SIZES.KEYBOARD_INNER_HEIGHT - 25),
               left: scaleSize(7.4),
               zIndex: Z_INDEX.KEYBOARD,
               transform:

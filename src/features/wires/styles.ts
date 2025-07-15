@@ -1,9 +1,11 @@
-import { GRADIENTS, SHADOWS } from '../../constants/colors';
-import { scaleSize, BASE_SIZES } from '../../utils/responsive';
+import { GRADIENTS, SHADOWS } from "../../constants/colors";
+import { scaleSize, BASE_SIZES } from "../../utils/responsive";
 
 export const exposedWiresContainerStyle = {
   width: scaleSize(BASE_SIZES.CONTAINER_WIDTH),
-  height: scaleSize(BASE_SIZES.KEYBOARD_TOTAL_HEIGHT + BASE_SIZES.CONTAINER_PADDING * 2),
+  height: scaleSize(
+    BASE_SIZES.KEYBOARD_INNER_HEIGHT + BASE_SIZES.CONTAINER_PADDING * 2
+  ),
   background: GRADIENTS.exposedWires,
   borderRadius: scaleSize(BASE_SIZES.CONTAINER_BORDER_RADIUS),
   padding: scaleSize(BASE_SIZES.CONTAINER_PADDING),
@@ -19,8 +21,9 @@ export const topBorderStyle = {
   left: scaleSize(BASE_SIZES.WIRE_BORDER_MARGIN),
   right: scaleSize(BASE_SIZES.WIRE_BORDER_MARGIN),
   height: scaleSize(BASE_SIZES.WIRE_BORDER_THICKNESS),
-  background: "linear-gradient(to right, rgba(255,255,255,0.15), rgba(255,255,255,0.08), rgba(255,255,255,0.15))",
-  borderRadius: scaleSize(BASE_SIZES.WIRE_BORDER_RADIUS)
+  background:
+    "linear-gradient(to right, rgba(255,255,255,0.15), rgba(255,255,255,0.08), rgba(255,255,255,0.15))",
+  borderRadius: scaleSize(BASE_SIZES.WIRE_BORDER_RADIUS),
 };
 
 export const leftBorderStyle = {
@@ -29,8 +32,9 @@ export const leftBorderStyle = {
   left: scaleSize(BASE_SIZES.WIRE_BORDER_MARGIN),
   width: scaleSize(BASE_SIZES.WIRE_BORDER_THICKNESS),
   bottom: scaleSize(BASE_SIZES.WIRE_BORDER_MARGIN),
-  background: "linear-gradient(to bottom, rgba(255,255,255,0.15), rgba(255,255,255,0.05))",
-  borderRadius: scaleSize(BASE_SIZES.WIRE_BORDER_RADIUS)
+  background:
+    "linear-gradient(to bottom, rgba(255,255,255,0.15), rgba(255,255,255,0.05))",
+  borderRadius: scaleSize(BASE_SIZES.WIRE_BORDER_RADIUS),
 };
 
 export const wireStyle = {

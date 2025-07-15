@@ -23,12 +23,12 @@ const WireContainer: React.FC<WireContainerProps> = ({
     <div
       style={{
         width: scaleSize(BASE_SIZES.KEYBOARD_INNER_WIDTH),
-        height: scaleSize(BASE_SIZES.KEYBOARD_TOTAL_HEIGHT),
+        height: scaleSize(BASE_SIZES.KEYBOARD_INNER_HEIGHT),
         position: "relative",
       }}
     >
       <svg
-        viewBox={`0 0 ${BASE_SIZES.KEYBOARD_INNER_WIDTH} ${BASE_SIZES.KEYBOARD_TOTAL_HEIGHT}`}
+        viewBox={`0 0 ${BASE_SIZES.KEYBOARD_INNER_WIDTH} ${BASE_SIZES.KEYBOARD_INNER_HEIGHT}`}
         preserveAspectRatio="none"
         style={{
           position: "absolute",
