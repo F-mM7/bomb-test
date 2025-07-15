@@ -7,7 +7,6 @@ export const containerStyle = {
   justifyContent: "center" as const,
   width: "100vw",
   height: "100vh",
-  padding: scaleSize(BASE_SIZES.GLOBAL_CONTAINER_PADDING),
   gap: scaleSize(BASE_SIZES.SPACING_LG),
   boxSizing: "border-box" as const,
 };

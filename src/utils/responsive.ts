@@ -7,20 +7,28 @@ import { Z_INDEX_CSS_VARS } from "../constants/zIndex";
 
 // 基準サイズ定数
 export const BASE_SIZES = {
-  // キーボード・露出ワイヤー共通コンテナ（基盤上の部品用）
-  CONTAINER_PADDING: 6, // キーボードと露出ワイヤーの内部パディング
-  CONTAINER_BORDER_RADIUS: 4, // 角丸半径
+  // スペーシング
+  SPACING_XS: 4,
+  SPACING_SM: 8,
+  SPACING_MD: 12,
+  SPACING_LG: 16,
 
-  // 爆弾全体の最外層コンテナ（ページレベル）
-  GLOBAL_CONTAINER_PADDING: 0, // ページ全体のパディング
+  // ディスプレイ
+  DISPLAY_WIDTH: 640, // ディスプレイキャンバスの幅
+  DISPLAY_HEIGHT: 360, // ディスプレイキャンバスの高さ
 
-  // キーボードボタン
-  BUTTON_SIZE: 53, // 各ボタンの幅・高さ
-  BUTTON_GAP: 6, // ボタン間の隙間
+  // ディスプレイマウント用
+  DISPLAY_MOUNT_PADDING: 7, // ディスプレイマウントの内部パディング
+  DISPLAY_MOUNT_MARGIN: 10, // ディスプレイマウントの下マージン
+  DISPLAY_MOUNT_BORDER_WIDTH: 1, // ディスプレイマウントの境界線幅
 
   // キーボードレイアウト
   KEYBOARD_ROWS: 5, // キーボードの行数
   KEYBOARD_COLUMNS: 11, // キーボードの列数
+
+  // キーボードボタン
+  BUTTON_SIZE: 53, // 各ボタンの幅・高さ
+  BUTTON_GAP: 6, // ボタン間の隙間
 
   get KEYBOARD_INNER_WIDTH() {
     return (
@@ -35,6 +43,10 @@ export const BASE_SIZES = {
       this.KEYBOARD_ROWS * this.BUTTON_GAP
     );
   },
+
+  // キーボード・露出ワイヤー共通コンテナ（基盤上の部品用）
+  CONTAINER_PADDING: 6, // キーボードと露出ワイヤーの内部パディング
+  CONTAINER_BORDER_RADIUS: 4, // 角丸半径
 
   // コンテナ幅は内部幅 + パディングで計算
   get CONTAINER_WIDTH() {
@@ -55,13 +67,9 @@ export const BASE_SIZES = {
     );
   },
 
-  // ディスプレイ（基盤上のスクリーン）
-  DISPLAY_WIDTH: 640, // ディスプレイキャンバスの幅
-  DISPLAY_HEIGHT: 360, // ディスプレイキャンバスの高さ
-
   // 爆弾本体（全体を包む外枠）
-  BOMB_BODY_WIDTH: 720, // 爆弾本体の幅
-  BOMB_BODY_HEIGHT: 820, // 爆弾本体の高さ
+  BOMB_BODY_WIDTH: 714, // 爆弾本体の幅
+  BOMB_BODY_HEIGHT: 814, // 爆弾本体の高さ
   BOMB_BODY_PADDING: 16, // 爆弾本体の内部パディング
 
   // 爆弾本体の計算値
@@ -69,27 +77,9 @@ export const BASE_SIZES = {
     return this.BOMB_BODY_WIDTH + this.BOMB_BODY_PADDING * 2;
   },
 
-  // フォント
-  FONT_SIZE_SMALL: 12,
-  FONT_SIZE_MEDIUM: 16,
-  FONT_SIZE_LARGE: 20,
-  FONT_SIZE_XL: 24,
-
-  // スペーシング
-  SPACING_XS: 4,
-  SPACING_SM: 8,
-  SPACING_MD: 12,
-  SPACING_LG: 16,
-  SPACING_XL: 24,
-
   // 基盤（PCB）スタイル用
-  PCB_HEIGHT: 790, // 基盤の高さ
+  PCB_HEIGHT: 780, // 基盤の高さ
   PCB_BORDER_WIDTH: 2, // 基盤の境界線幅
-
-  // ディスプレイマウント用
-  DISPLAY_MOUNT_PADDING: 7, // ディスプレイマウントの内部パディング
-  DISPLAY_MOUNT_MARGIN: 10, // ディスプレイマウントの下マージン
-  DISPLAY_MOUNT_BORDER_WIDTH: 1, // ディスプレイマウントの境界線幅
 
   // キーボード装飾用
   KEYBOARD_BORDER_WIDTH: 1, // キーボードの境界線幅
