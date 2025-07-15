@@ -2,13 +2,13 @@ import React, { useEffect, useRef } from "react";
 import type { DisplayProps } from "../types/display.types";
 import { COLORS } from "../../../constants/colors";
 import { TimerRenderer } from "../../timer";
-import { 
-  StatusRenderer, 
-  QuestionRenderer, 
-  CircleRenderer, 
-  InputRenderer 
+import {
+  StatusRenderer,
+  QuestionRenderer,
+  CircleRenderer,
+  InputRenderer,
 } from "../renderers";
-import { scaleSize, BASE_SIZES } from "../../../utils/responsive";
+import { scaleSize } from "../../../utils/responsive";
 
 // Canvas内部解像度（ピクセル数）- レスポンシブとは無関係
 const CANVAS_WIDTH = 96;
@@ -45,12 +45,26 @@ const Display: React.FC<DisplayProps> = ({
     if (showCorrect) {
       CircleRenderer.render(ctx, showCorrect, CANVAS_WIDTH, CANVAS_HEIGHT);
     }
-    InputRenderer.render(ctx, input || "", currentQuestion, isFailed || false, isPaused || false, remaining);
-  }, [remaining, input, currentQuestion, showCorrect, isCleared, isPaused, isFailed]);
-
+    InputRenderer.render(
+      ctx,
+      input || "",
+      currentQuestion,
+      isFailed || false,
+      isPaused || false,
+      remaining
+    );
+  }, [
+    remaining,
+    input,
+    currentQuestion,
+    showCorrect,
+    isCleared,
+    isPaused,
+    isFailed,
+  ]);
 
   return (
-    <div style={{ marginBottom: scaleSize(BASE_SIZES.SPACING_LG), ...style }}>
+    <div style={style}>
       <canvas
         ref={canvasRef}
         width={CANVAS_WIDTH}

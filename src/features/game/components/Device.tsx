@@ -131,7 +131,7 @@ const Device: React.FC<DeviceProps> = ({
                 animationPhase === "moving" ||
                 animationPhase === "settled" ||
                 animationPhase === "fading"
-                  ? "translateY(50px) rotateX(-15deg) rotateZ(3deg) scale(0.98)"
+                  ? `translateY(${scaleSize(50)}) rotateX(-15deg) rotateZ(3deg) scale(0.98)`
                   : "translateY(0) rotateX(0deg) rotateZ(0deg) scale(1)",
               opacity: animationPhase === "fading" ? 0 : 1,
               transition:
