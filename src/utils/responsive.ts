@@ -83,8 +83,7 @@ export const BASE_SIZES = {
   // 基盤（PCB）スタイル用
   PCB_HEIGHT: 780, // 基盤の高さ
   PCB_BORDER_WIDTH: 2, // 基盤の境界線幅
-  PCB_BORDER_RADIUS: 8,
-
+  PCB_BORDER_RADIUS: 4,
   SCREW_SISZE: 8,
 
   // キーボード装飾用
