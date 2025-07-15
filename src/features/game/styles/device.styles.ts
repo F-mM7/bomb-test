@@ -12,7 +12,7 @@ export const pcbStyle = {
   }`,
   position: "relative" as const,
   boxSizing: "border-box" as const,
-  height: scaleSize(790),
+  height: scaleSize(BASE_SIZES.PCB_HEIGHT),
 };
 
 export const screwStyle = {

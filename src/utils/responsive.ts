@@ -8,14 +8,14 @@ import { Z_INDEX_CSS_VARS } from "../constants/zIndex";
 // 基準サイズ定数
 export const BASE_SIZES = {
   // キーボード・露出ワイヤー共通コンテナ（基盤上の部品用）
-  CONTAINER_PADDING: 12, // キーボードと露出ワイヤーの内部パディング
+  CONTAINER_PADDING: 6, // キーボードと露出ワイヤーの内部パディング
   CONTAINER_BORDER_RADIUS: 4, // 角丸半径
 
   // 爆弾全体の最外層コンテナ（ページレベル）
   GLOBAL_CONTAINER_PADDING: 0, // ページ全体のパディング
 
   // キーボードボタン
-  BUTTON_SIZE: 52, // 各ボタンの幅・高さ
+  BUTTON_SIZE: 53, // 各ボタンの幅・高さ
   BUTTON_GAP: 6, // ボタン間の隙間
 
   // キーボードレイアウト
@@ -51,7 +51,7 @@ export const BASE_SIZES = {
     return (
       this.KEYBOARD_INNER_HEIGHT +
       this.DISPLAY_TOTAL_HEIGHT +
-      this.CONTAINER_PADDING * 4
+      this.CONTAINER_PADDING * 3
     );
   },
 
@@ -83,6 +83,7 @@ export const BASE_SIZES = {
   SPACING_XL: 24,
 
   // 基盤（PCB）スタイル用
+  PCB_HEIGHT: 790, // 基盤の高さ
   PCB_BORDER_WIDTH: 2, // 基盤の境界線幅
 
   // ディスプレイマウント用
