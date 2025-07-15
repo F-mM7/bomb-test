@@ -10,5 +10,4 @@ export interface DisplayProps {
   isCleared?: boolean;
   isPaused?: boolean;
   isFailed?: boolean;
-  style?: React.CSSProperties;
 }

@@ -24,7 +24,6 @@ const Display: React.FC<DisplayProps> = ({
   isCleared,
   isPaused,
   isFailed,
-  style,
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -64,19 +63,17 @@ const Display: React.FC<DisplayProps> = ({
   ]);
 
   return (
-    <div style={style}>
-      <canvas
-        ref={canvasRef}
-        width={CANVAS_WIDTH}
-        height={CANVAS_HEIGHT}
-        style={{
-          width: scaleSize(pixelWidth),
-          height: scaleSize(pixelHeight),
-          imageRendering: "pixelated",
-          background: COLORS.black,
-        }}
-      />
-    </div>
+    <canvas
+      ref={canvasRef}
+      width={CANVAS_WIDTH}
+      height={CANVAS_HEIGHT}
+      style={{
+        width: scaleSize(pixelWidth),
+        height: scaleSize(pixelHeight),
+        imageRendering: "pixelated",
+        background: COLORS.black,
+      }}
+    />
   );
 };
 
