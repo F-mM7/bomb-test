@@ -9,7 +9,6 @@ interface WireContainerProps {
   isLeftCut: boolean;
   isRightCut: boolean;
   wireStyle: React.CSSProperties;
-  disabled: boolean;
 }
 
 const WireContainer: React.FC<WireContainerProps> = ({
@@ -17,7 +16,6 @@ const WireContainer: React.FC<WireContainerProps> = ({
   isLeftCut,
   isRightCut,
   wireStyle,
-  disabled,
 }) => {
   return (
     <div
@@ -45,14 +43,12 @@ const WireContainer: React.FC<WireContainerProps> = ({
           isCut={isLeftCut}
           wireStyle={wireStyle}
           onWireClick={onWireClick}
-          disabled={disabled}
         />
         <SvgWire
           position="right"
           isCut={isRightCut}
           wireStyle={wireStyle}
           onWireClick={onWireClick}
-          disabled={disabled}
         />
       </svg>
     </div>

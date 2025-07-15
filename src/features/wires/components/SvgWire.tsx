@@ -15,7 +15,6 @@ interface GameWireProps {
   isCut: boolean;
   wireStyle: React.CSSProperties;
   onWireClick: (wire: WirePosition) => void;
-  disabled: boolean;
 }
 
 type WireProps = BasicWireProps | GameWireProps;
@@ -26,7 +25,7 @@ function isGameWireProps(props: WireProps): props is GameWireProps {
 
 const SvgWire: React.FC<WireProps> = (props) => {
   if (isGameWireProps(props)) {
-    const { position, isCut, wireStyle, onWireClick, disabled } = props;
+    const { position, isCut, wireStyle, onWireClick } = props;
     const config = WIRE_CONFIGS[position];
     const gameWireStyle = getGameWireStyle(position);
     
@@ -73,7 +72,7 @@ const SvgWire: React.FC<WireProps> = (props) => {
           ...gameWireStyle,
           pointerEvents: "auto",
         }}
-        onClick={disabled ? undefined : () => onWireClick(position)}
+        onClick={() => onWireClick(position)}
       />
     );
   }

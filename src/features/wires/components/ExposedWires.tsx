@@ -23,7 +23,6 @@ const ExposedWires: React.FC<ExposedWiresProps> = ({
           isLeftCut={isLeftCut}
           isRightCut={isRightCut}
           wireStyle={wireStyleWithState}
-          disabled={false}
         />
       </div>
     </div>
