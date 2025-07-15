@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import { useTimer } from '../../timer';
 import { useGameState } from './useGameState';
 import { useBombState } from './useBombState';
-import { useWireHandler } from '../../wires';
+import { useWireHandler } from '../../interactive-wires';
 import { useAnswerHandler } from './useAnswerHandler';
 import { questionBitmaps } from '../data/questions';
 

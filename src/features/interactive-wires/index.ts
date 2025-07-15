@@ -10,7 +10,6 @@ export { useWireHandler } from './hooks/useWireHandler';
 
 // Components
 export { default as ExposedWires } from './components/ExposedWires';
-export { default as WireLayer } from './components/WireLayer';
 
 // Styles
 export * from './styles';

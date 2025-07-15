@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { useWireState } from '../../wires';
+import { useWireState } from '../../interactive-wires';
 import { useInputState } from './useInputState';
 import { useGameCompletionState } from './useGameCompletionState';
 import { useKeyboardState } from '../../keyboard/hooks/useKeyboardState';
