@@ -28,7 +28,7 @@ export const BASE_SIZES = {
   // キーボードボタン
   BUTTON_SIZE: 53,
   BUTTON_GAP: 6,
-  BUTTON_FONTSIZE: 32,
+  BUTTON_FONTSIZE: 28,
 
   get ACTION_BUTTON_WIDTH() {
     return this.BUTTON_SIZE * 2 + this.BUTTON_GAP;
@@ -88,8 +88,9 @@ export const BASE_SIZES = {
 
   // キーボード装飾用
   KEYBOARD_BORDER_WIDTH: 1, // キーボードの境界線幅
-  KEYBOARD_BUTTON_BORDER_RADIUS: 6, // キーボードボタンの角丸
+  KEYBOARD_BUTTON_BORDER_RADIUS: 4, // キーボードボタンの角丸
   KEYBOARD_BUTTON_PADDING: 2, // アクションボタンのパディング
+  KEYBOARD_BUTTON_ITALIC_OFFSET: 10, // 斜体文字の中央配置調整用オフセット
 
   // ワイヤー関連
   WIRE_STROKE_WIDTH: 8, // ワイヤーの線幅

@@ -20,7 +20,7 @@ export const GRADIENTS = {
   buttonHover: "linear-gradient(135deg, #ff5555 0%, #dd4444 50%, #ff5555 100%)",
   keyboard: "linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 50%, #1a1a1a 100%)",
   keyButton:
-    "linear-gradient(to bottom, #f8f8f8 0%, #e8e8e8 50%, #d8d8d8 100%)",
+    "linear-gradient(to bottom, #a0a090 0%, #909080 50%, #808070 100%)",
   display: "linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 50%, #151515 100%)",
   exposedWires:
     "linear-gradient(145deg, #020202 0%, #080808 30%, #0f0f0f 70%, #050505 100%)",
@@ -42,7 +42,7 @@ export const SHADOWS = {
   timer: "0 0 10px rgba(255, 102, 102, 0.5)",
   keyboard:
     "0 4px 8px rgba(0,0,0,0.6), 0 2px 4px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1)",
-  keyButton: "0 2px 4px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.8)",
+  keyButton: "0 2px 4px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -1px 0 rgba(96,96,80,0.8)",
   exposedWires:
     "inset 0 8px 16px rgba(0,0,0,0.98), inset 0 -3px 6px rgba(0,0,0,0.9), 0 1px 2px rgba(0,0,0,0.4)",
   pcb: "0 4px 8px rgba(0,0,0,0.6), inset 0 -2px 4px rgba(0,0,0,0.4)",

@@ -27,18 +27,19 @@ export const baseButtonStyle = {
   width: scaleSize(BASE_SIZES.BUTTON_SIZE),
   height: scaleSize(BASE_SIZES.BUTTON_SIZE),
   background: GRADIENTS.keyButton,
-  border: `${scaleSize(BASE_SIZES.KEYBOARD_BORDER_WIDTH)} solid #666`,
+  border: `${scaleSize(BASE_SIZES.KEYBOARD_BORDER_WIDTH)} solid #706860`,
   borderRadius: scaleSize(BASE_SIZES.KEYBOARD_BUTTON_BORDER_RADIUS),
   cursor: "pointer" as const,
   fontWeight: "bold" as const,
-  color: "#333",
+  fontStyle: "italic" as const,
+  color: "#2a2a2a",
   boxShadow: SHADOWS.keyButton,
-  textShadow: "0 1px 0 rgba(255,255,255,0.8)",
   transition: "all 0.1s ease",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
   padding: "0",
+  paddingRight: scaleSize(BASE_SIZES.KEYBOARD_BUTTON_ITALIC_OFFSET),
   fontSize: scaleSize(BASE_SIZES.BUTTON_FONTSIZE),
 };
 
@@ -70,15 +71,16 @@ export const gridStyle = (groupCount: number) => ({
 export const BUTTON_STATES = {
   pressed: {
     transform: "translateY(2px)",
-    boxShadow: "0 0 2px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.8)",
+    boxShadow: "0 0 2px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.6)",
   },
   released: {
     transform: "translateY(0px)",
     boxShadow: SHADOWS.keyButton,
   },
   disabled: {
-    background: "linear-gradient(to bottom, #ccc 0%, #bbb 50%, #aaa 100%)",
-    color: "#888",
+    background:
+      "linear-gradient(to bottom, #808070 0%, #707060 50%, #606050 100%)",
+    color: "#3a3a3a",
     cursor: "not-allowed" as const,
     opacity: 0.6,
   },
