@@ -1,3 +1,2 @@
-export * from './device.styles';
+export * from './game.styles';
 export * from './startPage.styles';
-export * from './layout.styles';

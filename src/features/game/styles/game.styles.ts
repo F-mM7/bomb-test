@@ -1,6 +1,8 @@
+import { COLORS, SHADOWS } from "../../../constants/colors";
 import { scaleSize, BASE_SIZES } from "../../../utils/responsive";
 import { commonPatterns } from "../../../styles/common";
 
+// Layout styles
 export const containerStyle = {
   ...commonPatterns.flexCenterColumn,
   width: "100vw",
@@ -18,4 +20,25 @@ export const bombBodyStyle = {
     "0 8px 16px rgba(0,0,0,0.5), inset 0 2px 4px rgba(255,255,255,0.1)",
   textAlign: "center" as const,
   position: "relative" as const,
+};
+
+// Device styles
+export const pcbStyle = {
+  background: COLORS.pcbGreen,
+  borderRadius: scaleSize(BASE_SIZES.PCB_BORDER_RADIUS),
+  padding: scaleSize(BASE_SIZES.SPACING_MD),
+  boxShadow: SHADOWS.pcb,
+  display: "inline-block",
+  border: `${scaleSize(BASE_SIZES.PCB_BORDER_WIDTH)} solid ${COLORS.pcbGreen}`,
+  position: "relative" as const,
+  height: scaleSize(BASE_SIZES.PCB_HEIGHT),
+};
+
+export const screwStyle = {
+  position: "absolute" as const,
+  width: scaleSize(BASE_SIZES.SCREW_SISZE),
+  height: scaleSize(BASE_SIZES.SCREW_SISZE),
+  borderRadius: "50%",
+  background: "radial-gradient(circle at 30% 30%, #e0e0e0, #808080)",
+  boxShadow: SHADOWS.screw,
 };

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Display } from "../../display";
+import { DisplayWithMount } from "../../display";
 import { Keyboard } from "../../keyboard";
 import { ExposedWires } from "../../interactive-wires";
 import { WireLayer } from "../../wire-decoration";
-import { pcbStyle, screwStyle, displayMountStyle } from "../styles";
+import { pcbStyle, screwStyle } from "../styles";
 import { BASE_SIZES, scaleSize } from "../../../utils/responsive";
 import type { Question } from "../types/question.types";
 import { Z_INDEX } from "../../../constants/zIndex";
@@ -99,19 +99,17 @@ const Device: React.FC<DeviceProps> = ({
           }}
         />
 
-        <div style={displayMountStyle}>
-          <Display
-            pixelWidth={BASE_SIZES.DISPLAY_WIDTH}
-            pixelHeight={BASE_SIZES.DISPLAY_HEIGHT}
-            input={input}
-            remaining={remaining}
-            currentQuestion={currentQuestion}
-            showCorrect={showCorrect}
-            isCleared={isCleared}
-            isPaused={isPaused}
-            isFailed={isFailed}
-          />
-        </div>
+        <DisplayWithMount
+          pixelWidth={BASE_SIZES.DISPLAY_WIDTH}
+          pixelHeight={BASE_SIZES.DISPLAY_HEIGHT}
+          input={input}
+          remaining={remaining}
+          currentQuestion={currentQuestion}
+          showCorrect={showCorrect}
+          isCleared={isCleared}
+          isPaused={isPaused}
+          isFailed={isFailed}
+        />
         <ExposedWires
           onWireClick={onWireClick}
           isLeftCut={isLeftCut}
