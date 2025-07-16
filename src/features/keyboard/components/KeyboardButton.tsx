@@ -20,6 +20,9 @@ const KeyboardButton: React.FC<KeyboardButtonProps> = ({
       onMouseDown={(e) => !disabled && applyButtonState(e.currentTarget, "pressed")}
       onMouseUp={(e) => !disabled && applyButtonState(e.currentTarget, "released")}
       onMouseLeave={(e) => !disabled && applyButtonState(e.currentTarget, "released")}
+      onTouchStart={(e) => !disabled && applyButtonState(e.currentTarget, "pressed")}
+      onTouchEnd={(e) => !disabled && applyButtonState(e.currentTarget, "released")}
+      onTouchCancel={(e) => !disabled && applyButtonState(e.currentTarget, "released")}
     >
       {content}
     </button>

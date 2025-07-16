@@ -42,7 +42,7 @@ export const SHADOWS = {
   timer: "0 0 10px rgba(255, 102, 102, 0.5)",
   keyboard:
     "0 4px 8px rgba(0,0,0,0.6), 0 2px 4px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1)",
-  keyButton: "0 2px 4px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -1px 0 rgba(96,96,80,0.8)",
+  keyButton: "0 4px 8px rgba(0,0,0,0.5), 0 2px 4px rgba(0,0,0,0.3), inset 0 2px 0 rgba(255,255,255,0.7), inset 0 -2px 0 rgba(96,96,80,0.9), inset 2px 0 0 rgba(200,200,180,0.5), inset -2px 0 0 rgba(96,96,80,0.5)",
   exposedWires:
     "inset 0 8px 16px rgba(0,0,0,0.98), inset 0 -3px 6px rgba(0,0,0,0.9), 0 1px 2px rgba(0,0,0,0.4)",
   pcb: "0 4px 8px rgba(0,0,0,0.6), inset 0 -2px 4px rgba(0,0,0,0.4)",

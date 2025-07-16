@@ -35,6 +35,9 @@ export const baseButtonStyle = {
   color: "#2a2a2a",
   boxShadow: SHADOWS.keyButton,
   transition: "all 0.1s ease",
+  // タッチデバイス用のアクティブ状態（CSS疑似クラス）
+  userSelect: "none" as const,
+  touchAction: "manipulation" as const,
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
@@ -70,8 +73,8 @@ export const gridStyle = (groupCount: number) => ({
 
 export const BUTTON_STATES = {
   pressed: {
-    transform: "translateY(2px)",
-    boxShadow: "0 0 2px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.6)",
+    transform: "translateY(3px)",
+    boxShadow: "0 1px 3px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -1px 0 rgba(96,96,80,0.8)",
   },
   released: {
     transform: "translateY(0px)",

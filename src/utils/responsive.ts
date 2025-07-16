@@ -90,7 +90,7 @@ export const BASE_SIZES = {
   KEYBOARD_BORDER_WIDTH: 1, // キーボードの境界線幅
   KEYBOARD_BUTTON_BORDER_RADIUS: 4, // キーボードボタンの角丸
   KEYBOARD_BUTTON_PADDING: 2, // アクションボタンのパディング
-  KEYBOARD_BUTTON_ITALIC_OFFSET: 10, // 斜体文字の中央配置調整用オフセット
+  KEYBOARD_BUTTON_ITALIC_OFFSET: 5, // 斜体文字の中央配置調整用オフセット
 
   // ワイヤー関連
   WIRE_STROKE_WIDTH: 8, // ワイヤーの線幅
