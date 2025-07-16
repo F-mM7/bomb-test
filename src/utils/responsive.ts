@@ -26,8 +26,8 @@ export const BASE_SIZES = {
   KEYBOARD_COLUMNS: 11, // キーボードの列数
 
   // キーボードボタン
-  BUTTON_SIZE: 53,
-  BUTTON_GAP: 6,
+  BUTTON_SIZE: 56,
+  BUTTON_GAP: 3,
   BUTTON_FONTSIZE: 28,
 
   get ACTION_BUTTON_WIDTH() {
