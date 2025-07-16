@@ -99,15 +99,8 @@ const WireLayer: React.FC = () => {
     { side: "right", startPos: 0.5, endPos: 0.55, color: "#80f", detour: 130 },
     { side: "right", startPos: 0.65, endPos: 0.9, color: "#8ff", detour: 110 },
     { side: "bottom", startPos: 0.25, endPos: 0.75, color: "#f08", detour: 65 },
-    {
-      side: "bottom",
-      startPos: 0.125,
-      endPos: 0.375,
-      color: "#88f",
-      detour: 50,
-    },
+    { side: "bottom", startPos: 0.15, endPos: 0.35, color: "#88f", detour: 50 },
   ];
-
   return (
     <svg
       viewBox="0 0 920 1000"
