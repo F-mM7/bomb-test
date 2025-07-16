@@ -98,12 +98,12 @@ const WireLayer: React.FC = () => {
     { side: "right", startPos: 0.2, endPos: 0.45, color: "#f88", detour: 60 },
     { side: "right", startPos: 0.5, endPos: 0.55, color: "#80f", detour: 130 },
     { side: "right", startPos: 0.65, endPos: 0.9, color: "#8ff", detour: 110 },
-    { side: "bottom", startPos: 0.25, endPos: 0.75, color: "#aaf", detour: 65 },
+    { side: "bottom", startPos: 0.25, endPos: 0.75, color: "#f08", detour: 65 },
     {
       side: "bottom",
       startPos: 0.125,
       endPos: 0.375,
-      color: "#8fa",
+      color: "#88f",
       detour: 50,
     },
   ];
