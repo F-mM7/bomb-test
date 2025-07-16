@@ -35,15 +35,22 @@ export const baseButtonStyle = {
   color: "#2a2a2a",
   boxShadow: SHADOWS.keyButton,
   transition: "all 0.1s ease",
-  // タッチデバイス用のアクティブ状態（CSS疑似クラス）
+  // タッチデバイス用の設定
   userSelect: "none" as const,
   touchAction: "manipulation" as const,
+  WebkitTapHighlightColor: "transparent",
+  WebkitTouchCallout: "none" as const,
+  WebkitUserSelect: "none" as const,
+  MozUserSelect: "none" as const,
+  msUserSelect: "none" as const,
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
   padding: "0",
   paddingRight: scaleSize(BASE_SIZES.KEYBOARD_BUTTON_ITALIC_OFFSET),
   fontSize: scaleSize(BASE_SIZES.BUTTON_FONTSIZE),
+  // フォーカスリングを無効化
+  outline: "none",
 };
 
 export const actionRowStyle = {
