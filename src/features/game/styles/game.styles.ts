@@ -13,7 +13,6 @@ export const bombBodyStyle = {
   borderRadius: scaleSize(BASE_SIZES.PCB_PADDING),
   padding: scaleSize(BASE_SIZES.PCB_PADDING),
   background: "linear-gradient(135deg, #5a5a5a 0%, #3a3a3a 50%, #4a4a4a 100%)",
-  height: scaleSize(BASE_SIZES.BOMB_BODY_HEIGHT),
   boxShadow:
     "0 8px 16px rgba(0,0,0,0.5), inset 0 2px 4px rgba(255,255,255,0.1)",
   position: "relative" as const,

@@ -10,7 +10,6 @@ export const BASE_SIZES = {
   // スペーシング
   DISPLAY_MOUNT_BORDER_RADIUS: 4, // ディスプレイマウント角丸専用
   PCB_PADDING: 12, // PCB（基盤）の内部パディング
-  GAME_ELEMENT_GAP: 16, // ゲーム要素間の隙間専用
 
   // ディスプレイ（DOM要素の視覚的サイズ）
   DISPLAY_DOM_WIDTH: 640, // ディスプレイDOM要素の幅
@@ -31,7 +30,6 @@ export const BASE_SIZES = {
   KEYBOARD_BUTTON_GAP: 4,
   KEYBOARD_BUTTON_BORDER_RADIUS: 3, // キーボードボタンの角丸
   KEYBOARD_BUTTON_FONTSIZE: 28,
-  KEYBOARD_BUTTON_ITALIC_OFFSET: 10, // 斜体文字の中央配置調整用オフセット//TODOオフセットの方法がわからない
   get ACTION_BUTTON_WIDTH() {
     return this.KEYBOARD_BUTTON_SIZE * 2 + this.KEYBOARD_BUTTON_GAP;
   },
@@ -56,14 +54,16 @@ export const BASE_SIZES = {
   CONTAINER_BORDER_RADIUS: 4, // 角丸半径
 
   get KEYBOARD_OUTER_WIDTH() {
-    return this.KEYBOARD_INNER_WIDTH + this.CONTAINER_PADDING * 2;
+    return (
+      this.KEYBOARD_INNER_WIDTH +
+      (this.CONTAINER_PADDING + this.KEYBOARD_BORDER_WIDTH) * 2
+    );
   },
   get KEYBOARD_OUTER_HEIGHT() {
-    return this.KEYBOARD_INNER_HEIGHT + this.CONTAINER_PADDING * 2;
-  },
-
-  get KEYBOARD_OFFSET() {
-    return BASE_SIZES.KEYBOARD_OUTER_HEIGHT + BASE_SIZES.CONTAINER_PADDING - 4;
+    return (
+      this.KEYBOARD_INNER_HEIGHT +
+      (this.CONTAINER_PADDING + this.KEYBOARD_BORDER_WIDTH) * 2
+    );
   },
 
   get BOMB_BODY_WIDTH() {
@@ -72,7 +72,6 @@ export const BASE_SIZES = {
   get BOMB_BODY_HEIGHT() {
     return this.PCB_HEIGHT + (this.PCB_PADDING + this.PCB_BORDER_WIDTH) * 2;
   },
-  BOMB_BODY_PADDING: 8, // 爆弾本体の内部パディング
 
   // 基盤（PCB）スタイル用
   get PCB_WIDTH() {
