@@ -5,13 +5,21 @@ import { useGameOrchestration } from "../hooks/useGameOrchestration";
 import { useResponsiveSetup } from "../../../utils/useResponsiveSetup";
 import { useKeyboardDetachment } from "../../keyboard/hooks/useKeyboardDetachment";
 import "../styles/explosion.css";
+import { WireLayer } from "../../wire-decoration";
 
 const MainPage: React.FC = () => {
   const { containerRef } = useResponsiveSetup();
-  const { remaining, gameState, bombState, currentQuestionData, wireHandler, answerHandler } = useGameOrchestration();
+  const {
+    remaining,
+    gameState,
+    bombState,
+    currentQuestionData,
+    wireHandler,
+    answerHandler,
+  } = useGameOrchestration();
   const { isDetaching } = useKeyboardDetachment(
-    gameState.currentQuestion, 
-    bombState.isKeyboardAttached, 
+    gameState.currentQuestion,
+    bombState.isKeyboardAttached,
     bombState.setIsKeyboardAttached
   );
 
@@ -30,6 +38,7 @@ const MainPage: React.FC = () => {
           bombState.isFailed && !bombState.showExplosion ? "burned-bomb" : ""
         }
       >
+        <WireLayer />
         <Device
           isKeyboardAttached={bombState.isKeyboardAttached}
           input={bombState.input}

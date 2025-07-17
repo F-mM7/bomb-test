@@ -21,8 +21,8 @@ const generateWirePath = (config: WireConfig): string => {
   const deviceBounds = {
     left: 120,
     right: 800,
-    top: 110,
-    bottom: 890,
+    top: 90,
+    bottom: 880,
   };
 
   const defaultDetour = 80;

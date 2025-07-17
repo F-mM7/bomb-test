@@ -72,6 +72,7 @@ const Display: React.FC<DisplayProps> = ({
         height: scaleSize(pixelHeight),
         imageRendering: "pixelated",
         background: COLORS.black,
+        display: "block",
       }}
     />
   );

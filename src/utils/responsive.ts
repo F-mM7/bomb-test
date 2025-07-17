@@ -9,7 +9,7 @@ import { Z_INDEX_CSS_VARS } from "../constants/zIndex";
 export const BASE_SIZES = {
   // スペーシング
   DISPLAY_MOUNT_BORDER_RADIUS: 4, // ディスプレイマウント角丸専用
-  SPACING_MD: 12,
+  PCB_PADDING: 12, // PCB（基盤）の内部パディング
   GAME_ELEMENT_GAP: 16, // ゲーム要素間の隙間専用
 
   // ディスプレイ（DOM要素の視覚的サイズ）
@@ -22,11 +22,12 @@ export const BASE_SIZES = {
   DISPLAY_MOUNT_BORDER_WIDTH: 1, // ディスプレイマウントの境界線幅
 
   // キーボードレイアウト
-  KEYBOARD_ROWS: 5, // キーボードの行数
+  KEYBOARD_ROWS: 5,
+  KEYBOARD_COLS: 11,
 
   // キーボードボタン
-  KEYBOARD_BUTTON_SIZE: 56,
-  KEYBOARD_BUTTON_GAP: 3,
+  KEYBOARD_BUTTON_SIZE: 50,
+  KEYBOARD_BUTTON_GAP: 8,
   KEYBOARD_BUTTON_FONTSIZE: 28,
 
   get ACTION_BUTTON_WIDTH() {
@@ -35,8 +36,8 @@ export const BASE_SIZES = {
 
   get KEYBOARD_INNER_WIDTH() {
     return (
-      11 * this.KEYBOARD_BUTTON_SIZE +
-      (11 - 1) * this.KEYBOARD_BUTTON_GAP
+      this.KEYBOARD_COLS * this.KEYBOARD_BUTTON_SIZE +
+      (this.KEYBOARD_COLS - 1) * this.KEYBOARD_BUTTON_GAP
     );
   },
   get KEYBOARD_INNER_HEIGHT() {
@@ -54,14 +55,33 @@ export const BASE_SIZES = {
   get KEYBOARD_OUTER_WIDTH() {
     return this.KEYBOARD_INNER_WIDTH + this.CONTAINER_PADDING * 2;
   },
+  get KEYBOARD_OUTER_HEIGHT() {
+    return this.KEYBOARD_INNER_HEIGHT + this.CONTAINER_PADDING * 2;
+  },
 
-  // 爆弾本体（全体を包む外枠）
-  BOMB_BODY_WIDTH: 714, // 爆弾本体の幅
-  BOMB_BODY_HEIGHT: 814, // 爆弾本体の高さ
-  BOMB_BODY_PADDING: 16, // 爆弾本体の内部パディング
+  get BOMB_BODY_WIDTH() {
+    return this.PCB_WIDTH + (this.PCB_PADDING + this.PCB_BORDER_WIDTH) * 2;
+  },
+  get BOMB_BODY_HEIGHT() {
+    return this.PCB_HEIGHT + (this.PCB_PADDING + this.PCB_BORDER_WIDTH) * 2;
+  },
+  BOMB_BODY_PADDING: 8, // 爆弾本体の内部パディング
 
   // 基盤（PCB）スタイル用
-  PCB_HEIGHT: 780, // 基盤の高さ
+  get PCB_WIDTH() {
+    return this.KEYBOARD_OUTER_WIDTH;
+  },
+  get PCB_HEIGHT() {
+    return (
+      this.PCB_PADDING + // PCB上部パディング
+      this.DISPLAY_DOM_HEIGHT + // ディスプレイ領域
+      this.DISPLAY_MOUNT_PADDING * 2 + // ディスプレイマウントの上下パディング
+      this.DISPLAY_MOUNT_BORDER_WIDTH * 2 + // ディスプレイマウント境界線
+      this.DISPLAY_MOUNT_MARGIN + // ディスプレイとキーボードの間のマージン
+      this.KEYBOARD_OUTER_HEIGHT + // キーボード全体の高さ
+      this.KEYBOARD_BORDER_WIDTH * 2 // キーボード境界線
+    );
+  },
   PCB_BORDER_WIDTH: 2, // 基盤の境界線幅
   COMMON_BORDER_RADIUS: 4, // 汎用的な角丸（PCB、ボタンなど）
   SCREW_SIZE: 8,
@@ -81,13 +101,6 @@ export const BASE_SIZES = {
   WIRE_LAYER_OFFSET: 100, // SVGレイヤーのオフセット
   WIRE_LAYER_OVERFLOW: 200, // SVGレイヤーのはみ出し分
 
-  // 計算済み定数（よく使われる計算式を事前定義）
-  get KEYBOARD_WITH_PADDING_HEIGHT() {
-    return this.KEYBOARD_INNER_HEIGHT + this.CONTAINER_PADDING * 2;
-  },
-  get KEYBOARD_WITH_PADDING_HEIGHT_NEGATIVE() {
-    return -(this.KEYBOARD_INNER_HEIGHT + this.CONTAINER_PADDING * 2);
-  },
   get WIRE_SPACING() {
     return this.KEYBOARD_INNER_WIDTH / 3;
   },
@@ -96,7 +109,7 @@ export const BASE_SIZES = {
 // スケール設定
 export const SCALE_CONFIG = {
   MIN_SCALE: 0.3,
-  MAX_SCALE: 1.2,
+  MAX_SCALE: 1.0,
   DEFAULT_SCALE: 1.0,
   SCALE_RATIO: 0.97,
 } as const;

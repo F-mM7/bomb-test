@@ -5,6 +5,7 @@ import { commonPatterns } from "../../styles/common";
 export const keyboardStyle = {
   ...commonPatterns.baseContainer,
   width: scaleSize(BASE_SIZES.KEYBOARD_OUTER_WIDTH),
+  height: scaleSize(BASE_SIZES.KEYBOARD_OUTER_HEIGHT),
   background: GRADIENTS.keyboard,
   boxShadow: SHADOWS.keyboard,
   border: `${scaleSize(BASE_SIZES.KEYBOARD_BORDER_WIDTH)} solid #0a0a0a`,
@@ -15,12 +16,6 @@ export const buttonContainerStyle = {
   flexDirection: "column" as const,
   gap: scaleSize(BASE_SIZES.KEYBOARD_BUTTON_GAP),
   justifyContent: "center" as const,
-};
-
-export const columnStyle = {
-  display: "flex",
-  flexDirection: "column" as const,
-  gap: scaleSize(BASE_SIZES.KEYBOARD_BUTTON_GAP),
 };
 
 export const baseButtonStyle = {
@@ -46,7 +41,6 @@ export const baseButtonStyle = {
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  padding: "0",
   paddingRight: scaleSize(BASE_SIZES.KEYBOARD_BUTTON_ITALIC_OFFSET),
   fontSize: scaleSize(BASE_SIZES.KEYBOARD_BUTTON_FONTSIZE),
   // フォーカスリングを無効化
@@ -54,10 +48,13 @@ export const baseButtonStyle = {
 };
 
 export const actionRowStyle = {
-  display: "flex",
-  gap: scaleSize(BASE_SIZES.KEYBOARD_BUTTON_GAP),
-  justifyContent: "flex-end" as const,
+  display: "grid",
+  gridTemplateColumns: `repeat(${BASE_SIZES.KEYBOARD_COLS}, ${scaleSize(
+    BASE_SIZES.KEYBOARD_BUTTON_SIZE
+  )})`,
+  gridGap: scaleSize(BASE_SIZES.KEYBOARD_BUTTON_GAP),
   width: scaleSize(BASE_SIZES.KEYBOARD_INNER_WIDTH),
+  margin: "0", // グローバルのmargin: 0 autoを上書き
 };
 
 export const actionButtonStyle = {
@@ -76,12 +73,14 @@ export const gridStyle = (groupCount: number) => ({
     BASE_SIZES.KEYBOARD_BUTTON_SIZE
   )})`,
   gridGap: scaleSize(BASE_SIZES.KEYBOARD_BUTTON_GAP),
+  margin: "0", // グローバルのmargin: 0 autoを上書き
 });
 
 export const BUTTON_STATES = {
   pressed: {
     transform: "translateY(3px)",
-    boxShadow: "0 1px 3px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -1px 0 rgba(96,96,80,0.8)",
+    boxShadow:
+      "0 1px 3px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -1px 0 rgba(96,96,80,0.8)",
   },
   released: {
     transform: "translateY(0px)",

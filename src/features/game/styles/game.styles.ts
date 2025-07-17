@@ -7,18 +7,15 @@ export const containerStyle = {
   ...commonPatterns.flexCenterColumn,
   width: "100vw",
   height: "100vh",
-  gap: scaleSize(BASE_SIZES.GAME_ELEMENT_GAP),
 };
 
 export const bombBodyStyle = {
-  borderRadius: scaleSize(BASE_SIZES.SPACING_MD),
-  padding: scaleSize(BASE_SIZES.BOMB_BODY_PADDING),
+  borderRadius: scaleSize(BASE_SIZES.PCB_PADDING),
+  padding: scaleSize(BASE_SIZES.PCB_PADDING),
   background: "linear-gradient(135deg, #5a5a5a 0%, #3a3a3a 50%, #4a4a4a 100%)",
-  width: scaleSize(BASE_SIZES.BOMB_BODY_WIDTH),
   height: scaleSize(BASE_SIZES.BOMB_BODY_HEIGHT),
   boxShadow:
     "0 8px 16px rgba(0,0,0,0.5), inset 0 2px 4px rgba(255,255,255,0.1)",
-  textAlign: "center" as const,
   position: "relative" as const,
 };
 
@@ -26,7 +23,7 @@ export const bombBodyStyle = {
 export const pcbStyle = {
   background: COLORS.pcbGreen,
   borderRadius: scaleSize(BASE_SIZES.COMMON_BORDER_RADIUS),
-  padding: scaleSize(BASE_SIZES.SPACING_MD),
+  padding: scaleSize(BASE_SIZES.PCB_PADDING),
   boxShadow: SHADOWS.pcb,
   display: "inline-block",
   border: `${scaleSize(BASE_SIZES.PCB_BORDER_WIDTH)} solid ${COLORS.pcbGreen}`,

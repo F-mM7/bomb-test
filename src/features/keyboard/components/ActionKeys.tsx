@@ -1,6 +1,7 @@
 import type { FC } from "react";
 import KeyboardButton from "./KeyboardButton";
 import { actionRowStyle, actionButtonStyle } from "../styles";
+import { BASE_SIZES, scaleSize } from "../../../utils/responsive";
 
 interface ActionKeysProps {
   onBackspace: () => void;
@@ -22,14 +23,38 @@ const ActionKeys: FC<ActionKeysProps> = ({
     { label: "送信", onClick: disabled ? undefined : onEnter },
   ];
 
+  // 11列のうち、右から2、4、6列目にアクションボタンを配置
+  // 各アクションボタンは2列分の幅を占める
+  const totalCols = BASE_SIZES.KEYBOARD_COLS; // 11
+  const actionButtonCount = 3;
+  const actionButtonWidth = 2; // 各アクションボタンの列数
+  const usedCols = actionButtonCount * actionButtonWidth; // 6列使用
+  const emptySpaceCount = totalCols - usedCols; // 5列の空スペース
+
   return (
     <div style={actionRowStyle}>
+      {/* 左側の空スペース（透明要素） - 5列分 */}
+      {Array(emptySpaceCount).fill(null).map((_, index) => (
+        <div
+          key={`empty-${index}`}
+          style={{
+            width: scaleSize(BASE_SIZES.KEYBOARD_BUTTON_SIZE),
+            height: scaleSize(BASE_SIZES.KEYBOARD_BUTTON_SIZE),
+            visibility: "hidden"
+          }}
+        />
+      ))}
+      
+      {/* アクションボタン（2列分の幅） */}
       {actionButtons.map(({ label, onClick }) => (
         <KeyboardButton 
           key={label}
           content={label} 
           onClick={onClick || (() => {})} 
-          style={actionButtonStyle}
+          style={{
+            ...actionButtonStyle,
+            gridColumn: "span 2" // 2列分の幅を指定
+          }}
           disabled={disabled}
         />
       ))}
