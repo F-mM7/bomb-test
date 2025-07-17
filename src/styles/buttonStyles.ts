@@ -8,7 +8,7 @@ export const createBaseButtonStyle = (
   variant: 'primary' | 'secondary' = 'primary'
 ): CSSProperties => ({
   padding: `${scaleSize(BASE_SIZES.SPACING_MD)}px`,
-  borderRadius: `${scaleSize(BASE_SIZES.PCB_BORDER_RADIUS)}px`,
+  borderRadius: `${scaleSize(BASE_SIZES.COMMON_BORDER_RADIUS)}px`,
   border: "none",
   cursor: "pointer",
   fontWeight: "bold",

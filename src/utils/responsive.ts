@@ -8,13 +8,13 @@ import { Z_INDEX_CSS_VARS } from "../constants/zIndex";
 // 基準サイズ定数
 export const BASE_SIZES = {
   // スペーシング
-  SPACING_XS: 4,
+  DISPLAY_MOUNT_BORDER_RADIUS: 4, // ディスプレイマウント角丸専用
   SPACING_MD: 12,
-  SPACING_LG: 16,
+  GAME_ELEMENT_GAP: 16, // ゲーム要素間の隙間専用
 
-  // ディスプレイ
-  DISPLAY_WIDTH: 640, // ディスプレイキャンバスの幅
-  DISPLAY_HEIGHT: 360, // ディスプレイキャンバスの高さ
+  // ディスプレイ（DOM要素の視覚的サイズ）
+  DISPLAY_DOM_WIDTH: 640, // ディスプレイDOM要素の幅
+  DISPLAY_DOM_HEIGHT: 360, // ディスプレイDOM要素の高さ
 
   // ディスプレイマウント
   DISPLAY_MOUNT_PADDING: 7, // ディスプレイマウントの内部パディング
@@ -23,28 +23,27 @@ export const BASE_SIZES = {
 
   // キーボードレイアウト
   KEYBOARD_ROWS: 5, // キーボードの行数
-  KEYBOARD_COLUMNS: 11, // キーボードの列数
 
   // キーボードボタン
-  BUTTON_SIZE: 56,
-  BUTTON_GAP: 3,
-  BUTTON_FONTSIZE: 28,
+  KEYBOARD_BUTTON_SIZE: 56,
+  KEYBOARD_BUTTON_GAP: 3,
+  KEYBOARD_BUTTON_FONTSIZE: 28,
 
   get ACTION_BUTTON_WIDTH() {
-    return this.BUTTON_SIZE * 2 + this.BUTTON_GAP;
+    return this.KEYBOARD_BUTTON_SIZE * 2 + this.KEYBOARD_BUTTON_GAP;
   },
 
   get KEYBOARD_INNER_WIDTH() {
     return (
-      this.KEYBOARD_COLUMNS * this.BUTTON_SIZE +
-      (this.KEYBOARD_COLUMNS - 1) * this.BUTTON_GAP
+      11 * this.KEYBOARD_BUTTON_SIZE +
+      (11 - 1) * this.KEYBOARD_BUTTON_GAP
     );
   },
   get KEYBOARD_INNER_HEIGHT() {
     //ActionKeyの分1行多い
     return (
-      (this.KEYBOARD_ROWS + 1) * this.BUTTON_SIZE +
-      this.KEYBOARD_ROWS * this.BUTTON_GAP
+      (this.KEYBOARD_ROWS + 1) * this.KEYBOARD_BUTTON_SIZE +
+      this.KEYBOARD_ROWS * this.KEYBOARD_BUTTON_GAP
     );
   },
 
@@ -56,35 +55,16 @@ export const BASE_SIZES = {
     return this.KEYBOARD_INNER_WIDTH + this.CONTAINER_PADDING * 2;
   },
 
-  // ディスプレイ全体の高さ（マウント部分込み）
-  get DISPLAY_TOTAL_HEIGHT() {
-    return this.DISPLAY_HEIGHT + this.CONTAINER_PADDING * 2;
-  },
-
-  // デバイス全体の高さ（キーボード + ディスプレイ + パディング）
-  get DEVICE_TOTAL_HEIGHT() {
-    return (
-      this.KEYBOARD_INNER_HEIGHT +
-      this.DISPLAY_TOTAL_HEIGHT +
-      this.CONTAINER_PADDING * 3
-    );
-  },
-
   // 爆弾本体（全体を包む外枠）
   BOMB_BODY_WIDTH: 714, // 爆弾本体の幅
   BOMB_BODY_HEIGHT: 814, // 爆弾本体の高さ
   BOMB_BODY_PADDING: 16, // 爆弾本体の内部パディング
 
-  // 爆弾本体の計算値
-  get BOMB_BODY_TOTAL_WIDTH() {
-    return this.BOMB_BODY_WIDTH + this.BOMB_BODY_PADDING * 2;
-  },
-
   // 基盤（PCB）スタイル用
   PCB_HEIGHT: 780, // 基盤の高さ
   PCB_BORDER_WIDTH: 2, // 基盤の境界線幅
-  PCB_BORDER_RADIUS: 4,
-  SCREW_SISZE: 8,
+  COMMON_BORDER_RADIUS: 4, // 汎用的な角丸（PCB、ボタンなど）
+  SCREW_SIZE: 8,
 
   // キーボード装飾用
   KEYBOARD_BORDER_WIDTH: 1, // キーボードの境界線幅

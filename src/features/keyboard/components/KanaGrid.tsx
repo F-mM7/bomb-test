@@ -42,8 +42,8 @@ const KanaGrid: FC<KanaGridProps> = ({ onCharInput, onMarkClick, disabled = fals
               <div
                 key={`${row}-${col}`}
                 style={{ 
-                  width: scaleSize(BASE_SIZES.BUTTON_SIZE), 
-                  height: scaleSize(BASE_SIZES.BUTTON_SIZE), 
+                  width: scaleSize(BASE_SIZES.KEYBOARD_BUTTON_SIZE), 
+                  height: scaleSize(BASE_SIZES.KEYBOARD_BUTTON_SIZE), 
                   visibility: "hidden" 
                 }}
               />

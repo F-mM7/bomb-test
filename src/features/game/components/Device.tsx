@@ -73,35 +73,35 @@ const Device: React.FC<DeviceProps> = ({
         <div
           style={{
             ...screwStyle,
-            top: scaleSize(BASE_SIZES.PCB_BORDER_RADIUS),
-            left: scaleSize(BASE_SIZES.PCB_BORDER_RADIUS),
+            top: scaleSize(BASE_SIZES.COMMON_BORDER_RADIUS),
+            left: scaleSize(BASE_SIZES.COMMON_BORDER_RADIUS),
           }}
         />
         <div
           style={{
             ...screwStyle,
-            top: scaleSize(BASE_SIZES.PCB_BORDER_RADIUS),
-            right: scaleSize(BASE_SIZES.PCB_BORDER_RADIUS),
+            top: scaleSize(BASE_SIZES.COMMON_BORDER_RADIUS),
+            right: scaleSize(BASE_SIZES.COMMON_BORDER_RADIUS),
           }}
         />
         <div
           style={{
             ...screwStyle,
-            bottom: scaleSize(BASE_SIZES.PCB_BORDER_RADIUS),
-            left: scaleSize(BASE_SIZES.PCB_BORDER_RADIUS),
+            bottom: scaleSize(BASE_SIZES.COMMON_BORDER_RADIUS),
+            left: scaleSize(BASE_SIZES.COMMON_BORDER_RADIUS),
           }}
         />
         <div
           style={{
             ...screwStyle,
-            bottom: scaleSize(BASE_SIZES.PCB_BORDER_RADIUS),
-            right: scaleSize(BASE_SIZES.PCB_BORDER_RADIUS),
+            bottom: scaleSize(BASE_SIZES.COMMON_BORDER_RADIUS),
+            right: scaleSize(BASE_SIZES.COMMON_BORDER_RADIUS),
           }}
         />
 
         <DisplayWithMount
-          pixelWidth={BASE_SIZES.DISPLAY_WIDTH}
-          pixelHeight={BASE_SIZES.DISPLAY_HEIGHT}
+          pixelWidth={BASE_SIZES.DISPLAY_DOM_WIDTH}
+          pixelHeight={BASE_SIZES.DISPLAY_DOM_HEIGHT}
           input={input}
           remaining={remaining}
           currentQuestion={currentQuestion}

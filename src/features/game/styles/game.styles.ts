@@ -7,7 +7,7 @@ export const containerStyle = {
   ...commonPatterns.flexCenterColumn,
   width: "100vw",
   height: "100vh",
-  gap: scaleSize(BASE_SIZES.SPACING_LG),
+  gap: scaleSize(BASE_SIZES.GAME_ELEMENT_GAP),
 };
 
 export const bombBodyStyle = {
@@ -25,7 +25,7 @@ export const bombBodyStyle = {
 // Device styles
 export const pcbStyle = {
   background: COLORS.pcbGreen,
-  borderRadius: scaleSize(BASE_SIZES.PCB_BORDER_RADIUS),
+  borderRadius: scaleSize(BASE_SIZES.COMMON_BORDER_RADIUS),
   padding: scaleSize(BASE_SIZES.SPACING_MD),
   boxShadow: SHADOWS.pcb,
   display: "inline-block",
@@ -36,8 +36,8 @@ export const pcbStyle = {
 
 export const screwStyle = {
   position: "absolute" as const,
-  width: scaleSize(BASE_SIZES.SCREW_SISZE),
-  height: scaleSize(BASE_SIZES.SCREW_SISZE),
+  width: scaleSize(BASE_SIZES.SCREW_SIZE),
+  height: scaleSize(BASE_SIZES.SCREW_SIZE),
   borderRadius: "50%",
   background: "radial-gradient(circle at 30% 30%, #e0e0e0, #808080)",
   boxShadow: SHADOWS.screw,

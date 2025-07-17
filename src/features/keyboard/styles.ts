@@ -13,19 +13,19 @@ export const keyboardStyle = {
 export const buttonContainerStyle = {
   display: "flex",
   flexDirection: "column" as const,
-  gap: scaleSize(BASE_SIZES.BUTTON_GAP),
+  gap: scaleSize(BASE_SIZES.KEYBOARD_BUTTON_GAP),
   justifyContent: "center" as const,
 };
 
 export const columnStyle = {
   display: "flex",
   flexDirection: "column" as const,
-  gap: scaleSize(BASE_SIZES.BUTTON_GAP),
+  gap: scaleSize(BASE_SIZES.KEYBOARD_BUTTON_GAP),
 };
 
 export const baseButtonStyle = {
-  width: scaleSize(BASE_SIZES.BUTTON_SIZE),
-  height: scaleSize(BASE_SIZES.BUTTON_SIZE),
+  width: scaleSize(BASE_SIZES.KEYBOARD_BUTTON_SIZE),
+  height: scaleSize(BASE_SIZES.KEYBOARD_BUTTON_SIZE),
   background: GRADIENTS.keyButton,
   border: `${scaleSize(BASE_SIZES.KEYBOARD_BORDER_WIDTH)} solid #706860`,
   borderRadius: scaleSize(BASE_SIZES.KEYBOARD_BUTTON_BORDER_RADIUS),
@@ -48,14 +48,14 @@ export const baseButtonStyle = {
   justifyContent: "center",
   padding: "0",
   paddingRight: scaleSize(BASE_SIZES.KEYBOARD_BUTTON_ITALIC_OFFSET),
-  fontSize: scaleSize(BASE_SIZES.BUTTON_FONTSIZE),
+  fontSize: scaleSize(BASE_SIZES.KEYBOARD_BUTTON_FONTSIZE),
   // フォーカスリングを無効化
   outline: "none",
 };
 
 export const actionRowStyle = {
   display: "flex",
-  gap: scaleSize(BASE_SIZES.BUTTON_GAP),
+  gap: scaleSize(BASE_SIZES.KEYBOARD_BUTTON_GAP),
   justifyContent: "flex-end" as const,
   width: scaleSize(BASE_SIZES.KEYBOARD_INNER_WIDTH),
 };
@@ -63,19 +63,19 @@ export const actionRowStyle = {
 export const actionButtonStyle = {
   ...baseButtonStyle,
   width: scaleSize(BASE_SIZES.ACTION_BUTTON_WIDTH),
-  fontSize: scaleSize(BASE_SIZES.BUTTON_FONTSIZE),
+  fontSize: scaleSize(BASE_SIZES.KEYBOARD_BUTTON_FONTSIZE),
   padding: scaleSize(BASE_SIZES.KEYBOARD_BUTTON_PADDING),
 };
 
 export const gridStyle = (groupCount: number) => ({
   display: "grid",
   gridTemplateColumns: `repeat(${groupCount}, ${scaleSize(
-    BASE_SIZES.BUTTON_SIZE
+    BASE_SIZES.KEYBOARD_BUTTON_SIZE
   )})`,
   gridTemplateRows: `repeat(${BASE_SIZES.KEYBOARD_ROWS}, ${scaleSize(
-    BASE_SIZES.BUTTON_SIZE
+    BASE_SIZES.KEYBOARD_BUTTON_SIZE
   )})`,
-  gridGap: scaleSize(BASE_SIZES.BUTTON_GAP),
+  gridGap: scaleSize(BASE_SIZES.KEYBOARD_BUTTON_GAP),
 });
 
 export const BUTTON_STATES = {
