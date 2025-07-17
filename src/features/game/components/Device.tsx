@@ -96,8 +96,6 @@ const Device: React.FC<DeviceProps> = ({
       />
 
       <DisplayWithMount
-        pixelWidth={BASE_SIZES.DISPLAY_DOM_WIDTH}
-        pixelHeight={BASE_SIZES.DISPLAY_DOM_HEIGHT}
         input={input}
         remaining={remaining}
         currentQuestion={currentQuestion}

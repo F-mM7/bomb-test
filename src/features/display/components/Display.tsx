@@ -8,15 +8,13 @@ import {
   CircleRenderer,
   InputRenderer,
 } from "../renderers";
-import { scaleSize } from "../../../utils/responsive";
+import { BASE_SIZES, scaleSize } from "../../../utils/responsive";
 
 // Canvas内部解像度（ピクセル数）- レスポンシブとは無関係
 const CANVAS_WIDTH = 96;
 const CANVAS_HEIGHT = 54;
 
 const Display: React.FC<DisplayProps> = ({
-  pixelWidth,
-  pixelHeight,
   remaining,
   input,
   currentQuestion,
@@ -68,8 +66,8 @@ const Display: React.FC<DisplayProps> = ({
       width={CANVAS_WIDTH}
       height={CANVAS_HEIGHT}
       style={{
-        width: scaleSize(pixelWidth),
-        height: scaleSize(pixelHeight),
+        width: scaleSize(BASE_SIZES.DISPLAY_DOM_WIDTH),
+        height: scaleSize(BASE_SIZES.DISPLAY_DOM_HEIGHT),
         imageRendering: "pixelated",
         background: COLORS.black,
         display: "block",

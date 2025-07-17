@@ -1,8 +1,6 @@
-import type { Question } from '../../game/types/question.types';
+import type { Question } from "../../game/types/question.types";
 
 export interface DisplayProps {
-  pixelWidth: number;
-  pixelHeight: number;
   remaining: number;
   input: string;
   currentQuestion?: Question;

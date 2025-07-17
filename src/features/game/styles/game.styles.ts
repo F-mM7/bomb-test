@@ -25,7 +25,6 @@ export const pcbStyle = {
   borderRadius: scaleSize(BASE_SIZES.COMMON_BORDER_RADIUS),
   padding: scaleSize(BASE_SIZES.PCB_PADDING),
   boxShadow: SHADOWS.pcb,
-  display: "inline-block",
   border: `${scaleSize(BASE_SIZES.PCB_BORDER_WIDTH)} solid ${COLORS.pcbGreen}`,
   position: "relative" as const,
   height: scaleSize(BASE_SIZES.PCB_HEIGHT),
