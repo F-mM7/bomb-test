@@ -80,13 +80,12 @@ export const BASE_SIZES = {
   },
   get PCB_HEIGHT() {
     return (
-      this.PCB_PADDING + // PCB上部パディング
       this.DISPLAY_DOM_HEIGHT + // ディスプレイ領域
       this.DISPLAY_MOUNT_PADDING * 2 + // ディスプレイマウントの上下パディング
-      // this.DISPLAY_MOUNT_BORDER_WIDTH * 2 + // ディスプレイマウント境界線
+      this.DISPLAY_MOUNT_BORDER_WIDTH * 2 + // ディスプレイマウント境界線
       this.DISPLAY_MOUNT_MARGIN + // ディスプレイとキーボードの間のマージン
       this.KEYBOARD_OUTER_HEIGHT + // キーボード全体の高さ
-      // this.KEYBOARD_BORDER_WIDTH * 2 + // キーボード境界線
+      this.KEYBOARD_BORDER_WIDTH * 2 + // キーボード境界線
       0
     );
   },
