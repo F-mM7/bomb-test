@@ -35,6 +35,8 @@ export const baseButtonStyle = {
   fontSize: scaleSize(BASE_SIZES.KEYBOARD_BUTTON_FONTSIZE),
   // フォーカスリングを無効化
   outline: "none",
+  // 文字を左にずらす
+  textIndent: scaleSize(BASE_SIZES.KEYBOARD_BUTTON_TEXT_INDENT),
 };
 export const actionButtonStyle = {
   ...baseButtonStyle,
