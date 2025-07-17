@@ -26,10 +26,12 @@ export const BASE_SIZES = {
   KEYBOARD_COLS: 11,
 
   // キーボードボタン
-  KEYBOARD_BUTTON_SIZE: 50,
-  KEYBOARD_BUTTON_GAP: 8,
+  KEYBOARD_BUTTON_SIZE: 54,
+  KEYBOARD_BUTTON_BORDER_WIDTH: 1,
+  KEYBOARD_BUTTON_GAP: 4,
+  KEYBOARD_BUTTON_BORDER_RADIUS: 3, // キーボードボタンの角丸
   KEYBOARD_BUTTON_FONTSIZE: 28,
-
+  KEYBOARD_BUTTON_ITALIC_OFFSET: 10, // 斜体文字の中央配置調整用オフセット//TODOオフセットの方法がわからない
   get ACTION_BUTTON_WIDTH() {
     return this.KEYBOARD_BUTTON_SIZE * 2 + this.KEYBOARD_BUTTON_GAP;
   },
@@ -47,6 +49,7 @@ export const BASE_SIZES = {
       this.KEYBOARD_ROWS * this.KEYBOARD_BUTTON_GAP
     );
   },
+  KEYBOARD_BORDER_WIDTH: 1, // キーボードの境界線幅
 
   // キーボード・露出ワイヤー共通コンテナ（基盤上の部品用）
   CONTAINER_PADDING: 6, // キーボードと露出ワイヤーの内部パディング
@@ -57,6 +60,10 @@ export const BASE_SIZES = {
   },
   get KEYBOARD_OUTER_HEIGHT() {
     return this.KEYBOARD_INNER_HEIGHT + this.CONTAINER_PADDING * 2;
+  },
+
+  get KEYBOARD_OFFSET() {
+    return BASE_SIZES.KEYBOARD_OUTER_HEIGHT + BASE_SIZES.CONTAINER_PADDING - 4;
   },
 
   get BOMB_BODY_WIDTH() {
@@ -85,12 +92,6 @@ export const BASE_SIZES = {
   PCB_BORDER_WIDTH: 2, // 基盤の境界線幅
   COMMON_BORDER_RADIUS: 4, // 汎用的な角丸（PCB、ボタンなど）
   SCREW_SIZE: 8,
-
-  // キーボード装飾用
-  KEYBOARD_BORDER_WIDTH: 1, // キーボードの境界線幅
-  KEYBOARD_BUTTON_BORDER_RADIUS: 4, // キーボードボタンの角丸
-  KEYBOARD_BUTTON_PADDING: 2, // アクションボタンのパディング
-  KEYBOARD_BUTTON_ITALIC_OFFSET: 5, // 斜体文字の中央配置調整用オフセット
 
   // ワイヤー関連
   WIRE_STROKE_WIDTH: 8, // ワイヤーの線幅

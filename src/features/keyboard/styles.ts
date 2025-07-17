@@ -4,25 +4,19 @@ import { commonPatterns } from "../../styles/common";
 
 export const keyboardStyle = {
   ...commonPatterns.baseContainer,
-  width: scaleSize(BASE_SIZES.KEYBOARD_OUTER_WIDTH),
-  height: scaleSize(BASE_SIZES.KEYBOARD_OUTER_HEIGHT),
   background: GRADIENTS.keyboard,
   boxShadow: SHADOWS.keyboard,
   border: `${scaleSize(BASE_SIZES.KEYBOARD_BORDER_WIDTH)} solid #0a0a0a`,
-};
-
-export const buttonContainerStyle = {
   display: "flex",
   flexDirection: "column" as const,
   gap: scaleSize(BASE_SIZES.KEYBOARD_BUTTON_GAP),
-  justifyContent: "center" as const,
 };
 
 export const baseButtonStyle = {
   width: scaleSize(BASE_SIZES.KEYBOARD_BUTTON_SIZE),
   height: scaleSize(BASE_SIZES.KEYBOARD_BUTTON_SIZE),
   background: GRADIENTS.keyButton,
-  border: `${scaleSize(BASE_SIZES.KEYBOARD_BORDER_WIDTH)} solid #706860`,
+  border: `${scaleSize(BASE_SIZES.KEYBOARD_BUTTON_BORDER_WIDTH)} solid #706860`,
   borderRadius: scaleSize(BASE_SIZES.KEYBOARD_BUTTON_BORDER_RADIUS),
   cursor: "pointer" as const,
   fontWeight: "bold" as const,
@@ -38,30 +32,13 @@ export const baseButtonStyle = {
   WebkitUserSelect: "none" as const,
   MozUserSelect: "none" as const,
   msUserSelect: "none" as const,
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  paddingRight: scaleSize(BASE_SIZES.KEYBOARD_BUTTON_ITALIC_OFFSET),
   fontSize: scaleSize(BASE_SIZES.KEYBOARD_BUTTON_FONTSIZE),
   // フォーカスリングを無効化
   outline: "none",
 };
-
-export const actionRowStyle = {
-  display: "grid",
-  gridTemplateColumns: `repeat(${BASE_SIZES.KEYBOARD_COLS}, ${scaleSize(
-    BASE_SIZES.KEYBOARD_BUTTON_SIZE
-  )})`,
-  gridGap: scaleSize(BASE_SIZES.KEYBOARD_BUTTON_GAP),
-  width: scaleSize(BASE_SIZES.KEYBOARD_INNER_WIDTH),
-  margin: "0", // グローバルのmargin: 0 autoを上書き
-};
-
 export const actionButtonStyle = {
   ...baseButtonStyle,
   width: scaleSize(BASE_SIZES.ACTION_BUTTON_WIDTH),
-  fontSize: scaleSize(BASE_SIZES.KEYBOARD_BUTTON_FONTSIZE),
-  padding: scaleSize(BASE_SIZES.KEYBOARD_BUTTON_PADDING),
 };
 
 export const gridStyle = (groupCount: number) => ({
@@ -73,8 +50,14 @@ export const gridStyle = (groupCount: number) => ({
     BASE_SIZES.KEYBOARD_BUTTON_SIZE
   )})`,
   gridGap: scaleSize(BASE_SIZES.KEYBOARD_BUTTON_GAP),
-  margin: "0", // グローバルのmargin: 0 autoを上書き
 });
+export const actionRowStyle = {
+  display: "grid",
+  gridTemplateColumns: `repeat(${BASE_SIZES.KEYBOARD_COLS}, ${scaleSize(
+    BASE_SIZES.KEYBOARD_BUTTON_SIZE
+  )})`,
+  gridGap: scaleSize(BASE_SIZES.KEYBOARD_BUTTON_GAP),
+};
 
 export const BUTTON_STATES = {
   pressed: {

@@ -4,8 +4,8 @@ import { commonPatterns } from "../../styles/common";
 
 export const exposedWiresContainerStyle = {
   ...commonPatterns.baseContainer,
-  width: scaleSize(BASE_SIZES.KEYBOARD_OUTER_WIDTH),
-  height: scaleSize(BASE_SIZES.KEYBOARD_OUTER_HEIGHT),
+  width: scaleSize(BASE_SIZES.KEYBOARD_INNER_WIDTH),
+  height: scaleSize(BASE_SIZES.KEYBOARD_INNER_HEIGHT),
   background: GRADIENTS.exposedWires,
   boxShadow: SHADOWS.exposedWires,
   border: `${scaleSize(BASE_SIZES.KEYBOARD_BORDER_WIDTH)} solid #000`,
