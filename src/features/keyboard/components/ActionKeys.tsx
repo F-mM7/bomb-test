@@ -22,12 +22,9 @@ const ActionKeys: FC<ActionKeysProps> = ({
     { label: "送信", onClick: disabled ? undefined : onEnter },
   ];
 
-  // 11列のうち、右から2、4、6列目にアクションボタンを配置
-  // 各アクションボタンは2列分の幅を占める
   const totalCols = BASE_SIZES.KEYBOARD_COLS; // 11
-  const actionButtonCount = 3;
   const actionButtonWidth = 2; // 各アクションボタンの列数
-  const usedCols = actionButtonCount * actionButtonWidth; // 6列使用
+  const usedCols = actionButtons.length * actionButtonWidth; // 6列使用
   const emptySpaceCount = totalCols - usedCols; // 5列の空スペース
 
   return (
