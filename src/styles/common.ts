@@ -12,8 +12,8 @@ export const commonPatterns = {
 
   // 基本コンテナスタイル
   baseContainer: {
-    padding: scaleSize(BASE_SIZES.CONTAINER_PADDING),
-    borderRadius: scaleSize(BASE_SIZES.CONTAINER_BORDER_RADIUS),
+    padding: scaleSize(BASE_SIZES.KEYBOARD_PADDING),
+    borderRadius: scaleSize(BASE_SIZES.KEYBOARD_BORDER_RADIUS),
     position: "relative" as const,
   },
 };

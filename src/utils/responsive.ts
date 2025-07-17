@@ -20,6 +20,15 @@ export const BASE_SIZES = {
   DISPLAY_MOUNT_MARGIN: 10, // ディスプレイマウントの下マージン
   DISPLAY_MOUNT_BORDER_WIDTH: 1, // ディスプレイマウントの境界線幅
 
+  get DISPLAY_TOTAL_HEIGHT() {
+    return (
+      this.DISPLAY_DOM_HEIGHT +
+      this.DISPLAY_MOUNT_PADDING * 2 +
+      this.DISPLAY_MOUNT_BORDER_WIDTH * 2 +
+      this.DISPLAY_MOUNT_MARGIN
+    );
+  },
+
   // キーボードレイアウト
   KEYBOARD_ROWS: 5,
   KEYBOARD_COLS: 11,
@@ -48,22 +57,21 @@ export const BASE_SIZES = {
       this.KEYBOARD_ROWS * this.KEYBOARD_BUTTON_GAP
     );
   },
-  KEYBOARD_BORDER_WIDTH: 1, // キーボードの境界線幅
 
-  // キーボード・露出ワイヤー共通コンテナ（基盤上の部品用）
-  CONTAINER_PADDING: 6, // キーボードと露出ワイヤーの内部パディング
-  CONTAINER_BORDER_RADIUS: 4, // 角丸半径
+  KEYBOARD_PADDING: 6,
+  KEYBOARD_BORDER_WIDTH: 1,
+  KEYBOARD_BORDER_RADIUS: 4, // 角丸半径
 
   get KEYBOARD_OUTER_WIDTH() {
     return (
       this.KEYBOARD_INNER_WIDTH +
-      (this.CONTAINER_PADDING + this.KEYBOARD_BORDER_WIDTH) * 2
+      (this.KEYBOARD_PADDING + this.KEYBOARD_BORDER_WIDTH) * 2
     );
   },
   get KEYBOARD_OUTER_HEIGHT() {
     return (
       this.KEYBOARD_INNER_HEIGHT +
-      (this.CONTAINER_PADDING + this.KEYBOARD_BORDER_WIDTH) * 2
+      (this.KEYBOARD_PADDING + this.KEYBOARD_BORDER_WIDTH) * 2
     );
   },
 
@@ -71,23 +79,24 @@ export const BASE_SIZES = {
     return this.PCB_WIDTH + (this.PCB_PADDING + this.PCB_BORDER_WIDTH) * 2;
   },
   get BOMB_BODY_HEIGHT() {
-    return this.PCB_HEIGHT + (this.PCB_PADDING + this.PCB_BORDER_WIDTH) * 2;
+    return (
+      this.PCB_TOTAL_HEIGHT + (this.PCB_PADDING + this.PCB_BORDER_WIDTH) * 2
+    );
   },
 
   // 基盤（PCB）スタイル用
-  get PCB_WIDTH() {
-    return this.KEYBOARD_OUTER_WIDTH;
-  },
+
   get PCB_HEIGHT() {
+    return this.DISPLAY_TOTAL_HEIGHT + this.KEYBOARD_OUTER_HEIGHT;
+  },
+
+  get PCB_WIDTH() {
     return (
-      this.DISPLAY_DOM_HEIGHT + // ディスプレイ領域
-      this.DISPLAY_MOUNT_PADDING * 2 + // ディスプレイマウントの上下パディング
-      this.DISPLAY_MOUNT_BORDER_WIDTH * 2 + // ディスプレイマウント境界線
-      this.DISPLAY_MOUNT_MARGIN + // ディスプレイとキーボードの間のマージン
-      this.KEYBOARD_OUTER_HEIGHT + // キーボード全体の高さ
-      this.KEYBOARD_BORDER_WIDTH * 2 + // キーボード境界線
-      0
+      this.KEYBOARD_OUTER_WIDTH + (this.PCB_PADDING + this.PCB_BORDER_WIDTH) * 2
     );
+  },
+  get PCB_TOTAL_HEIGHT() {
+    return this.PCB_HEIGHT + (this.PCB_PADDING + this.PCB_BORDER_WIDTH) * 2;
   },
   PCB_BORDER_WIDTH: 2, // 基盤の境界線幅
   COMMON_BORDER_RADIUS: 4, // 汎用的な角丸（PCB、ボタンなど）
