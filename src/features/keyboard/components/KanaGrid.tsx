@@ -1,4 +1,4 @@
-import React from "react";
+import type { FC } from "react";
 import KeyboardButton from "./KeyboardButton";
 import { kanaGroups } from "../constants";
 import { BASE_SIZES, scaleSize } from "../../../utils/responsive";
@@ -10,7 +10,7 @@ interface KanaGridProps {
   disabled?: boolean;
 }
 
-const KanaGrid: React.FC<KanaGridProps> = ({ onCharInput, onMarkClick, disabled = false }) => {
+const KanaGrid: FC<KanaGridProps> = ({ onCharInput, onMarkClick, disabled = false }) => {
   const keyStyle = { ...baseButtonStyle } as const;
   const orderedGroups = [...kanaGroups].reverse();
 

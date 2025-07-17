@@ -1,4 +1,4 @@
-import React from "react";
+import type { FC } from "react";
 import {
   topBorderStyle,
   leftBorderStyle,
@@ -25,7 +25,7 @@ const BORDER_STYLES = {
   }
 };
 
-const WireBorders: React.FC = () => {
+const WireBorders: FC = () => {
   return (
     <>
       <div style={topBorderStyle} />

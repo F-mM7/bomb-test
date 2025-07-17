@@ -1,4 +1,4 @@
-import React from "react";
+import type { FC } from "react";
 import { BUTTON_STATES } from "../styles";
 import type { KeyboardButtonProps } from "../types/keyboard.types";
 
@@ -7,7 +7,7 @@ const applyButtonState = (element: HTMLButtonElement, state: keyof typeof BUTTON
   Object.assign(element.style, styles);
 };
 
-const KeyboardButton: React.FC<KeyboardButtonProps> = ({ 
+const KeyboardButton: FC<KeyboardButtonProps> = ({ 
   content, 
   onClick, 
   style, 

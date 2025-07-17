@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import type { FC, CSSProperties } from "react";
 import { Z_INDEX } from "../../../constants/zIndex";
 
 interface TweetButtonProps {
   isCleared: boolean;
   isFailed: boolean;
   remaining: number;
-  style?: React.CSSProperties;
+  style?: CSSProperties;
 }
 
 const XIcon = () => (
@@ -14,7 +15,7 @@ const XIcon = () => (
   </svg>
 );
 
-const TweetButton: React.FC<TweetButtonProps> = ({
+const TweetButton: FC<TweetButtonProps> = ({
   isCleared,
   isFailed,
   remaining,
@@ -23,7 +24,7 @@ const TweetButton: React.FC<TweetButtonProps> = ({
   const [isHovered, setIsHovered] = useState(false);
 
   const handleTweet = () => {
-    const gameUrl = "https://example.com"; // TODO: 実際のゲームURLに置き換える
+    const gameUrl = "https://f-mm7.github.io/bomb-test/";
     const remainingSeconds = Math.floor(remaining / 1000);
     const resultText = isCleared
       ? `${remainingSeconds}秒残して時限爆弾の解除に成功した！\n${gameUrl}`

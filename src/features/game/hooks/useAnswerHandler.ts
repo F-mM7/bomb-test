@@ -1,11 +1,12 @@
 import { useCallback } from 'react';
 import type { UseAnswerHandlerProps } from '../types/hooks.types';
+import { gameStateHelper } from '../utils/gameStateHelper';
 
 export const useAnswerHandler = ({
   currentQuestion,
   currentQuestionData,
   input,
-  isFailed,
+  gameState,
   showCorrectAnswer,
   hideCorrectAnswer,
   clearInput,
@@ -13,7 +14,7 @@ export const useAnswerHandler = ({
 }: UseAnswerHandlerProps) => {
   
   const handleSubmit = useCallback(() => {
-    if (isFailed) return; // 失敗時は操作無効
+    if (!gameStateHelper.canPerformAction(gameState)) return;
     
     if (currentQuestionData && input.trim() === currentQuestionData.answer) {
       showCorrectAnswer();
@@ -26,7 +27,7 @@ export const useAnswerHandler = ({
       }, 500);
     }
   }, [
-    isFailed,
+    gameState,
     currentQuestionData,
     input,
     currentQuestion,

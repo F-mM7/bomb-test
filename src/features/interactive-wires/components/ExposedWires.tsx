@@ -1,4 +1,4 @@
-import React from "react";
+import type { FC } from "react";
 import {
   exposedWiresContainerStyle,
   getWireStyleWithState,
@@ -7,7 +7,7 @@ import WireBorders from "./WireBorders";
 import WireContainer from "./WireContainer";
 import type { ExposedWiresProps } from "../types/wires.types";
 
-const ExposedWires: React.FC<ExposedWiresProps> = ({
+const ExposedWires: FC<ExposedWiresProps> = ({
   onWireClick,
   isLeftCut = false,
   isRightCut = false,

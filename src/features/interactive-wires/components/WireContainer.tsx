@@ -1,4 +1,4 @@
-import React from "react";
+import type { FC, CSSProperties } from "react";
 import GameWire from "./GameWire";
 import type { WirePosition } from "../../game/types/game.types";
 import { BASE_SIZES, scaleSize } from "../../../utils/responsive";
@@ -8,10 +8,10 @@ interface WireContainerProps {
   onWireClick: (wire: WirePosition) => void;
   isLeftCut: boolean;
   isRightCut: boolean;
-  wireStyle: React.CSSProperties;
+  wireStyle: CSSProperties;
 }
 
-const WireContainer: React.FC<WireContainerProps> = ({
+const WireContainer: FC<WireContainerProps> = ({
   onWireClick,
   isLeftCut,
   isRightCut,

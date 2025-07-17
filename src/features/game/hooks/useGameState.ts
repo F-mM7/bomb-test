@@ -39,17 +39,12 @@ export const useGameState = () => {
     saveProgress('cleared', currentQuestion);
   }, [currentQuestion, saveProgress]);
 
-  const failGame = useCallback(() => {
-    saveProgress('failed', currentQuestion);
-  }, [currentQuestion, saveProgress]);
-
   return {
     gameState,
     currentQuestion,
     startGame,
     nextQuestion,
     clearGame,
-    failGame,
     saveProgress
   };
 };

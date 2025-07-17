@@ -53,39 +53,39 @@ npm run preview  # ビルドプレビュー
 npm run deploy   # GitHub Pagesへデプロイ
 ```
 
-## 不要コードの調査結果（2025-07-17）
+## 不要コードの調査・修正結果（2025-07-17）
 
-### 1. 未使用のエクスポート
-- `BasicWireProps` (wire-decoration/index.ts) - 外部で未使用
-- 内部のみ使用のコンポーネント多数（KeyboardButton、GameWire等）
+### ✅ 完了した修正
 
-### 2. 重複コードの検出
-- **状態管理パターン**: 複数フックで同じGameStorageアクセスパターン
-- **レスポンシブシステム**: 複数スタイルファイルで同じimportパターン
-- **レンダラー処理**: フォントレンダリングの重複処理
-- **ボタンスタイル**: キーボードボタンとアクションボタンの類似パターン
+#### 1. デッドコードの削除
+- `useGameState.ts:42-44` - `failGame`関数を削除
+- `font.types.ts:2` - `SmallKana`型を削除
 
-### 3. デッドコードの発見
-- **即座に削除可能**:
-  - `useGameState.ts:42-44` - `failGame`関数（未使用）
-  - `font.types.ts:2` - `SmallKana`型（未使用）
-- **慎重に削除可能**:
-  - 10ファイルで不要な`React`インポート
+#### 2. 不要なReactインポートの除去
+- 11ファイルでReactインポートを最適化
+- `import React from "react"` → `import type { FC, CSSProperties } from "react"`
+- バンドルサイズの削減とパフォーマンス向上
 
-### 4. TODO項目
-- `TweetButton.tsx:26` - 実際のゲームURLへの置き換えが必要
+#### 3. 未使用のエクスポート整理
+- `BasicWireProps` (wire-decoration/index.ts) - 削除
+- `BasicWire`コンポーネント - エクスポート削除（内部使用のみ）
 
-### 5. 推奨事項
-1. **即座に対応**:
-   - 未使用関数・型の削除
-   - 不要なReactインポートの除去
-2. **リファクタリング**:
-   - 状態管理パターンの共通化
-   - フォントレンダリング処理の抽象化
-   - ボタンスタイルの統一化
-3. **エクスポート整理**:
-   - 内部コンポーネントのエクスポート見直し
-   - 外部未使用の型定義削除
+#### 4. TODO項目の解決
+- `TweetButton.tsx:26` - 実際のゲームURL（https://f-mm7.github.io/bomb-test/）に更新
+
+#### 5. 重複コードのリファクタリング
+新しい共通ヘルパーファイルを作成：
+- `src/features/game/hooks/useGameStorage.ts` - GameStorage状態管理の共通化
+- `src/utils/fontRenderHelper.ts` - フォントレンダリング処理の抽象化
+- `src/styles/buttonStyles.ts` - ボタンスタイルの統一化
+- `src/features/game/utils/gameStateHelper.ts` - ゲーム状態チェックの共通化
+
+### 🔧 改善されたコード品質
+
+1. **バンドルサイズの削減**: 不要なReactインポートを削除
+2. **型安全性の向上**: より厳密な型定義
+3. **保守性の向上**: 重複コードの共通化
+4. **一貫性の向上**: 統一されたパターンの使用
 
 ## プロジェクト構造
 

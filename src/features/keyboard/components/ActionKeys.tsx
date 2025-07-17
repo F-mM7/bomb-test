@@ -1,4 +1,4 @@
-import React from "react";
+import type { FC } from "react";
 import KeyboardButton from "./KeyboardButton";
 import { actionRowStyle, actionButtonStyle } from "../styles";
 
@@ -9,7 +9,7 @@ interface ActionKeysProps {
   disabled?: boolean;
 }
 
-const ActionKeys: React.FC<ActionKeysProps> = ({ 
+const ActionKeys: FC<ActionKeysProps> = ({ 
   onBackspace, 
   onClear, 
   onEnter, 

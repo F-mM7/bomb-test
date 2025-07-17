@@ -44,7 +44,7 @@ export const useGameOrchestration = () => {
     currentQuestion: gameState.currentQuestion,
     currentQuestionData,
     input: bombState.input,
-    isFailed: bombState.isFailed,
+    gameState: gameState.gameState,
     showCorrectAnswer: bombState.showCorrectAnswer,
     hideCorrectAnswer: bombState.hideCorrectAnswer,
     clearInput: bombState.clearInput,

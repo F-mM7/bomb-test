@@ -1,15 +1,15 @@
-import React from "react";
+import type { FC, CSSProperties } from "react";
 import type { WirePosition } from "../../game/types/game.types";
 import { WIRE_CONFIGS, getGameWireStyle } from "../constants";
 
 export interface GameWireProps {
   position: WirePosition;
   isCut: boolean;
-  wireStyle: React.CSSProperties;
+  wireStyle: CSSProperties;
   onWireClick: (wire: WirePosition) => void;
 }
 
-const GameWire: React.FC<GameWireProps> = ({
+const GameWire: FC<GameWireProps> = ({
   position,
   isCut,
   wireStyle,

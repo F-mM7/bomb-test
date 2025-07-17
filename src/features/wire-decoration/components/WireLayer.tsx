@@ -1,4 +1,4 @@
-import React from "react";
+import type { FC } from "react";
 import BasicWire from "./BasicWire";
 import { scaleSize, BASE_SIZES } from "../../../utils/responsive";
 import { Z_INDEX } from "../../../constants/zIndex";
@@ -87,7 +87,7 @@ const generateWirePath = (config: WireConfig): string => {
   return `M ${startX} ${startY} C ${control1X} ${control1Y} ${control2X} ${control2Y} ${endX} ${endY}`;
 };
 
-const WireLayer: React.FC = () => {
+const WireLayer: FC = () => {
   // ワイヤー設定配列
   const wireConfigs: WireConfig[] = [
     { side: "top", startPos: 0.1, endPos: 0.6, color: "#0ff", detour: 50 },

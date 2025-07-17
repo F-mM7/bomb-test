@@ -1,5 +1,5 @@
 import type { Question } from './question.types';
-import type { WirePosition } from './game.types';
+import type { WirePosition, GameState } from './game.types';
 
 export interface BombState {
   isCleared: boolean;
@@ -30,7 +30,7 @@ export interface UseAnswerHandlerProps {
   currentQuestion: number;
   currentQuestionData: Question | undefined;
   input: string;
-  isFailed: boolean;
+  gameState: GameState;
   showCorrectAnswer: () => void;
   hideCorrectAnswer: () => void;
   clearInput: () => void;

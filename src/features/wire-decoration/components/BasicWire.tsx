@@ -1,11 +1,11 @@
-import React from "react";
+import type { FC } from "react";
 
 export interface BasicWireProps {
   d: string;
   stroke: string;
 }
 
-const BasicWire: React.FC<BasicWireProps> = ({ 
+const BasicWire: FC<BasicWireProps> = ({ 
   d, 
   stroke
 }) => {
