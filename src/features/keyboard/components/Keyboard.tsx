@@ -1,4 +1,5 @@
-import React, { useCallback } from "react";
+import type { FC } from "react";
+import { useCallback } from "react";
 import { fullDakutenMap, fullHandakutenMap, fullSmallMap } from "../constants";
 import { keyboardStyle } from "../styles";
 import type { KeyboardProps, MarkMapping } from "../types/keyboard.types";
@@ -12,7 +13,9 @@ const MARK_MAPPINGS: MarkMapping[] = [
   { mark: "小字", map: fullSmallMap },
 ];
 
-const Keyboard: React.FC<KeyboardProps> = ({
+const MAX_INPUT_LENGTH = 8;
+
+const Keyboard: FC<KeyboardProps> = ({
   setInput,
   onEnter,
   disabled = false,
@@ -41,7 +44,7 @@ const Keyboard: React.FC<KeyboardProps> = ({
     (char: string) => {
       if (disabled) return;
 
-      setInput((prev) => (prev.length < 8 ? prev + char : prev));
+      setInput((prev) => (prev.length < MAX_INPUT_LENGTH ? prev + char : prev));
     },
     [setInput, disabled]
   );

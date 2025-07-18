@@ -8,7 +8,7 @@ import type { GameProgress } from '../types/game.types';
 export const useGameStorage = <T>(key: string, initialValue: T) => {
   const [state, setState] = useState<T>(() => {
     const progress = GameStorage.getGameProgress();
-    return (progress as unknown as Record<string, unknown>)?.[key] as T ?? initialValue;
+    return (progress?.[key] as T) ?? initialValue;
   });
 
   const updateState = useCallback((newValue: T) => {
